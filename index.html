@@ -1,32 +1,294 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sport Map</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SportMap · Criar conta</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Archivo+Black&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sm-bg: #0b0b0d;
+    --sm-panel: #141417;
+    --sm-panel-2: #1b1b1f;
+    --sm-border: #26262b;
+    --sm-orange: #ff5a1f;
+    --sm-orange-dark: #d94812;
+    --sm-text: #f4f4f5;
+    --sm-muted: #8b8b93;
+  }
+  html,body{
+    background: var(--sm-bg);
+    color: var(--sm-text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+  }
+  .brand-mark{
+    width: 40px; height: 40px;
+    background: var(--sm-orange);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; color: #fff; font-size: 1.1rem;
+  }
+
+  .bg-scene{
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    display: flex;
+  }
+  .bg-scene .bg-half{
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(35%);
+  }
+  .bg-scene .bg-half.basketball{
+    background-image: url('https://images.unsplash.com/photo-1653965189275-8cb10d9f0a81?auto=format&fit=crop&w=1000&q=80');
+  }
+  .bg-scene .bg-half.skate{
+    background-image: url('https://images.unsplash.com/photo-1547198152-dde291a08c45?auto=format&fit=crop&w=1000&q=80');
+  }
+  .bg-scene::before{
+    content:"";
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(6,6,7,.5) 0%, rgba(6,6,7,.8) 100%);
+  }
+  .bg-scene .seam{
+    content:"";
+    position:absolute; inset:0;
+    background: linear-gradient(90deg,
+      transparent 38%,
+      rgba(8,8,9,.85) 48%,
+      rgba(8,8,9,.85) 52%,
+      transparent 62%);
+  }
+  .bg-scene::after{
+    content:"";
+    position:absolute; inset:0;
+    background: linear-gradient(90deg,
+      rgba(8,8,9,.25) 0%,
+      rgba(20,12,8,.55) 40%,
+      rgba(60,22,8,.72) 58%,
+      rgba(11,11,13,.95) 78%,
+      var(--sm-bg) 88%);
+  }
+  .glow{
+    position: fixed;
+    z-index: 0;
+    width: 700px; height: 700px;
+    right: -180px; top: 15%;
+    background: radial-gradient(circle, rgba(255,90,31,.28) 0%, rgba(255,90,31,0) 70%);
+    filter: blur(2px);
+    pointer-events: none;
+  }
+
+  .page-row{ position: relative; z-index: 1; }
+
+  .hero-content{
+    max-width: 480px;
+  }
+  .headline{
+    font-size: 2.8rem;
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .headline .accent{ color: var(--sm-orange); }
+  .sport-pill{
+    display:inline-flex; align-items:center; gap:.4rem;
+    background: rgba(255,90,31,.14);
+    border: 1px solid rgba(255,90,31,.4);
+    color: #ffb28c;
+    padding: .3rem .75rem;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 600;
+  }
+  .form-wrap{
+    max-width: 440px;
+    width: 100%;
+    background: rgba(14,13,14,.55);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 20px;
+    padding: 2.25rem;
+    backdrop-filter: blur(18px);
+  }
+  .form-control, .form-select{
+    background: var(--sm-panel-2);
+    border: 1px solid var(--sm-border);
+    color: var(--sm-text);
+    padding: .68rem .9rem;
+    border-radius: 10px;
+  }
+  .form-control::placeholder{ color: #6b6b72; }
+  .form-control:focus, .form-select:focus{
+    background: var(--sm-panel-2);
+    border-color: var(--sm-orange);
+    color: var(--sm-text);
+    box-shadow: 0 0 0 3px rgba(255,90,31,.18);
+  }
+  .input-group-text{
+    background: var(--sm-panel-2);
+    border: 1px solid var(--sm-border);
+    color: var(--sm-muted);
+  }
+  label{
+    font-size: .82rem;
+    font-weight: 600;
+    color: #c9c9cf;
+    margin-bottom: .35rem;
+  }
+  .btn-orange{
+    background: var(--sm-orange);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    padding: .72rem 1rem;
+    border-radius: 10px;
+    transition: background .15s ease;
+  }
+  .btn-orange:hover{ background: var(--sm-orange-dark); color:#fff; }
+  .divider{
+    display:flex; align-items:center; gap: .75rem;
+    color: var(--sm-muted);
+    font-size: .8rem;
+    margin: 1.35rem 0;
+  }
+  .divider::before, .divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background: var(--sm-border);
+  }
+  .btn-social{
+    background: var(--sm-panel-2);
+    border: 1px solid var(--sm-border);
+    color: var(--sm-text);
+    border-radius: 10px;
+    padding: .6rem 1rem;
+    font-weight: 600;
+    font-size: .9rem;
+  }
+  .btn-social:hover{ background: #232328; color: var(--sm-text); border-color: #34343a; }
+  .link-orange{ color: var(--sm-orange); font-weight: 600; text-decoration: none; }
+  .link-orange:hover{ color: var(--sm-orange-dark); }
+  .step-dot{
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--sm-border);
+  }
+  .step-dot.active{ background: var(--sm-orange); width: 20px; border-radius: 4px; }
+  @media (max-width: 991.98px){
+    .side-panel{ display:none; }
+  }
+</style>
 </head>
-
 <body>
-     <!--Comentando para conseguir fazer commit -->
 
+<div class="bg-scene">
+  <div class="bg-half basketball"></div>
+  <div class="bg-half skate"></div>
+  <div class="seam"></div>
+</div>
+<div class="glow"></div>
 
+<div class="container-fluid page-row">
+  <div class="row min-vh-100 align-items-center">
 
+    <!-- Conteúdo hero sobre a imagem -->
+    <div class="col-lg-6 col-xl-5 d-none d-lg-block">
+      <div class="hero-content">
+        <span class="sport-pill mb-3"><i class="bi bi-lightning-fill"></i> A rede social do esporte de rua</span>
+        <h1 class="headline mt-3 mb-3">Ache sua<br><span class="accent">quadra.</span><br>Ache seu<br><span class="accent">time.</span></h1>
+        <p class="text-secondary mb-0" style="max-width: 360px;">Cadastre-se e encontre pessoas, locais e sessões de esporte perto de você.</p>
+      </div>
+    </div>
 
+    <!-- Formulário -->
+    <div class="col-lg-6 col-xl-5 offset-xl-1 d-flex align-items-center justify-content-center py-5">
+      <div class="form-wrap px-3 px-sm-4">
 
+        <div class="d-flex align-items-center mb-4">
+          <div style="font-family:'Permanent Marker',cursive; font-size: 2.1rem; line-height:1; display:inline-block; transform:rotate(-2deg);">
+            <span style="color:#ff5a1f; -webkit-text-stroke:3px #050505; paint-order: stroke fill;">Sport</span><span style="color:#ffffff; -webkit-text-stroke:3px #050505; paint-order: stroke fill;">Map</span>
+          </div>
+        </div>
 
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <span class="step-dot active"></span>
+          <span class="step-dot"></span>
+          <span class="step-dot"></span>
+        </div>
 
+        <h2 class="fw-bold mb-1">Criar sua conta</h2>
+        <p class="text-secondary mb-4" style="font-size:.92rem;">Já tem uma conta? <a href="#" class="link-orange">Entrar</a></p>
 
+        <form novalidate>
 
+          <div class="row g-3 mb-3">
+            <div class="col-sm-6">
+              <label for="nome">Nome</label>
+              <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+            </div>
+            <div class="col-sm-6">
+              <label for="sobrenome">Sobrenome</label>
+              <input type="text" class="form-control" id="sobrenome" placeholder="Seu sobrenome">
+            </div>
+          </div>
 
+          <div class="mb-3">
+            <label for="usuario">Nome de usuário</label>
+            <div class="input-group">
+              <span class="input-group-text">@</span>
+              <input type="text" class="form-control" id="usuario" placeholder="seuusuario">
+            </div>
+          </div>
 
+          <div class="mb-3">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="voce@email.com">
+          </div>
 
+          <div class="mb-3">
+            <label for="senha">Senha</label>
+            <div class="input-group">
+              <input type="password" class="form-control" id="senha" placeholder="Mínimo 8 caracteres">
+              <span class="input-group-text"><i class="bi bi-eye"></i></span>
+            </div>
+          </div>
 
+          <div class="mb-3">
+            <label for="cidade">Cidade</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+              <input type="text" class="form-control" id="cidade" placeholder="São Paulo, SP">
+            </div>
+          </div>
 
+          <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" id="termos" style="background-color: var(--sm-panel-2); border-color: var(--sm-border);">
+            <label class="form-check-label text-secondary" for="termos" style="font-size:.82rem; font-weight:400;">
+              Aceito os <a href="#" class="link-orange">termos de uso</a> e a <a href="#" class="link-orange">política de privacidade</a>
+            </label>
+          </div>
 
+          <button type="submit" class="btn btn-orange w-100">Criar conta</button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+          <div class="divider">ou continue com</div>
+
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-social flex-fill"><i class="bi bi-google me-2"></i>Google</button>
+            <button type="button" class="btn btn-social flex-fill"><i class="bi bi-apple me-2"></i>Apple</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
 </body>
 </html>
-
-<!-- TESTE  -->
