@@ -21,62 +21,6 @@
     display: flex; align-items: center; justify-content: center;
     font-weight: 800; color: #fff; font-size: 1.1rem;
   }
- 
-  .bg-scene{
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    display: flex;
-  }
-  .bg-scene .bg-half{
-    flex: 1;
-    background-size: cover;
-    background-position: center;
-    filter: grayscale(35%);
-  }
-
-
-
-
-  
-
-  .bg-scene .bg-half.basketball{
-    background-image: url('https://images.unsplash.com/photo-1653965189275-8cb10d9f0a81?auto=format&fit=crop&w=1000&q=80');
-  }
-  .bg-scene .bg-half.skate{
-    background-image: url('https://images.unsplash.com/photo-1547198152-dde291a08c45?auto=format&fit=crop&w=1000&q=80');
-  }
-
-
-
-
-
-
-
-  .bg-scene::before{
-    content:"";
-    position:absolute; inset:0;
-    background: linear-gradient(180deg, rgba(6,6,7,.5) 0%, rgba(6,6,7,.8) 100%);
-  }
-  .bg-scene .seam{
-    content:"";
-    position:absolute; inset:0;
-    background: linear-gradient(90deg,
-      transparent 38%,
-      rgba(8,8,9,.85) 48%,
-      rgba(8,8,9,.85) 52%,
-      transparent 62%);
-  }
-  .bg-scene::after{
-    content:"";
-    position:absolute; inset:0;
-    background: linear-gradient(90deg,
-      rgba(8,8,9,.25) 0%,
-      rgba(20,12,8,.55) 40%,
-      rgba(60,22,8,.72) 58%,
-      rgba(11,11,13,.95) 78%,
-      var(--sm-bg) 88%);
-  }
   .glow{
     position: fixed;
     z-index: 0;
