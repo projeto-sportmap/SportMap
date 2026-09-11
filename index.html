@@ -1,57 +1,47 @@
 <!doctype html>
 <html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SportMap</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Archivo+Black&display=swap"
+      rel="stylesheet"
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/principal.css" />
+    <link rel="stylesheet" href="css/feed.css" />
 
-  <title>SportMap</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- ===== radios ocultos que controlam a navegação (sem JS) ===== -->
+      <input type="radio" name="nav" id="nav-home" class="nav-radio" checked />
+      <input type="radio" name="nav" id="nav-dashboard" class="nav-radio" />
+      <input type="radio" name="nav" id="nav-orders" class="nav-radio" />
+      <input type="radio" name="nav" id="nav-products" class="nav-radio" />
+      <input type="radio" name="nav" id="nav-customers" class="nav-radio" />
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
-    rel="stylesheet" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Archivo+Black&display=swap"
-    rel="stylesheet" />
-
-  <link rel="stylesheet" href="css/principal.css" />
-  <link rel="stylesheet" href="css/mapa.css" />
-  <link rel="stylesheet" href="css/mk.css" />
-  <link rel="stylesheet" href="css/comunidade.css" />
-
-</head>
-
-<body>
-
-  <div class="app-container">
-
-    <!-- ================================================= -->
-    <!-- RADIOS QUE CONTROLAM A NAVEGAÇÃO - SEM JAVASCRIPT -->
-    <!-- ================================================= -->
-
-    <input type="radio" name="nav" id="nav-home" class="nav-radio" checked />
-
-    <input type="radio" name="nav" id="nav-dashboard" class="nav-radio" />
-
-    <input type="radio" name="nav" id="nav-orders" class="nav-radio" />
-
-    <input type="radio" name="nav" id="nav-products" class="nav-radio" />
-
-    <input type="radio" name="nav" id="nav-customers" class="nav-radio" />
-
-
-    <!-- ================================================= -->
-    <!-- SIDEBAR -->
-    <!-- ================================================= -->
-
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar">
-
-      <!-- LOGO -->
-
-      <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-
-        <div style="
+      
+      <!-- ============ SIDEBAR ============ -->
+      <div
+        class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar"
+      >
+        <a
+          href="#"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+        >
+          <div
+            style="
               width: 34px;
               height: 34px;
               background: var(--orange);
@@ -60,2407 +50,383 @@
               align-items: center;
               justify-content: center;
               margin-right: 10px;
-            ">
-          <i class="bi bi-diagram-3-fill text-white"></i>
-        </div>
-
-        <span class="fs-4">SportMap</span>
-
-      </a>
-
-
-      <hr />
-
-
-      <!-- MENU -->
-
-      <ul class="nav nav-pills flex-column mb-auto">
-
-        <!-- FEED -->
-
-        <li class="nav-item">
-
-          <label for="nav-home" class="nav-link">
-
-            <i class="bi bi-house-door me-2"></i>
-
-            Feed
-
-          </label>
-
-        </li>
-
-
-        <!-- MAPA -->
-
-        <li>
-
-          <label for="nav-dashboard" class="nav-link">
-
-            <i class="bi bi-speedometer2 me-2"></i>
-
-            Mapa
-
-          </label>
-
-        </li>
-
-
-        <!-- SESSÕES -->
-
-        <li>
-
-          <label for="nav-orders" class="nav-link">
-
-            <i class="bi bi-calendar-check me-2"></i>
-
-            Sessões
-
-          </label>
-
-        </li>
-
-
-        <!-- MARKETPLACE -->
-
-        <li>
-
-          <label for="nav-products" class="nav-link">
-
-            <i class="bi bi-grid me-2"></i>
-
-            Marketplace
-
-          </label>
-
-        </li>
-
-
-        <!-- COMUNIDADE -->
-
-        <li>
-
-          <label for="nav-customers" class="nav-link">
-
-            <i class="bi bi-people-fill me-2"></i>
-
-            Comunidade
-
-          </label>
-
-        </li>
-
-      </ul>
-
-
-      <hr />
-
-
-      <!-- CRIAR SESSÃO -->
-
-      <button class="btn-create mb-3">
-
-        <i class="bi bi-plus-lg me-1"></i>
-
-        Criar sessão
-
-      </button>
-
-
-    </div>
-    <!-- ================================================= -->
-    <!-- FIM DA SIDEBAR -->
-    <!-- ================================================= -->
-
-
-    <!-- ================================================= -->
-    <!-- MAIN CONTENT -->
-    <!-- ================================================= -->
-
-    <main class="main-content">
-
-
-      <!-- ================================================= -->
-      <!-- SEÇÃO: FEED -->
-      <!-- ================================================= -->
-
-      <section class="app-section" id="section-home">
-
-        <div class="feed-wrap">
-
-
-          <!-- POST 1 -->
-
-          <article class="post-card">
-
-            <div class="post-head">
-
-              <div class="avatar">
-                RM
-              </div>
-
-              <div class="post-user">
-
-                <div class="name">
-
-                  Rafael Mendes
-
-                  <span class="sport-tag">
-                    Skate
-                  </span>
-
-                </div>
-
-                <div class="meta">
-                  @rafamendes · há 12 min
-                </div>
-
-              </div>
-
-              <button class="post-follow">
-                Seguir
-              </button>
-
-            </div>
-
-
-            <div class="post-caption">
-
-              Fechamos a pista hoje cedo, ninguém segurou esse ollie 🛹
-
-            </div>
-
-
-            <div class="post-photo">
-
-              <i class="bi bi-image"></i>
-
-              espaço para foto
-
-            </div>
-
-
-            <div class="post-actions">
-
-              <input type="checkbox" id="like1" class="like-checkbox" checked />
-
-              <label for="like1" class="action-btn like-label">
-
-                <span class="icon-liked">
-                  <i class="bi bi-heart-fill"></i>
-                </span>
-
-                <span class="icon-unliked">
-                  <i class="bi bi-heart"></i>
-                </span>
-
-                <span class="count-liked">
-                  128
-                </span>
-
-                <span class="count-unliked">
-                  127
-                </span>
-
-              </label>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-chat"></i>
-
-                14
-
-              </button>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-share"></i>
-
-                Compartilhar
-
-              </button>
-
-            </div>
-
-
-            <div class="post-likes">
-
-              Curtido por
-              <strong>Vinícius R.</strong>
-              e mais
-              <strong>127 pessoas</strong>
-
-            </div>
-
-          </article>
-
-
-          <!-- POST 2 -->
-
-          <article class="post-card">
-
-            <div class="post-head">
-
-              <div class="avatar">
-                JA
-              </div>
-
-              <div class="post-user">
-
-                <div class="name">
-
-                  Julia Alves
-
-                  <span class="sport-tag">
-                    Vôlei
-                  </span>
-
-                </div>
-
-                <div class="meta">
-                  @ju.alves · há 40 min
-                </div>
-
-              </div>
-
-              <button class="post-follow">
-                Seguir
-              </button>
-
-            </div>
-
-
-            <div class="post-caption">
-
-              Treino de sábado na quadra da Vila. Time completo pra domingo! 🏐
-
-            </div>
-
-
-            <div class="post-photo">
-
-              <i class="bi bi-image"></i>
-
-              espaço para foto
-
-            </div>
-
-
-            <div class="post-actions">
-
-              <input type="checkbox" id="like2" class="like-checkbox" />
-
-              <label for="like2" class="action-btn like-label">
-
-                <span class="icon-liked">
-                  <i class="bi bi-heart-fill"></i>
-                </span>
-
-                <span class="icon-unliked">
-                  <i class="bi bi-heart"></i>
-                </span>
-
-                <span class="count-liked">
-                  77
-                </span>
-
-                <span class="count-unliked">
-                  76
-                </span>
-
-              </label>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-chat"></i>
-
-                5
-
-              </button>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-share"></i>
-
-                Compartilhar
-
-              </button>
-
-            </div>
-
-
-            <div class="post-likes">
-
-              Curtido por
-              <strong>76 pessoas</strong>
-
-            </div>
-
-          </article>
-
-
-          <!-- POST 3 -->
-
-          <article class="post-card">
-
-            <div class="post-head">
-
-              <div class="avatar">
-                BZ
-              </div>
-
-              <div class="post-user">
-
-                <div class="name">
-
-                  Bruno Zago
-
-                  <span class="sport-tag">
-                    Futebol
-                  </span>
-
-                </div>
-
-                <div class="meta">
-                  @brunozago · há 1 h
-                </div>
-
-              </div>
-
-              <button class="post-follow">
-                Seguir
-              </button>
-
-            </div>
-
-
-            <div class="post-caption">
-
-              Gol de bicicleta na pelada de hoje, quem viu sabe 🔥⚽
-
-            </div>
-
-
-            <div class="post-photo">
-
-              <i class="bi bi-image"></i>
-
-              espaço para foto
-
-            </div>
-
-
-            <div class="post-actions">
-
-              <input type="checkbox" id="like3" class="like-checkbox" checked />
-
-              <label for="like3" class="action-btn like-label">
-
-                <span class="icon-liked">
-                  <i class="bi bi-heart-fill"></i>
-                </span>
-
-                <span class="icon-unliked">
-                  <i class="bi bi-heart"></i>
-                </span>
-
-                <span class="count-liked">
-                  342
-                </span>
-
-                <span class="count-unliked">
-                  341
-                </span>
-
-              </label>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-chat"></i>
-
-                48
-
-              </button>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-share"></i>
-
-                Compartilhar
-
-              </button>
-
-            </div>
-
-
-            <div class="post-likes">
-
-              Curtido por
-              <strong>Rafael M.</strong>
-              e mais
-              <strong>341 pessoas</strong>
-
-            </div>
-
-          </article>
-
-
-          <!-- POST 4 -->
-
-          <article class="post-card">
-
-            <div class="post-head">
-
-              <div class="avatar">
-                CS
-              </div>
-
-              <div class="post-user">
-
-                <div class="name">
-
-                  Carla Souza
-
-                  <span class="sport-tag">
-                    Tênis
-                  </span>
-
-                </div>
-
-                <div class="meta">
-                  @carlas · há 2 h
-                </div>
-
-              </div>
-
-              <button class="post-follow">
-                Seguir
-              </button>
-
-            </div>
-
-
-            <div class="post-caption">
-
-              Primeira aula na quadra nova, saudade de jogar em saibro 🎾
-
-            </div>
-
-
-            <div class="post-photo">
-
-              <i class="bi bi-image"></i>
-
-              espaço para foto
-
-            </div>
-
-
-            <div class="post-actions">
-
-              <input type="checkbox" id="like4" class="like-checkbox" />
-
-              <label for="like4" class="action-btn like-label">
-
-                <span class="icon-liked">
-                  <i class="bi bi-heart-fill"></i>
-                </span>
-
-                <span class="icon-unliked">
-                  <i class="bi bi-heart"></i>
-                </span>
-
-                <span class="count-liked">
-                  60
-                </span>
-
-                <span class="count-unliked">
-                  59
-                </span>
-
-              </label>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-chat"></i>
-
-                3
-
-              </button>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-share"></i>
-
-                Compartilhar
-
-              </button>
-
-            </div>
-
-
-            <div class="post-likes">
-
-              Curtido por
-              <strong>59 pessoas</strong>
-
-            </div>
-
-          </article>
-
-
-          <!-- POST 5 -->
-
-          <article class="post-card">
-
-            <div class="post-head">
-
-              <div class="avatar">
-                VR
-              </div>
-
-              <div class="post-user">
-
-                <div class="name">
-
-                  Vinícius Rocha
-
-                  <span class="sport-tag">
-                    Basquete
-                  </span>
-
-                </div>
-
-                <div class="meta">
-                  @viniciusr · há 3 h
-                </div>
-
-              </div>
-
-              <button class="post-follow">
-                Seguir
-              </button>
-
-            </div>
-
-
-            <div class="post-caption">
-
-              Fechamos com 5x5 até escurecer na quadra do Ibirapuera 🏀
-
-            </div>
-
-
-            <div class="post-photo">
-
-              <i class="bi bi-image"></i>
-
-              espaço para foto
-
-            </div>
-
-
-            <div class="post-actions">
-
-              <input type="checkbox" id="like5" class="like-checkbox" checked />
-
-              <label for="like5" class="action-btn like-label">
-
-                <span class="icon-liked">
-                  <i class="bi bi-heart-fill"></i>
-                </span>
-
-                <span class="icon-unliked">
-                  <i class="bi bi-heart"></i>
-                </span>
-
-                <span class="count-liked">
-                  213
-                </span>
-
-                <span class="count-unliked">
-                  212
-                </span>
-
-              </label>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-chat"></i>
-
-                22
-
-              </button>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-share"></i>
-
-                Compartilhar
-
-              </button>
-
-            </div>
-
-
-            <div class="post-likes">
-
-              Curtido por
-              <strong>Julia A.</strong>
-              e mais
-              <strong>212 pessoas</strong>
-
-            </div>
-
-          </article>
-
-
-          <!-- POST 6 -->
-
-          <article class="post-card">
-
-            <div class="post-head">
-
-              <div class="avatar">
-                TL
-              </div>
-
-              <div class="post-user">
-
-                <div class="name">
-
-                  Thiago Lima
-
-                  <span class="sport-tag">
-                    Futebol
-                  </span>
-
-                </div>
-
-                <div class="meta">
-                  @thiagol · há 4 h
-                </div>
-
-              </div>
-
-              <button class="post-follow">
-                Seguir
-              </button>
-
-            </div>
-
-
-            <div class="post-caption">
-
-              Time montado pro racha de quinta, só falta você 👀⚽
-
-            </div>
-
-
-            <div class="post-photo">
-
-              <i class="bi bi-image"></i>
-
-              espaço para foto
-
-            </div>
-
-
-            <div class="post-actions">
-
-              <input type="checkbox" id="like6" class="like-checkbox" />
-
-              <label for="like6" class="action-btn like-label">
-
-                <span class="icon-liked">
-                  <i class="bi bi-heart-fill"></i>
-                </span>
-
-                <span class="icon-unliked">
-                  <i class="bi bi-heart"></i>
-                </span>
-
-                <span class="count-liked">
-                  46
-                </span>
-
-                <span class="count-unliked">
-                  45
-                </span>
-
-              </label>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-chat"></i>
-
-                9
-
-              </button>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-share"></i>
-
-                Compartilhar
-
-              </button>
-
-            </div>
-
-
-            <div class="post-likes">
-
-              Curtido por
-              <strong>45 pessoas</strong>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </section>
-
-
-      <!-- ================================================= -->
-      <!-- SEÇÃO: MAPA -->
-      <!-- ================================================= -->
-
-      <section class="app-section" id="section-dashboard">
-
-        <div class="map-page">
-
-
-          <!-- TOPO DO MAPA -->
-
-          <div class="map-top">
-
-            <div class="map-search">
-
-              <i class="bi bi-search"></i>
-
-              <input type="text" placeholder="Buscar por esportes, pessoas ou locais..." />
-
-            </div>
-
-
-            <div class="sport-filters">
-
-
-              <button class="sport-filter active">
-
-                <i class="bi bi-grid"></i>
-
-                Todos
-
-              </button>
-
-
-              <button class="sport-filter">
-
-                <i class="bi bi-person-running"></i>
-
-                Corrida
-
-              </button>
-
-
-              <button class="sport-filter">
-
-                <i class="bi bi-dumbbell"></i>
-
-                Musculação
-
-              </button>
-
-
-              <button class="sport-filter">
-
-                <i class="bi bi-circle-fill"></i>
-
-                Futebol
-
-              </button>
-
-
-              <button class="sport-filter">
-
-                <i class="bi bi-bicycle"></i>
-
-                Bike
-
-              </button>
-
-
-              <button class="sport-filter">
-
-                <i class="bi bi-three-dots"></i>
-
-                Outros
-
-              </button>
-
-            </div>
-
+            "
+          >
+            <i class="bi bi-diagram-3-fill text-white"></i>
           </div>
-
-
-          <!-- CONTEÚDO PRINCIPAL DO MAPA -->
-
-          <div class="map-content">
-
-
-            <!-- MAPA -->
-
-            <div class="sport-map">
-
-
-              <!-- FUNDO DO MAPA -->
-
-              <div class="map-background">
-
-                <div class="map-road road-1"></div>
-                <div class="map-road road-2"></div>
-                <div class="map-road road-3"></div>
-                <div class="map-road road-4"></div>
-
-
-                <span class="map-place place-1">
-                  CENTRO
-                </span>
-
-                <span class="map-place place-2">
-                  VILA RICA
-                </span>
-
-                <span class="map-place place-3">
-                  JARDIM REGINA
-                </span>
-
-                <span class="map-place place-4">
-                  ARARETAMA
-                </span>
-
-              </div>
-
-
-              <!-- RAIO DE 5 KM -->
-
-              <div class="radius-circle">
-
-                <span class="radius-label">
-                  5 km
-                </span>
-
-              </div>
-
-
-              <!-- SUA LOCALIZAÇÃO -->
-
-              <div class="user-location">
-
-                <div class="user-pulse"></div>
-
-                <div class="user-dot"></div>
-
-              </div>
-
-
-              <!-- MARCADORES -->
-
-              <button class="sport-marker corrida marker-1">
-
-                <i class="bi bi-person-running"></i>
-
-              </button>
-
-
-              <button class="sport-marker futebol marker-2">
-
-                <i class="bi bi-circle-fill"></i>
-
-              </button>
-
-
-              <button class="sport-marker bike marker-3">
-
-                <i class="bi bi-bicycle"></i>
-
-              </button>
-
-
-              <button class="sport-marker musculacao marker-4">
-
-                <i class="bi bi-dumbbell"></i>
-
-              </button>
-
-
-              <button class="sport-marker corrida marker-5">
-
-                <i class="bi bi-person-running"></i>
-
-              </button>
-
-
-              <button class="sport-marker futebol marker-6">
-
-                <i class="bi bi-circle-fill"></i>
-
-              </button>
-
-
-              <button class="sport-marker bike marker-7">
-
-                <i class="bi bi-bicycle"></i>
-
-              </button>
-
-
-              <button class="sport-marker corrida marker-8">
-
-                <i class="bi bi-person-running"></i>
-
-              </button>
-
-
-              <button class="sport-marker musculacao marker-9">
-
-                <i class="bi bi-dumbbell"></i>
-
-              </button>
-
-
-              <!-- CONTROLES -->
-
-              <div class="map-controls">
-
-                <button>
-                  <i class="bi bi-plus-lg"></i>
-                </button>
-
-                <button>
-                  <i class="bi bi-dash-lg"></i>
-                </button>
-
-                <button>
-                  <i class="bi bi-crosshair"></i>
-                </button>
-
-              </div>
-
-
-              <!-- INFORMAÇÃO DO RAIO -->
-
-              <div class="radius-info">
-
-                <div class="radius-info-icon">
-
-                  <i class="bi bi-geo-alt-fill"></i>
-
-                </div>
-
-
-                <div>
-
-                  <strong>
-                    Você está vendo pessoas em um raio de 5 km
-                  </strong>
-
-                  <span>
-                    42 pessoas praticando esportes agora
-                  </span>
-
-                </div>
-
-              </div>
-
-
-              <!-- LEGENDA -->
-
-              <div class="map-legend">
-
-
-                <div class="legend-item">
-
-                  <span class="legend-dot corrida"></span>
-
-                  Corrida
-
-                </div>
-
-
-                <div class="legend-item">
-
-                  <span class="legend-dot musculacao"></span>
-
-                  Musculação
-
-                </div>
-
-
-                <div class="legend-item">
-
-                  <span class="legend-dot futebol"></span>
-
-                  Futebol
-
-                </div>
-
-
-                <div class="legend-item">
-
-                  <span class="legend-dot bike"></span>
-
-                  Bike
-
-                </div>
-
-              </div>
-
-
-              <!-- COMPARTILHAR -->
-
-              <button class="share-sport-button">
-
-                <i class="bi bi-share"></i>
-
-                Compartilhar seu esporte
-
-              </button>
-
+          <span class="fs-4">SportMap</span>
+        </a>
+        <hr />
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <label for="nav-home" class="nav-link">
+              <i class="bi bi-house-door me-2"></i>
+              Feed
+            </label>
+          </li>
+          <li>
+            <label for="nav-dashboard" class="nav-link">
+              <i class="bi bi-speedometer2 me-2"></i>
+              Mapa
+            </label>
+          </li>
+          <li>
+            <label for="nav-orders" class="nav-link">
+              <i class="bi bi-calendar-check me-2"></i>
+              Sessões
+             
+            </label>
+          </li>
+          <li>
+            <label for="nav-products" class="nav-link">
+              <i class="bi bi-grid me-2"></i>
+              Marketplace
+            </label>
+          </li>
+          <li>
+            <label for="nav-customers" class="nav-link">
+              <i class="bi bi-people-fill me-2"></i>
+              Comunidade
+            </label>
+          </li>
+        </ul>
+        <hr />
+        <button class="btn-create mb-3">
+          <i class="bi bi-plus-lg me-1"></i> Criar sessão
+        </button>
+
+        <!-- menu do usuário, 100% CSS -->
+       
+      </div>
+
+      <!-- ============ MAIN CONTENT ============ -->
+      <main class="main-content">
+        <!-- ===================== SEÇÃO: FEED ===================== -->
+         <!-- murilo-->
+       <nav class="navbar navbar-dark bg-dark">
+  <div class="navbar-spacer"></div>
+
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Busque locais, pessoas, esportes..." aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+  </form>
+
+  <div class="user-menu">
+    <input
+      type="checkbox"
+      id="user-menu-toggle"
+      class="user-menu-toggle"
+    />
+    <label for="user-menu-toggle" class="user-menu-label">
+      <strong>João Vitor Pereira</strong>
+      <img
+        src="https://github.com/mdo.png"
+        alt=""
+        width="32"
+        height="32"
+        class="rounded-circle"
+      />
+    </label>
+  </div>
+</nav>
+          <!-- BANNER DO FEED -->
+          <div class="feed-hero">
+          <!-- FOTO AQUI -->
+            <div class="feed-hero-photo">
+              <img src="img/fundo.png" class="feed-hero-photo-img">
+            
             </div>
-
-
-            <!-- ================================================= -->
-            <!-- PESSOAS POR PERTO -->
-            <!-- ================================================= -->
-
-            <aside class="nearby-people">
-
-
-              <div class="nearby-header">
-
-                <div>
-
-                  <h2>
-                    Pessoas por perto
-                  </h2>
-
-                  <span>
-                    42 resultados
-                  </span>
-
+            <!-- BARRA DE PESQUISA -->
+           
+            
+          <div class="feed-wrap">
+            <article class="post-card">
+              <div class="post-head">
+                <div class="avatar">RM</div>
+                <div class="post-user">
+                  <div class="name">
+                    Rafael Mendes <span class="sport-tag">Skate</span>
+                  </div>
+                  <div class="meta">@rafamendes · há 12 min</div>
                 </div>
-
-                <i class="bi bi-people"></i>
-
+                <button class="post-follow">Seguir</button>
               </div>
-
-
-              <!-- PESSOA 1 -->
-
-              <div class="person-card">
-
-                <div class="person-avatar">
-                  LF
-                </div>
-
-
-                <div class="person-info">
-
-                  <div class="person-name">
-
-                    Lucas Ferreira
-
-                    <span class="online"></span>
-
-                  </div>
-
-
-                  <div class="person-sport corrida-text">
-
-                    <i class="bi bi-person-running"></i>
-
-                    Corrida
-
-                  </div>
-
-
-                  <p>
-                    Corrida leve no Parque da Cidade
-                  </p>
-
-
-                  <span class="person-distance">
-
-                    <i class="bi bi-geo-alt"></i>
-
-                    1,2 km
-
-                  </span>
-
-                </div>
-
-
-                <button class="connect-button">
-                  Conectar
-                </button>
-
-              </div>
-
-
-              <!-- PESSOA 2 -->
-
-              <div class="person-card">
-
-                <div class="person-avatar avatar-purple">
-                  AS
-                </div>
-
-
-                <div class="person-info">
-
-                  <div class="person-name">
-
-                    Ana Souza
-
-                    <span class="online"></span>
-
-                  </div>
-
-
-                  <div class="person-sport musculacao-text">
-
-                    <i class="bi bi-dumbbell"></i>
-
-                    Musculação
-
-                  </div>
-
-
-                  <p>
-                    Treino de membros superiores
-                  </p>
-
-
-                  <span class="person-distance">
-
-                    <i class="bi bi-geo-alt"></i>
-
-                    2,4 km
-
-                  </span>
-
-                </div>
-
-
-                <button class="connect-button">
-                  Conectar
-                </button>
-
-              </div>
-
-
-              <!-- PESSOA 3 -->
-
-              <div class="person-card">
-
-                <div class="person-avatar avatar-green">
-                  RC
-                </div>
-
-
-                <div class="person-info">
-
-                  <div class="person-name">
-
-                    Rafael Costa
-
-                    <span class="online"></span>
-
-                  </div>
-
-
-                  <div class="person-sport futebol-text">
-
-                    <i class="bi bi-circle-fill"></i>
-
-                    Futebol
-
-                  </div>
-
-
-                  <p>
-                    Jogando no campo do Araratema
-                  </p>
-
-
-                  <span class="person-distance">
-
-                    <i class="bi bi-geo-alt"></i>
-
-                    3,1 km
-
-                  </span>
-
-                </div>
-
-
-                <button class="connect-button">
-                  Conectar
-                </button>
-
-              </div>
-
-
-              <!-- PESSOA 4 -->
-
-              <div class="person-card">
-
-                <div class="person-avatar avatar-blue">
-                  MS
-                </div>
-
-
-                <div class="person-info">
-
-                  <div class="person-name">
-
-                    Matheus Silva
-
-                    <span class="online"></span>
-
-                  </div>
-
-
-                  <div class="person-sport bike-text">
-
-                    <i class="bi bi-bicycle"></i>
-
-                    Bike
-
-                  </div>
-
-
-                  <p>
-                    Pedalada pelo centro
-                  </p>
-
-
-                  <span class="person-distance">
-
-                    <i class="bi bi-geo-alt"></i>
-
-                    3,8 km
-
-                  </span>
-
-                </div>
-
-
-                <button class="connect-button">
-                  Conectar
-                </button>
-
-              </div>
-
-
-              <!-- PESSOA 5 -->
-
-              <div class="person-card">
-
-                <div class="person-avatar">
-                  GL
-                </div>
-
-
-                <div class="person-info">
-
-                  <div class="person-name">
-
-                    Gabriela Lima
-
-                    <span class="online"></span>
-
-                  </div>
-
-
-                  <div class="person-sport corrida-text">
-
-                    <i class="bi bi-person-running"></i>
-
-                    Corrida
-
-                  </div>
-
-
-                  <p>
-                    Corrida na orla do Ribeirão
-                  </p>
-
-
-                  <span class="person-distance">
-
-                    <i class="bi bi-geo-alt"></i>
-
-                    4,5 km
-
-                  </span>
-
-                </div>
-
-
-                <button class="connect-button">
-                  Conectar
-                </button>
-
-              </div>
-
-            </aside>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- ================================================= -->
-      <!-- SEÇÃO: SESSÕES -->
-      <!-- ================================================= -->
-
-      <section class="app-section" id="section-orders">
-
-      </section>
-
-
-      <!-- ================================================= -->
-      <!-- SEÇÃO: MARKETPLACE -->
-      <!-- ================================================= -->
-
-      <section class="app-section" id="section-products">
-
-
-        <!-- ===== Topbar ===== -->
-        <nav class="topbar d-flex align-items-center gap-3">
-          <div class="logo-mark d-none d-sm-block"><span class="sport">Sport</span><span class="map">Map</span></div>
-
-          <div class="flex-grow-1 mx-2" style="max-width:520px;">
-            <div class="input-group">
-              <span class="input-group-text search-input border-end-0"><i class="bi bi-search"></i></span>
-              <input type="text" class="form-control search-input border-start-0"
-                placeholder="Buscar chuteiras, skates, bolas...">
-            </div>
-          </div>
-
-          <div class="ms-auto d-flex align-items-center gap-2">
-            <button class="btn btn-orange d-none d-md-inline-flex align-items-center gap-2">
-              <i class="bi bi-plus-lg"></i> Anunciar item
-            </button>
-            <button class="icon-btn"><i class="bi bi-heart"></i></button>
-            <button class="icon-btn">
-              <i class="bi bi-chat-dots"></i>
-              <span class="icon-dot">3</span>
-            </button>
-            <img class="avatar-sm"
-              src="https://images.unsplash.com/photo-1623605931891-d5b95ee98459?auto=format&fit=crop&w=100&q=60"
-              alt="perfil">
-          </div>
-        </nav>
-
-        <div class="container-fluid px-3 px-lg-4 py-4">
-
-          <!-- Cabeçalho -->
-          <div class="d-flex flex-wrap align-items-end justify-content-between mb-3 gap-2">
-            <div>
-              <div class="section-title">Marketplace</div>
-              <div class="results-count">890 anúncios perto de você</div>
-            </div>
-            <button class="btn btn-orange d-inline-flex d-md-none align-items-center gap-2">
-              <i class="bi bi-plus-lg"></i> Anunciar
-            </button>
-          </div>
-
-          <!-- Categorias -->
-          <div class="d-flex gap-2 overflow-auto pb-3 mb-3" style="scrollbar-width:none;">
-            <a href="#" class="cat-pill active">Todos</a>
-            <a href="#" class="cat-pill"><i class="bi bi-dribbble"></i> Futebol</a>
-            <a href="#" class="cat-pill">Basquete</a>
-            <a href="#" class="cat-pill">Skate</a>
-            <a href="#" class="cat-pill">Vôlei</a>
-            <a href="#" class="cat-pill">Tênis</a>
-            <a href="#" class="cat-pill">Roupas</a>
-          </div>
-
-          <div class="row g-4">
-
-            <!-- Filtros -->
-            <div class="col-lg-3 filters-col">
-              <div class="filters-card mb-3">
-                <h6>Categoria</h6>
-                <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="fFutebol"
-                    checked><label class="form-check-label" for="fFutebol">Futebol</label></div>
-                <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="fBasquete"><label
-                    class="form-check-label" for="fBasquete">Basquete</label></div>
-                <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="fSkate"><label
-                    class="form-check-label" for="fSkate">Skate</label></div>
-                <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="fVolei"><label
-                    class="form-check-label" for="fVolei">Vôlei</label></div>
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="fTenis"><label
-                    class="form-check-label" for="fTenis">Tênis</label></div>
-              </div>
-
-              <div class="filters-card mb-3">
-                <h6>Faixa de preço</h6>
-                <input type="range" class="form-range" min="0" max="1000" value="350">
-                <div class="d-flex justify-content-between product-meta">
-                  <span>R$ 0</span>
-                  <span>R$ 1.000+</span>
-                </div>
-              </div>
-
-              <div class="filters-card mb-3">
-                <h6>Condição</h6>
-                <div class="form-check mb-2"><input class="form-check-input" type="radio" name="cond" id="cTodos"
-                    checked><label class="form-check-label" for="cTodos">Todos</label></div>
-                <div class="form-check mb-2"><input class="form-check-input" type="radio" name="cond" id="cNovo"><label
-                    class="form-check-label" for="cNovo">Novo</label></div>
-                <div class="form-check"><input class="form-check-input" type="radio" name="cond" id="cUsado"><label
-                    class="form-check-label" for="cUsado">Usado</label></div>
-              </div>
-
-              <div class="filters-card">
-                <h6>Localização</h6>
-                <div class="input-group">
-                  <span class="input-group-text search-input border-end-0"><i class="bi bi-geo-alt"></i></span>
-                  <input type="text" class="form-control search-input border-start-0" value="São Paulo, SP">
-                </div>
-                <div class="product-meta mt-2">Raio de até 10km</div>
-              </div>
-            </div>
-
-            <!-- Grid de produtos -->
-            <div class="col-lg-9">
-              <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3">
-
-                <div class="col">
-                  <div class="product-card">
-                    <div class="product-img-wrap">
-                      <img
-                        src="https://images.unsplash.com/photo-1451256656121-9ffc0c898a49?auto=format&fit=crop&w=500&q=70"
-                        alt="Chuteira Nike">
-                      <span class="badge-condition">Usado</span>
-                      <button class="fav-btn"><i class="bi bi-heart"></i></button>
-                    </div>
-                    <div class="p-3">
-                      <div class="product-title">Chuteira Nike Mercurial laranja</div>
-                      <div class="product-price">R$ 180</div>
-                      <div class="product-meta mt-1"><i class="bi bi-geo-alt"></i> Moema · 1,2km</div>
-                      <div class="seller-row d-flex align-items-center gap-2">
-                        <img class="seller-avatar"
-                          src="https://images.unsplash.com/photo-1623605931891-d5b95ee98459?auto=format&fit=crop&w=60&q=60"
-                          alt="vendedor">
-                        <span class="product-meta">Rafael Mendes</span>
-                        <span class="stars ms-auto"><i class="bi bi-star-fill"></i> 4.8</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <div class="product-card">
-                    <div class="product-img-wrap">
-                      <img
-                        src="https://images.unsplash.com/photo-1595795279832-13f0df36fbb9?auto=format&fit=crop&w=500&q=70"
-                        alt="Bola de basquete">
-                      <span class="badge-condition novo">Novo</span>
-                      <button class="fav-btn"><i class="bi bi-heart"></i></button>
-                    </div>
-                    <div class="p-3">
-                      <div class="product-title">Bola de basquete Spalding oficial</div>
-                      <div class="product-price">R$ 129</div>
-                      <div class="product-meta mt-1"><i class="bi bi-geo-alt"></i> Vila Mariana · 2,8km</div>
-                      <div class="seller-row d-flex align-items-center gap-2">
-                        <img class="seller-avatar"
-                          src="https://images.unsplash.com/photo-1567516364473-233c4b6fcfbe?auto=format&fit=crop&w=60&q=60"
-                          alt="vendedor">
-                        <span class="product-meta">Vinicius Rocha</span>
-                        <span class="stars ms-auto"><i class="bi bi-star-fill"></i> 5.0</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <div class="product-card">
-                    <div class="product-img-wrap">
-                      <img
-                        src="https://images.unsplash.com/photo-1511190874914-2606678a0693?auto=format&fit=crop&w=500&q=70"
-                        alt="Skate completo">
-                      <span class="badge-condition">Usado</span>
-                      <button class="fav-btn"><i class="bi bi-heart-fill" style="color:var(--sm-orange)"></i></button>
-                    </div>
-                    <div class="p-3">
-                      <div class="product-title">Skate completo shape 8.0</div>
-                      <div class="product-price">R$ 320</div>
-                      <div class="product-meta mt-1"><i class="bi bi-geo-alt"></i> Pinheiros · 3,4km</div>
-                      <div class="seller-row d-flex align-items-center gap-2">
-                        <img class="seller-avatar"
-                          src="https://images.unsplash.com/photo-1567516364473-233c4b6fcfbe?auto=format&fit=crop&w=60&q=60"
-                          alt="vendedor">
-                        <span class="product-meta">Bianca Alves</span>
-                        <span class="stars ms-auto"><i class="bi bi-star-fill"></i> 4.6</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <div class="product-card">
-                    <div class="product-img-wrap">
-                      <img
-                        src="https://images.unsplash.com/photo-1565818819174-d76ccec8b2af?auto=format&fit=crop&w=500&q=70"
-                        alt="Bola de vôlei">
-                      <span class="badge-condition novo">Novo</span>
-                      <button class="fav-btn"><i class="bi bi-heart"></i></button>
-                    </div>
-                    <div class="p-3">
-                      <div class="product-title">Bola de vôlei de praia Mikasa</div>
-                      <div class="product-price">R$ 95</div>
-                      <div class="product-meta mt-1"><i class="bi bi-geo-alt"></i> Ibirapuera · 1,0km</div>
-                      <div class="seller-row d-flex align-items-center gap-2">
-                        <img class="seller-avatar"
-                          src="https://images.unsplash.com/photo-1567516364473-233c4b6fcfbe?auto=format&fit=crop&w=60&q=60"
-                          alt="vendedor">
-                        <span class="product-meta">Camila Duarte</span>
-                        <span class="stars ms-auto"><i class="bi bi-star-fill"></i> 4.9</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <div class="product-card">
-                    <div class="product-img-wrap">
-                      <img
-                        src="https://images.unsplash.com/photo-1579338908476-3a3a1d71a706?auto=format&fit=crop&w=500&q=70"
-                        alt="Tênis para quadra">
-                      <span class="badge-condition">Usado</span>
-                      <button class="fav-btn"><i class="bi bi-heart"></i></button>
-                    </div>
-                    <div class="p-3">
-                      <div class="product-title">Tênis Nike para quadra nº 41</div>
-                      <div class="product-price">R$ 210</div>
-                      <div class="product-meta mt-1"><i class="bi bi-geo-alt"></i> Itaim Bibi · 4,1km</div>
-                      <div class="seller-row d-flex align-items-center gap-2">
-                        <img class="seller-avatar"
-                          src="https://images.unsplash.com/photo-1567516364473-233c4b6fcfbe?auto=format&fit=crop&w=60&q=60"
-                          alt="vendedor">
-                        <span class="product-meta">Thiago Lima</span>
-                        <span class="stars ms-auto"><i class="bi bi-star-fill"></i> 4.7</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <div class="product-card">
-                    <div class="product-img-wrap">
-                      <img
-                        src="https://images.unsplash.com/photo-1653965189275-8cb10d9f0a81?auto=format&fit=crop&w=500&q=70"
-                        alt="Cesta de basquete portátil">
-                      <span class="badge-condition">Usado</span>
-                      <button class="fav-btn"><i class="bi bi-heart"></i></button>
-                    </div>
-                    <div class="p-3">
-                      <div class="product-title">Cesta de basquete portátil ajustável</div>
-                      <div class="product-price">R$ 450</div>
-                      <div class="product-meta mt-1"><i class="bi bi-geo-alt"></i> Morumbi · 5,6km</div>
-                      <div class="seller-row d-flex align-items-center gap-2">
-                        <img class="seller-avatar"
-                          src="https://images.unsplash.com/photo-1623605931891-d5b95ee98459?auto=format&fit=crop&w=60&q=60"
-                          alt="vendedor">
-                        <span class="product-meta">Rafael Mendes</span>
-                        <span class="stars ms-auto"><i class="bi bi-star-fill"></i> 4.8</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="text-center mt-4">
-                <button class="btn btn-social px-4"
-                  style="background:var(--sm-panel-2);border:1px solid var(--sm-border);color:var(--sm-text);border-radius:10px;padding:.6rem 1.2rem;">
-                  Carregar mais anúncios
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-
-
-
-
-
-
-
-
-      </section>
-
-
-      <!-- ================================================= -->
-      <!-- SEÇÃO: COMUNIDADE -->
-      <!-- ================================================= -->
-
-      <section class="app-section" id="section-customers">
-
-        <div class="comunidade-container">
-
-
-          <!-- CABEÇALHO -->
-          <div class="comunidade-header">
-
-
-            <div class="comunidade-icone">
-              <i class="bi bi-people-fill"></i>
-            </div>
-
-
-            <div>
-              <h1>Comunidade</h1>
-              <p>
-                Compartilhe seus treinos, lugares e momentos esportivos.
-              </p>
-            </div>
-
-
-            <button style="
-                background-color: rgb(255, 85, 0);
-                color: #FFFFFF;
-                border: none;
-                border-radius: 8px;
-                padding: 12px 24px;
-                font-size: 16px;
-                font-weight: 600;
-                cursor: pointer;
-                margin-left: 215px;
-               ">
-              Criar publicação
-            </button>
-
-
-          </div>
-
-
-
-
-          <!-- FEED -->
-          <div class="feed-comunidade">
-
-
-
-
-            <!-- PUBLICAÇÃO 1 -->
-            <article class="post-comunidade">
-
-
-              <div class="post-header">
-
-
-                <div class="post-avatar">
-                  RM
-                </div>
-
-
-                <div class="post-usuario">
-
-
-                  <div class="post-nome">
-                    Rafael Mendes
-
-
-                    <span class="post-esporte">
-                      Skate
-                    </span>
-                  </div>
-
-
-                  <div class="post-data">
-                    @rafamendes · há 12 min
-                  </div>
-
-
-                </div>
-
-
-                <button class="btn-seguir">
-                  Seguir
-                </button>
-
-
-              </div>
-
-
-
-
-              <div class="post-texto">
+              <div class="post-caption">
                 Fechamos a pista hoje cedo, ninguém segurou esse ollie 🛹
               </div>
-
-
-
-
-              <div class="post-imagem">
-
-
-                <i class="bi bi-image"></i>
-
-
-                <span>espaço para foto</span>
-
-
+              <!-- FOTO AQUI -->
+              <div class="post-photo">
+                <i class="bi bi-image"></i>espaço para foto
               </div>
-
-
-
-
-              <div class="post-acoes">
-
-
-                <button class="acao-post curtida">
-                  <i class="bi bi-heart-fill"></i>
-                  128
+              <div class="post-actions">
+                <input
+                  type="checkbox"
+                  id="like1"
+                  class="like-checkbox"
+                  checked
+                />
+                <label for="like1" class="action-btn like-label">
+                  <span class="icon-liked"
+                    ><i class="bi bi-heart-fill"></i
+                  ></span>
+                  <span class="icon-unliked"><i class="bi bi-heart"></i></span>
+                  <span class="count-liked">128</span>
+                  <span class="count-unliked">127</span>
+                </label>
+                <button class="action-btn">
+                  <i class="bi bi-chat"></i> 14
                 </button>
-
-
-                <button class="acao-post">
-                  <i class="bi bi-chat"></i>
-                  14
+                <button class="action-btn">
+                  <i class="bi bi-share"></i> Compartilhar
                 </button>
-
-
-                <button class="acao-post">
-                  <i class="bi bi-share"></i>
-                  Compartilhar
-                </button>
-
-
               </div>
-
-
-
-
-              <div class="post-curtidas">
-
-
+              <div class="post-likes">
                 Curtido por <strong>Vinícius R.</strong> e mais
                 <strong>127 pessoas</strong>
-
-
               </div>
-
-
             </article>
 
-
-
-
-
-
-            <!-- PUBLICAÇÃO 2 -->
-            <article class="post-comunidade">
-
-
-              <div class="post-header">
-
-
-                <div class="post-avatar">
-                  JA
-                </div>
-
-
-                <div class="post-usuario">
-
-
-                  <div class="post-nome">
-
-
-                    Julia Alves
-
-
-                    <span class="post-esporte">
-                      Vôlei
-                    </span>
-
-
+            <article class="post-card">
+              <div class="post-head">
+                <div class="avatar">JA</div>
+                <div class="post-user">
+                  <div class="name">
+                    Julia Alves <span class="sport-tag">Vôlei</span>
                   </div>
-
-
-                  <div class="post-data">
-                    @ju.alves · há 40 min
-                  </div>
-
-
+                  <div class="meta">@ju.alves · há 40 min</div>
                 </div>
-
-
-                <button class="btn-seguir">
-                  Seguir
-                </button>
-
-
+                <button class="post-follow">Seguir</button>
               </div>
-
-
-
-
-              <div class="post-texto">
-                Treino de sábado na quadra da Vila. Time completo pra domingo! 🏐
+              <div class="post-caption">
+                Treino de sábado na quadra da Vila. Time completo pra domingo!
+                🏐
               </div>
-
-
-
-
-              <div class="post-imagem">
-
-
-                <i class="bi bi-image"></i>
-
-
-                <span>espaço para foto</span>
-
-
+              <!-- FOTO AQUI -->
+              <div class="post-photo">
+                <i class="bi bi-image"></i>espaço para foto
               </div>
-
-
-
-
-              <div class="post-acoes">
-
-
-                <button class="acao-post">
-                  <i class="bi bi-heart"></i>
-                  77
+              <div class="post-actions">
+                <input type="checkbox" id="like2" class="like-checkbox" />
+                <label for="like2" class="action-btn like-label">
+                  <span class="icon-liked"
+                    ><i class="bi bi-heart-fill"></i
+                  ></span>
+                  <span class="icon-unliked"><i class="bi bi-heart"></i></span>
+                  <span class="count-liked">77</span>
+                  <span class="count-unliked">76</span>
+                </label>
+                <button class="action-btn"><i class="bi bi-chat"></i> 5</button>
+                <button class="action-btn">
+                  <i class="bi bi-share"></i> Compartilhar
                 </button>
-
-
-                <button class="acao-post">
-                  <i class="bi bi-chat"></i>
-                  5
-                </button>
-
-
-                <button class="acao-post">
-                  <i class="bi bi-share"></i>
-                  Compartilhar
-                </button>
-
-
               </div>
-
-
-
-
-              <div class="post-curtidas">
-
-
+              <div class="post-likes">
                 Curtido por <strong>76 pessoas</strong>
-
-
               </div>
-
-
             </article>
 
-
-
-
-
-
-            <!-- PUBLICAÇÃO 3 -->
-            <article class="post-comunidade">
-
-
-              <div class="post-header">
-
-
-                <div class="post-avatar">
-                  BZ
-                </div>
-
-
-                <div class="post-usuario">
-
-
-                  <div class="post-nome">
-
-
-                    Bruno Zago
-
-
-                    <span class="post-esporte">
-                      Futebol
-                    </span>
-
-
+            <article class="post-card">
+              <div class="post-head">
+                <div class="avatar">BZ</div>
+                <div class="post-user">
+                  <div class="name">
+                    Bruno Zago <span class="sport-tag">Futebol</span>
                   </div>
-
-
-                  <div class="post-data">
-                    @brunozago · há 1 h
-                  </div>
-
-
+                  <div class="meta">@brunozago · há 1 h</div>
                 </div>
-
-
-                <button class="btn-seguir">
-                  Seguir
-                </button>
-
-
+                <button class="post-follow">Seguir</button>
               </div>
-
-
-
-
-              <div class="post-texto">
+              <div class="post-caption">
                 Gol de bicicleta na pelada de hoje, quem viu sabe 🔥⚽
               </div>
-
-
-
-
-              <div class="post-imagem">
-
-
-                <i class="bi bi-image"></i>
-
-
-                <span>espaço para foto</span>
-
-
+              <!-- FOTO AQUI -->
+              <div class="post-photo">
+                <i class="bi bi-image"></i>espaço para foto
               </div>
-
-
-
-
-              <div class="post-acoes">
-
-
-                <button class="acao-post curtida">
-                  <i class="bi bi-heart-fill"></i>
-                  342
+              <div class="post-actions">
+                <input
+                  type="checkbox"
+                  id="like3"
+                  class="like-checkbox"
+                  checked
+                />
+                <label for="like3" class="action-btn like-label">
+                  <span class="icon-liked"
+                    ><i class="bi bi-heart-fill"></i
+                  ></span>
+                  <span class="icon-unliked"><i class="bi bi-heart"></i></span>
+                  <span class="count-liked">342</span>
+                  <span class="count-unliked">341</span>
+                </label>
+                <button class="action-btn">
+                  <i class="bi bi-chat"></i> 48
                 </button>
-
-
-                <button class="acao-post">
-                  <i class="bi bi-chat"></i>
-                  48
+                <button class="action-btn">
+                  <i class="bi bi-share"></i> Compartilhar
                 </button>
-
-
-                <button class="acao-post">
-                  <i class="bi bi-share"></i>
-                  Compartilhar
-                </button>
-
-
               </div>
-
-
-
-
-              <div class="post-curtidas">
-
-
+              <div class="post-likes">
                 Curtido por <strong>Rafael M.</strong> e mais
                 <strong>341 pessoas</strong>
-
-
               </div>
-
-
             </article>
 
-
-
-
-
-
-            <!-- PUBLICAÇÃO 4 -->
-            <article class="post-comunidade">
-
-
-              <div class="post-header">
-
-
-                <div class="post-avatar">
-                  CS
-                </div>
-
-
-                <div class="post-usuario">
-
-
-                  <div class="post-nome">
-
-
-                    Carla Souza
-
-
-                    <span class="post-esporte">
-                      Tênis
-                    </span>
-
-
+            <article class="post-card">
+              <div class="post-head">
+                <div class="avatar">CS</div>
+                <div class="post-user">
+                  <div class="name">
+                    Carla Souza <span class="sport-tag">Tênis</span>
                   </div>
-
-
-                  <div class="post-data">
-                    @carlas · há 2 h
-                  </div>
-
-
+                  <div class="meta">@carlas · há 2 h</div>
                 </div>
-
-
-                <button class="btn-seguir">
-                  Seguir
-                </button>
-
-
+                <button class="post-follow">Seguir</button>
               </div>
-
-
-
-
-              <div class="post-texto">
+              <div class="post-caption">
                 Primeira aula na quadra nova, saudade de jogar em saibro 🎾
               </div>
-
-
-
-
-              <div class="post-imagem">
-
-
-                <i class="bi bi-image"></i>
-
-
-                <span>espaço para foto</span>
-
-
+              <!-- FOTO AQUI -->
+              <div class="post-photo">
+                <i class="bi bi-image"></i>espaço para foto
               </div>
-
-
-
-
-              <div class="post-acoes">
-
-
-                <button class="acao-post">
-                  <i class="bi bi-heart"></i>
-                  60
+              <div class="post-actions">
+                <input type="checkbox" id="like4" class="like-checkbox" />
+                <label for="like4" class="action-btn like-label">
+                  <span class="icon-liked"
+                    ><i class="bi bi-heart-fill"></i
+                  ></span>
+                  <span class="icon-unliked"><i class="bi bi-heart"></i></span>
+                  <span class="count-liked">60</span>
+                  <span class="count-unliked">59</span>
+                </label>
+                <button class="action-btn"><i class="bi bi-chat"></i> 3</button>
+                <button class="action-btn">
+                  <i class="bi bi-share"></i> Compartilhar
                 </button>
-
-
-                <button class="acao-post">
-                  <i class="bi bi-chat"></i>
-                  3
-                </button>
-
-
-                <button class="acao-post">
-                  <i class="bi bi-share"></i>
-                  Compartilhar
-                </button>
-
-
               </div>
-
-
-
-
-              <div class="post-curtidas">
-
-
+              <div class="post-likes">
                 Curtido por <strong>59 pessoas</strong>
-
-
               </div>
-
-
             </article>
 
-
-
-
-
-
-            <!-- PUBLICAÇÃO 5 -->
-            <article class="post-comunidade">
-
-
-              <div class="post-header">
-
-
-                <div class="post-avatar">
-                  VR
-                </div>
-
-
-                <div class="post-usuario">
-
-
-                  <div class="post-nome">
-
-
-                    Vinícius Rocha
-
-
-                    <span class="post-esporte">
-                      Basquete
-                    </span>
-
-
+            <article class="post-card">
+              <div class="post-head">
+                <div class="avatar">VR</div>
+                <div class="post-user">
+                  <div class="name">
+                    Vinícius Rocha <span class="sport-tag">Basquete</span>
                   </div>
-
-
-                  <div class="post-data">
-                    @viniciusr · há 3 h
-                  </div>
-
-
+                  <div class="meta">@viniciusr · há 3 h</div>
                 </div>
-
-
-                <button class="btn-seguir">
-                  Seguir
-                </button>
-
-
+                <button class="post-follow">Seguir</button>
               </div>
-
-
-
-
-              <div class="post-texto">
+              <div class="post-caption">
                 Fechamos com 5x5 até escurecer na quadra do Ibirapuera 🏀
               </div>
-
-
-
-
-              <div class="post-imagem">
-
-
-                <i class="bi bi-image"></i>
-
-
-                <span>espaço para foto</span>
-
-
+              <!-- FOTO AQUI -->
+              <div class="post-photo">
+                <i class="bi bi-image"></i>espaço para foto
               </div>
-
-
-
-
-              <div class="post-acoes">
-
-
-                <button class="acao-post curtida">
-                  <i class="bi bi-heart-fill"></i>
-                  213
+              <div class="post-actions">
+                <input
+                  type="checkbox"
+                  id="like5"
+                  class="like-checkbox"
+                  checked
+                />
+                <label for="like5" class="action-btn like-label">
+                  <span class="icon-liked"
+                    ><i class="bi bi-heart-fill"></i
+                  ></span>
+                  <span class="icon-unliked"><i class="bi bi-heart"></i></span>
+                  <span class="count-liked">213</span>
+                  <span class="count-unliked">212</span>
+                </label>
+                <button class="action-btn">
+                  <i class="bi bi-chat"></i> 22
                 </button>
-
-
-                <button class="acao-post">
-                  <i class="bi bi-chat"></i>
-                  22
+                <button class="action-btn">
+                  <i class="bi bi-share"></i> Compartilhar
                 </button>
-
-
-                <button class="acao-post">
-                  <i class="bi bi-share"></i>
-                  Compartilhar
-                </button>
-
-
               </div>
-
-
-
-
-              <div class="post-curtidas">
-
-
+              <div class="post-likes">
                 Curtido por <strong>Julia A.</strong> e mais
                 <strong>212 pessoas</strong>
-
-
               </div>
-
-
             </article>
 
-
-
-
-
-
-            <!-- PUBLICAÇÃO 6 -->
-            <article class="post-comunidade">
-
-
-              <div class="post-header">
-
-
-                <div class="post-avatar">
-                  TL
-                </div>
-
-
-                <div class="post-usuario">
-
-
-                  <div class="post-nome">
-
-
-                    Thiago Lima
-
-
-                    <span class="post-esporte">
-                      Futebol
-                    </span>
-
-
+            <article class="post-card">
+              <div class="post-head">
+                <div class="avatar">TL</div>
+                <div class="post-user">
+                  <div class="name">
+                    Thiago Lima <span class="sport-tag">Futebol</span>
                   </div>
-
-
-                  <div class="post-data">
-                    @thiagol · há 4 h
-                  </div>
-
-
+                  <div class="meta">@thiagol · há 4 h</div>
                 </div>
-
-
-                <button class="btn-seguir">
-                  Seguir
-                </button>
-
-
+                <button class="post-follow">Seguir</button>
               </div>
-
-
-
-
-              <div class="post-texto">
+              <div class="post-caption">
                 Time montado pro racha de quinta, só falta você 👀⚽
               </div>
-
-
-
-
-              <div class="post-imagem">
-
-
-                <i class="bi bi-image"></i>
-
-
-                <span>espaço para foto</span>
-
-
+              <!-- FOTO AQUI -->
+              <div class="post-photo">
+                <i class="bi bi-image"></i>espaço para foto
               </div>
-
-
-
-
-              <div class="post-acoes">
-
-
-                <button class="acao-post">
-                  <i class="bi bi-heart"></i>
-                  46
+              <div class="post-actions">
+                <input type="checkbox" id="like6" class="like-checkbox" />
+                <label for="like6" class="action-btn like-label">
+                  <span class="icon-liked"
+                    ><i class="bi bi-heart-fill"></i
+                  ></span>
+                  <span class="icon-unliked"><i class="bi bi-heart"></i></span>
+                  <span class="count-liked">46</span>
+                  <span class="count-unliked">45</span>
+                </label>
+                <button class="action-btn"><i class="bi bi-chat"></i> 9</button>
+                <button class="action-btn">
+                  <i class="bi bi-share"></i> Compartilhar
                 </button>
-
-
-                <button class="acao-post">
-                  <i class="bi bi-chat"></i>
-                  9
-                </button>
-
-
-                <button class="acao-post">
-                  <i class="bi bi-share"></i>
-                  Compartilhar
-                </button>
-
-
               </div>
-
-
-
-
-              <div class="post-curtidas">
-
-
+              <div class="post-likes">
                 Curtido por <strong>45 pessoas</strong>
-
-
               </div>
-
-
             </article>
-
-
-
-
           </div>
+        </section>
+
+        <!-- ===================== SEÇÃO: MAPA ===================== -->
+        <section class="app-section" id="section-dashboard">
+          
 
 
-        </div>
+
+        </section>
+
+        <!-- ===================== SEÇÃO: SESSÕES ===================== -->
+        <section class="app-section" id="section-orders">
+        
 
 
-      </section>
+        </section>
 
+        <!-- ===================== SEÇÃO: MARKETPLACE ===================== -->
+        <section class="app-section" id="section-products">
+         
+        </section>
 
-    </main>
-    <!-- ================================================= -->
-    <!-- FIM DO MAIN -->
-    <!-- ================================================= -->
+        <!-- ===================== SEÇÃO: COMUNIDADE ===================== -->
+        <section class="app-section" id="section-customers">
+         
+        </section>
+      </main>
+    </div>
 
-
-  </div>
-  <!-- ================================================= -->
-  <!-- FIM DO APP-CONTAINER -->
-  <!-- ================================================= -->
-
-
-  <!-- BOOTSTRAP JS -->
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
+<!-- teste -->
