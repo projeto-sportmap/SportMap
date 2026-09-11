@@ -1,0 +1,946 @@
+/* =========================================
+   MAPA - SPORTMAP
+========================================= */
+
+#section-dashboard {
+    padding: 0;
+    background: #000;
+}
+
+.map-page {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   TOPO
+========================================= */
+
+.map-top {
+    height: 55px;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+
+/* PESQUISA */
+
+.map-search {
+    width: 430px;
+    height: 55px;
+    background: #11181e;
+    border: 1px solid #1e2930;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 18px;
+}
+
+.map-search i {
+    color: #8b98a5;
+    font-size: 18px;
+}
+
+.map-search input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: white;
+    margin-left: 12px;
+
+    font-size: 14px;
+}
+
+.map-search input::placeholder {
+    color: #7d8994;
+}
+
+
+/* =========================================
+   FILTROS
+========================================= */
+
+.sport-filters {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.sport-filter {
+    height: 44px;
+
+    padding: 0 16px;
+
+    border: none;
+    border-radius: 22px;
+
+    background: #11181e;
+    color: #dce3e8;
+
+    font-weight: 600;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.sport-filter:hover {
+    background: #1c252c;
+}
+
+.sport-filter.active {
+    background: #ff5a00;
+    color: white;
+}
+
+
+/* =========================================
+   CONTEÚDO
+========================================= */
+
+.map-content {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 430px;
+
+    gap: 15px;
+
+    height: calc(100vh - 90px);
+}
+
+
+/* =========================================
+   MAPA
+========================================= */
+
+.sport-map {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: #101820;
+
+    border: 1px solid #1c272e;
+}
+
+
+/* FUNDO DO MAPA */
+
+.map-background {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            35deg,
+            transparent 45%,
+            #26343c 46%,
+            #26343c 47%,
+            transparent 48%
+        ),
+        linear-gradient(
+            120deg,
+            transparent 48%,
+            #26343c 49%,
+            #26343c 50%,
+            transparent 51%
+        ),
+        #101820;
+}
+
+
+/* ESTRADAS */
+
+.map-road {
+    position: absolute;
+
+    background: #26343c;
+
+    opacity: .7;
+}
+
+.road-1 {
+    width: 130%;
+    height: 3px;
+
+    transform: rotate(25deg);
+
+    top: 40%;
+    left: -10%;
+}
+
+.road-2 {
+    width: 120%;
+    height: 2px;
+
+    transform: rotate(-20deg);
+
+    top: 65%;
+    left: -10%;
+}
+
+.road-3 {
+    width: 100%;
+    height: 4px;
+
+    transform: rotate(75deg);
+
+    top: 0;
+    left: 45%;
+}
+
+.road-4 {
+    width: 100%;
+    height: 2px;
+
+    transform: rotate(105deg);
+
+    top: 0;
+    left: 25%;
+}
+
+
+/* =========================================
+   NOMES DOS LOCAIS
+========================================= */
+
+.map-place {
+    position: absolute;
+
+    color: #72808b;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+.place-1 {
+    left: 47%;
+    top: 48%;
+}
+
+.place-2 {
+    left: 58%;
+    top: 72%;
+}
+
+.place-3 {
+    right: 10%;
+    top: 25%;
+}
+
+.place-4 {
+    left: 12%;
+    bottom: 25%;
+}
+
+
+/* =========================================
+   RAIO DE 5 KM
+========================================= */
+
+.radius-circle {
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    border-radius: 50%;
+
+    border: 2px solid #ff5a00;
+
+    background: rgba(255, 90, 0, .08);
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 0 50px rgba(255, 90, 0, .08);
+}
+
+
+/* TEXTO 5 KM */
+
+.radius-label {
+    position: absolute;
+
+    top: -16px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #ff5a00;
+
+    color: white;
+
+    padding: 7px 18px;
+
+    border-radius: 20px;
+
+    font-weight: 700;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   SUA LOCALIZAÇÃO
+========================================= */
+
+.user-location {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 25px;
+    height: 25px;
+
+    z-index: 10;
+}
+
+.user-dot {
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    background: #1683ff;
+
+    border: 3px solid white;
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+}
+
+.user-pulse {
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: rgba(22, 131, 255, .2);
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* =========================================
+   MARCADORES
+========================================= */
+
+.sport-marker {
+    position: absolute;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    border: 3px solid rgba(255,255,255,.15);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.4);
+
+    transition: .2s;
+}
+
+.sport-marker:hover {
+    transform: scale(1.2);
+}
+
+
+/* POSIÇÕES */
+
+.marker-1 {
+    left: 28%;
+    top: 32%;
+}
+
+.marker-2 {
+    left: 65%;
+    top: 37%;
+}
+
+.marker-3 {
+    left: 60%;
+    top: 23%;
+}
+
+.marker-4 {
+    left: 42%;
+    top: 25%;
+}
+
+.marker-5 {
+    left: 34%;
+    top: 50%;
+}
+
+.marker-6 {
+    left: 73%;
+    top: 57%;
+}
+
+.marker-7 {
+    left: 53%;
+    top: 78%;
+}
+
+.marker-8 {
+    left: 38%;
+    top: 76%;
+}
+
+.marker-9 {
+    left: 25%;
+    top: 65%;
+}
+
+
+/* CORES */
+
+.corrida {
+    background: #ff5a00;
+}
+
+.futebol {
+    background: #31a95b;
+}
+
+.bike {
+    background: #2878df;
+}
+
+.musculacao {
+    background: #7542d7;
+}
+
+
+/* =========================================
+   CONTROLES
+========================================= */
+
+.map-controls {
+    position: absolute;
+
+    right: 18px;
+    top: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #101820;
+
+    border: 1px solid #29343c;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    z-index: 20;
+}
+
+.map-controls button {
+    width: 44px;
+    height: 44px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.map-controls button:hover {
+    background: #1d282f;
+}
+
+
+/* =========================================
+   INFORMAÇÃO DO RAIO
+========================================= */
+
+.radius-info {
+    position: absolute;
+
+    left: 18px;
+    bottom: 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px;
+
+    background: rgba(10, 16, 20, .94);
+
+    border: 1px solid #29343c;
+
+    border-radius: 13px;
+
+    z-index: 20;
+}
+
+.radius-info-icon {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: rgba(255,90,0,.15);
+
+    color: #ff5a00;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+.radius-info strong {
+    display: block;
+
+    color: white;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+.radius-info span {
+    color: #82909a;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   LEGENDA
+========================================= */
+
+.map-legend {
+    position: absolute;
+
+    left: 20px;
+    top: 20px;
+
+    padding: 12px 15px;
+
+    display: flex;
+    gap: 14px;
+
+    background: rgba(10,16,20,.9);
+
+    border-radius: 10px;
+
+    border: 1px solid #29343c;
+
+    z-index: 20;
+}
+
+.legend-item {
+    color: #cbd4da;
+
+    font-size: 11px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.legend-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   BOTÃO COMPARTILHAR
+========================================= */
+
+.share-sport-button {
+    position: absolute;
+
+    right: 25px;
+    bottom: 25px;
+
+    padding: 13px 22px;
+
+    border-radius: 25px;
+
+    background: #11181e;
+
+    border: 2px solid #ff5a00;
+
+    color: #ff7a36;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    z-index: 20;
+}
+
+.share-sport-button:hover {
+    background: #ff5a00;
+
+    color: white;
+}
+
+
+/* =========================================
+   PAINEL DE PESSOAS
+========================================= */
+
+.nearby-people {
+    background: #10171c;
+
+    border: 1px solid #1d282f;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    overflow-y: auto;
+}
+
+
+/* CABEÇALHO */
+
+.nearby-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 5px 5px 15px;
+
+    border-bottom: 1px solid #202a30;
+
+    margin-bottom: 10px;
+}
+
+.nearby-header h2 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 19px;
+}
+
+.nearby-header span {
+    color: #77858f;
+
+    font-size: 12px;
+}
+
+.nearby-header > i {
+    color: #77858f;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   CARD DE PESSOA
+========================================= */
+
+.person-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 13px 8px;
+
+    background: #131c22;
+
+    border-radius: 12px;
+
+    margin-bottom: 9px;
+
+    transition: .2s;
+}
+
+.person-card:hover {
+    background: #19242b;
+}
+
+
+/* AVATAR */
+
+.person-avatar {
+    min-width: 43px;
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    background: #ff5a00;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+
+    font-size: 13px;
+}
+
+.avatar-purple {
+    background: #7542d7;
+}
+
+.avatar-green {
+    background: #31a95b;
+}
+
+.avatar-blue {
+    background: #2878df;
+}
+
+
+/* INFORMAÇÕES */
+
+.person-info {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.person-name {
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.online {
+    width: 7px;
+    height: 7px;
+
+    background: #24c76b;
+
+    border-radius: 50%;
+}
+
+
+/* ESPORTE */
+
+.person-sport {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    margin-top: 3px;
+}
+
+.corrida-text {
+    color: #ff6a1a;
+}
+
+.musculacao-text {
+    color: #9b6df0;
+}
+
+.futebol-text {
+    color: #49c875;
+}
+
+.bike-text {
+    color: #4f96ff;
+}
+
+
+/* DESCRIÇÃO */
+
+.person-info p {
+    color: #7e8b94;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    margin: 4px 0;
+}
+
+
+/* DISTÂNCIA */
+
+.person-distance {
+    color: #687780;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   CONECTAR
+========================================= */
+
+.connect-button {
+    border: none;
+
+    background: #ff5a00;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    padding: 9px 12px;
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.connect-button:hover {
+    background: #ff701f;
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .map-content {
+        grid-template-columns: 1fr;
+    }
+
+    .nearby-people {
+        display: none;
+    }
+
+    .sport-filters {
+        overflow-x: auto;
+    }
+
+    .map-search {
+        width: 300px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .map-page {
+        padding: 10px;
+    }
+
+    .map-top {
+        flex-direction: column;
+
+        height: auto;
+    }
+
+    .map-search {
+        width: 100%;
+    }
+
+    .sport-filters {
+        width: 100%;
+    }
+
+    .map-content {
+        height: calc(100vh - 150px);
+    }
+
+    .radius-circle {
+        width: 400px;
+        height: 400px;
+    }
+
+    .map-legend {
+        display: none;
+    }
+
+    .radius-info {
+        left: 10px;
+        bottom: 10px;
+    }
+
+    .share-sport-button {
+        right: 10px;
+        bottom: 10px;
+
+        padding: 11px 15px;
+    }
+
+}

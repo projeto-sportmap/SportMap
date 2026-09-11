@@ -1,0 +1,659 @@
+/* ========================================
+   COMUNIDADE
+======================================== */
+
+
+#section-customers {
+    padding: 0;
+    background-color: #050607;
+    min-height: 100vh;
+}
+
+
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+
+.comunidade-container {
+
+
+    width: 100%;
+
+
+    max-width: 900px;
+
+
+    margin: 0 auto;
+
+
+    padding: 40px 30px;
+
+
+    color: white;
+
+
+}
+
+
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+
+.comunidade-header {
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    gap: 15px;
+
+
+    margin-bottom: 35px;
+
+
+}
+
+
+
+
+.comunidade-icone {
+
+
+    width: 55px;
+
+
+    height: 55px;
+
+
+    background-color: #ff5a00;
+
+
+    border-radius: 12px;
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    justify-content: center;
+
+
+    font-size: 25px;
+
+
+}
+
+
+
+
+.comunidade-header h1 {
+
+
+    margin: 0;
+
+
+    font-size: 32px;
+
+
+    font-weight: 700;
+
+
+}
+
+
+
+
+.comunidade-header p {
+
+
+    margin: 5px 0 0;
+
+
+    color: #8d969c;
+
+
+    font-size: 14px;
+
+
+}
+
+
+
+
+/* ========================================
+   FEED
+======================================== */
+
+
+.feed-comunidade {
+
+
+    display: flex;
+
+
+    flex-direction: column;
+
+
+    gap: 20px;
+
+
+}
+
+
+
+
+/* ========================================
+   POST
+======================================== */
+
+
+.post-comunidade {
+
+
+    background-color: #0d151b;
+
+
+    border: 1px solid #1d2a32;
+
+
+    border-radius: 14px;
+
+
+    padding: 22px;
+
+
+}
+
+
+
+
+/* ========================================
+   CABEÇALHO DO POST
+======================================== */
+
+
+.post-header {
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    gap: 12px;
+
+
+}
+
+
+
+
+.post-avatar {
+
+
+    width: 45px;
+
+
+    height: 45px;
+
+
+    min-width: 45px;
+
+
+    border-radius: 50%;
+
+
+    background-color: #ff5a00;
+
+
+    color: white;
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    justify-content: center;
+
+
+    font-weight: bold;
+
+
+}
+
+
+
+
+.post-usuario {
+
+
+    flex: 1;
+
+
+}
+
+
+
+
+.post-nome {
+
+
+    color: white;
+
+
+    font-weight: 700;
+
+
+    font-size: 15px;
+
+
+}
+
+
+
+
+.post-esporte {
+
+
+    display: inline-block;
+
+
+    margin-left: 6px;
+
+
+    padding: 3px 8px;
+
+
+    border-radius: 20px;
+
+
+    background-color: #18242c;
+
+
+    color: #ff5a00;
+
+
+    font-size: 11px;
+
+
+    font-weight: 600;
+
+
+}
+
+
+
+
+.post-data {
+
+
+    margin-top: 3px;
+
+
+    color: #68747b;
+
+
+    font-size: 12px;
+
+
+}
+
+
+
+
+/* ========================================
+   BOTÃO SEGUIR
+======================================== */
+
+
+.btn-seguir {
+
+
+    background-color: transparent;
+
+
+    border: 1px solid #35434c;
+
+
+    color: white;
+
+
+    padding: 7px 15px;
+
+
+    border-radius: 8px;
+
+
+    cursor: pointer;
+
+
+    font-size: 13px;
+
+
+}
+
+
+
+
+.btn-seguir:hover {
+
+
+    border-color: #ff5a00;
+
+
+    color: #ff5a00;
+
+
+}
+
+
+
+
+/* ========================================
+   TEXTO DO POST
+======================================== */
+
+
+.post-texto {
+
+
+    margin-top: 18px;
+
+
+    margin-bottom: 16px;
+
+
+    color: #e6e9eb;
+
+
+    font-size: 15px;
+
+
+    line-height: 1.5;
+
+
+}
+
+
+
+
+/* ========================================
+   IMAGEM
+======================================== */
+
+
+.post-imagem {
+
+
+    width: 100%;
+
+
+    height: 300px;
+
+
+    border-radius: 10px;
+
+
+    background-color: #151f25;
+
+
+    border: 1px solid #25333b;
+
+
+    display: flex;
+
+
+    flex-direction: column;
+
+
+    align-items: center;
+
+
+    justify-content: center;
+
+
+    gap: 10px;
+
+
+    color: #657179;
+
+
+}
+
+
+
+
+.post-imagem i {
+
+
+    font-size: 35px;
+
+
+    color: #39474f;
+
+
+}
+
+
+
+
+/* ========================================
+   AÇÕES
+======================================== */
+
+
+.post-acoes {
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    gap: 8px;
+
+
+    margin-top: 15px;
+
+
+}
+
+
+
+
+.acao-post {
+
+
+    background: transparent;
+
+
+    border: none;
+
+
+    color: #929ca2;
+
+
+    padding: 8px 10px;
+
+
+    border-radius: 7px;
+
+
+    cursor: pointer;
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    gap: 6px;
+
+
+    font-size: 13px;
+
+
+}
+
+
+
+
+.acao-post:hover {
+
+
+    background-color: #172128;
+
+
+    color: white;
+
+
+}
+
+
+
+
+.acao-post.curtida {
+
+
+    color: #ff5a00;
+
+
+}
+
+
+
+
+.acao-post i {
+
+
+    font-size: 17px;
+
+
+}
+
+
+
+
+/* ========================================
+   CURTIDAS
+======================================== */
+
+
+.post-curtidas {
+
+
+    margin-top: 4px;
+
+
+    color: #6f7a81;
+
+
+    font-size: 12px;
+
+
+}
+
+
+
+
+.post-curtidas strong {
+
+
+    color: #b8c0c5;
+
+
+}
+
+
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+
+@media (max-width: 700px) {
+
+
+    .comunidade-container {
+
+
+        padding: 25px 15px;
+
+
+    }
+
+
+
+
+    .comunidade-header h1 {
+
+
+        font-size: 26px;
+
+
+    }
+
+
+
+
+    .post-comunidade {
+
+
+        padding: 17px;
+
+
+    }
+
+
+
+
+    .post-imagem {
+
+
+        height: 220px;
+
+
+    }
+
+
+
+
+    .btn-seguir {
+
+
+        padding: 6px 10px;
+
+
+    }
+
+
+
+
+    .acao-post {
+
+
+        font-size: 12px;
+
+
+    }
+
+
+}
+
