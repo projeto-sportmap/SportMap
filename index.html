@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="css/mapa.css" />
   <link rel="stylesheet" href="css/mk.css" />
   <link rel="stylesheet" href="css/comunidade.css" />
-
+  <link rel="stylesheet" href="css/feed.css" />
 </head>
 
 <body>
@@ -112,9 +112,9 @@
 
           <label for="nav-orders" class="nav-link">
 
-            <i class="bi bi-calendar-check me-2"></i>
+            <i class="bi bi-chat-dots me-2"></i>
 
-            Sessões
+            Mensagens
 
           </label>
 
@@ -180,659 +180,1082 @@
     <main class="main-content">
 
 
+      
+
       <!-- ================================================= -->
-      <!-- SEÇÃO: FEED -->
-      <!-- ================================================= -->
+<!-- SEÇÃO: FEED -->
+<!-- ================================================= -->
 
-      <section class="app-section" id="section-home">
+<section class="app-section" id="section-home">
 
-        <div class="feed-wrap">
+  <!-- ===================== NAVBAR DO FEED ===================== -->
 
+  <nav class="feed-navbar">
 
-          <!-- POST 1 -->
+    <div class="feed-navbar-spacer"></div>
 
-          <article class="post-card">
+    <!-- BUSCA -->
+    <form class="feed-search-form" id="feed-search-form">
 
-            <div class="post-head">
+      <div class="feed-search-box">
 
-              <div class="avatar">
-                RM
-              </div>
+        <i class="bi bi-search"></i>
 
-              <div class="post-user">
+        <input
+          type="search"
+          id="feed-search"
+          placeholder="Busque locais, pessoas, esportes..."
+          autocomplete="off"
+        />
 
-                <div class="name">
+      </div>
 
-                  Rafael Mendes
+    </form>
 
-                  <span class="sport-tag">
-                    Skate
-                  </span>
 
-                </div>
+    <!-- USUÁRIO -->
+    <div class="user-menu">
 
-                <div class="meta">
-                  @rafamendes · há 12 min
-                </div>
+      <input
+        type="checkbox"
+        id="user-menu-toggle"
+        class="user-menu-toggle"
+      />
 
-              </div>
+      <label
+        for="user-menu-toggle"
+        class="user-menu-label"
+      >
 
-              <button class="post-follow">
-                Seguir
-              </button>
+        <strong>João Vitor Pereira</strong>
 
-            </div>
+        <img
+          src="https://github.com/mdo.png"
+          alt="João Vitor Pereira"
+          width="36"
+          height="36"
+          class="rounded-circle"
+        />
 
+        <i class="bi bi-chevron-down"></i>
 
-            <div class="post-caption">
+      </label>
 
-              Fechamos a pista hoje cedo, ninguém segurou esse ollie 🛹
 
-            </div>
+      <!-- MENU DROPDOWN -->
 
+      <div class="user-dropdown">
 
-            <div class="post-photo">
+        <div class="user-dropdown-header">
 
-              <i class="bi bi-image"></i>
+          <img
+            src="https://github.com/mdo.png"
+            alt="Perfil"
+          />
 
-              espaço para foto
+          <div>
 
-            </div>
+            <strong>João Vitor Pereira</strong>
 
+            <span>@joaovitor</span>
 
-            <div class="post-actions">
-
-              <input type="checkbox" id="like1" class="like-checkbox" checked />
-
-              <label for="like1" class="action-btn like-label">
-
-                <span class="icon-liked">
-                  <i class="bi bi-heart-fill"></i>
-                </span>
-
-                <span class="icon-unliked">
-                  <i class="bi bi-heart"></i>
-                </span>
-
-                <span class="count-liked">
-                  128
-                </span>
-
-                <span class="count-unliked">
-                  127
-                </span>
-
-              </label>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-chat"></i>
-
-                14
-
-              </button>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-share"></i>
-
-                Compartilhar
-
-              </button>
-
-            </div>
-
-
-            <div class="post-likes">
-
-              Curtido por
-              <strong>Vinícius R.</strong>
-              e mais
-              <strong>127 pessoas</strong>
-
-            </div>
-
-          </article>
-
-
-          <!-- POST 2 -->
-
-          <article class="post-card">
-
-            <div class="post-head">
-
-              <div class="avatar">
-                JA
-              </div>
-
-              <div class="post-user">
-
-                <div class="name">
-
-                  Julia Alves
-
-                  <span class="sport-tag">
-                    Vôlei
-                  </span>
-
-                </div>
-
-                <div class="meta">
-                  @ju.alves · há 40 min
-                </div>
-
-              </div>
-
-              <button class="post-follow">
-                Seguir
-              </button>
-
-            </div>
-
-
-            <div class="post-caption">
-
-              Treino de sábado na quadra da Vila. Time completo pra domingo! 🏐
-
-            </div>
-
-
-            <div class="post-photo">
-
-              <i class="bi bi-image"></i>
-
-              espaço para foto
-
-            </div>
-
-
-            <div class="post-actions">
-
-              <input type="checkbox" id="like2" class="like-checkbox" />
-
-              <label for="like2" class="action-btn like-label">
-
-                <span class="icon-liked">
-                  <i class="bi bi-heart-fill"></i>
-                </span>
-
-                <span class="icon-unliked">
-                  <i class="bi bi-heart"></i>
-                </span>
-
-                <span class="count-liked">
-                  77
-                </span>
-
-                <span class="count-unliked">
-                  76
-                </span>
-
-              </label>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-chat"></i>
-
-                5
-
-              </button>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-share"></i>
-
-                Compartilhar
-
-              </button>
-
-            </div>
-
-
-            <div class="post-likes">
-
-              Curtido por
-              <strong>76 pessoas</strong>
-
-            </div>
-
-          </article>
-
-
-          <!-- POST 3 -->
-
-          <article class="post-card">
-
-            <div class="post-head">
-
-              <div class="avatar">
-                BZ
-              </div>
-
-              <div class="post-user">
-
-                <div class="name">
-
-                  Bruno Zago
-
-                  <span class="sport-tag">
-                    Futebol
-                  </span>
-
-                </div>
-
-                <div class="meta">
-                  @brunozago · há 1 h
-                </div>
-
-              </div>
-
-              <button class="post-follow">
-                Seguir
-              </button>
-
-            </div>
-
-
-            <div class="post-caption">
-
-              Gol de bicicleta na pelada de hoje, quem viu sabe 🔥⚽
-
-            </div>
-
-
-            <div class="post-photo">
-
-              <i class="bi bi-image"></i>
-
-              espaço para foto
-
-            </div>
-
-
-            <div class="post-actions">
-
-              <input type="checkbox" id="like3" class="like-checkbox" checked />
-
-              <label for="like3" class="action-btn like-label">
-
-                <span class="icon-liked">
-                  <i class="bi bi-heart-fill"></i>
-                </span>
-
-                <span class="icon-unliked">
-                  <i class="bi bi-heart"></i>
-                </span>
-
-                <span class="count-liked">
-                  342
-                </span>
-
-                <span class="count-unliked">
-                  341
-                </span>
-
-              </label>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-chat"></i>
-
-                48
-
-              </button>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-share"></i>
-
-                Compartilhar
-
-              </button>
-
-            </div>
-
-
-            <div class="post-likes">
-
-              Curtido por
-              <strong>Rafael M.</strong>
-              e mais
-              <strong>341 pessoas</strong>
-
-            </div>
-
-          </article>
-
-
-          <!-- POST 4 -->
-
-          <article class="post-card">
-
-            <div class="post-head">
-
-              <div class="avatar">
-                CS
-              </div>
-
-              <div class="post-user">
-
-                <div class="name">
-
-                  Carla Souza
-
-                  <span class="sport-tag">
-                    Tênis
-                  </span>
-
-                </div>
-
-                <div class="meta">
-                  @carlas · há 2 h
-                </div>
-
-              </div>
-
-              <button class="post-follow">
-                Seguir
-              </button>
-
-            </div>
-
-
-            <div class="post-caption">
-
-              Primeira aula na quadra nova, saudade de jogar em saibro 🎾
-
-            </div>
-
-
-            <div class="post-photo">
-
-              <i class="bi bi-image"></i>
-
-              espaço para foto
-
-            </div>
-
-
-            <div class="post-actions">
-
-              <input type="checkbox" id="like4" class="like-checkbox" />
-
-              <label for="like4" class="action-btn like-label">
-
-                <span class="icon-liked">
-                  <i class="bi bi-heart-fill"></i>
-                </span>
-
-                <span class="icon-unliked">
-                  <i class="bi bi-heart"></i>
-                </span>
-
-                <span class="count-liked">
-                  60
-                </span>
-
-                <span class="count-unliked">
-                  59
-                </span>
-
-              </label>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-chat"></i>
-
-                3
-
-              </button>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-share"></i>
-
-                Compartilhar
-
-              </button>
-
-            </div>
-
-
-            <div class="post-likes">
-
-              Curtido por
-              <strong>59 pessoas</strong>
-
-            </div>
-
-          </article>
-
-
-          <!-- POST 5 -->
-
-          <article class="post-card">
-
-            <div class="post-head">
-
-              <div class="avatar">
-                VR
-              </div>
-
-              <div class="post-user">
-
-                <div class="name">
-
-                  Vinícius Rocha
-
-                  <span class="sport-tag">
-                    Basquete
-                  </span>
-
-                </div>
-
-                <div class="meta">
-                  @viniciusr · há 3 h
-                </div>
-
-              </div>
-
-              <button class="post-follow">
-                Seguir
-              </button>
-
-            </div>
-
-
-            <div class="post-caption">
-
-              Fechamos com 5x5 até escurecer na quadra do Ibirapuera 🏀
-
-            </div>
-
-
-            <div class="post-photo">
-
-              <i class="bi bi-image"></i>
-
-              espaço para foto
-
-            </div>
-
-
-            <div class="post-actions">
-
-              <input type="checkbox" id="like5" class="like-checkbox" checked />
-
-              <label for="like5" class="action-btn like-label">
-
-                <span class="icon-liked">
-                  <i class="bi bi-heart-fill"></i>
-                </span>
-
-                <span class="icon-unliked">
-                  <i class="bi bi-heart"></i>
-                </span>
-
-                <span class="count-liked">
-                  213
-                </span>
-
-                <span class="count-unliked">
-                  212
-                </span>
-
-              </label>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-chat"></i>
-
-                22
-
-              </button>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-share"></i>
-
-                Compartilhar
-
-              </button>
-
-            </div>
-
-
-            <div class="post-likes">
-
-              Curtido por
-              <strong>Julia A.</strong>
-              e mais
-              <strong>212 pessoas</strong>
-
-            </div>
-
-          </article>
-
-
-          <!-- POST 6 -->
-
-          <article class="post-card">
-
-            <div class="post-head">
-
-              <div class="avatar">
-                TL
-              </div>
-
-              <div class="post-user">
-
-                <div class="name">
-
-                  Thiago Lima
-
-                  <span class="sport-tag">
-                    Futebol
-                  </span>
-
-                </div>
-
-                <div class="meta">
-                  @thiagol · há 4 h
-                </div>
-
-              </div>
-
-              <button class="post-follow">
-                Seguir
-              </button>
-
-            </div>
-
-
-            <div class="post-caption">
-
-              Time montado pro racha de quinta, só falta você 👀⚽
-
-            </div>
-
-
-            <div class="post-photo">
-
-              <i class="bi bi-image"></i>
-
-              espaço para foto
-
-            </div>
-
-
-            <div class="post-actions">
-
-              <input type="checkbox" id="like6" class="like-checkbox" />
-
-              <label for="like6" class="action-btn like-label">
-
-                <span class="icon-liked">
-                  <i class="bi bi-heart-fill"></i>
-                </span>
-
-                <span class="icon-unliked">
-                  <i class="bi bi-heart"></i>
-                </span>
-
-                <span class="count-liked">
-                  46
-                </span>
-
-                <span class="count-unliked">
-                  45
-                </span>
-
-              </label>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-chat"></i>
-
-                9
-
-              </button>
-
-
-              <button class="action-btn">
-
-                <i class="bi bi-share"></i>
-
-                Compartilhar
-
-              </button>
-
-            </div>
-
-
-            <div class="post-likes">
-
-              Curtido por
-              <strong>45 pessoas</strong>
-
-            </div>
-
-          </article>
+          </div>
 
         </div>
 
-      </section>
+        <hr>
+
+        <button type="button">
+          <i class="bi bi-person"></i>
+          Meu perfil
+        </button>
+
+        <button type="button">
+          <i class="bi bi-gear"></i>
+          Configurações
+        </button>
+
+        <button type="button">
+          <i class="bi bi-box-arrow-right"></i>
+          Sair
+        </button>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- ===================== BANNER ===================== -->
+
+  <div class="feed-hero">
+
+    <div class="feed-hero-photo">
+
+      <img
+        src="img/fundo.png"
+        class="feed-hero-photo-img"
+        alt="SportMap"
+      >
+
+      <div class="feed-hero-overlay"></div>
+
+      <div class="feed-hero-content">
+
+        <span class="feed-hero-badge">
+          <i class="bi bi-lightning-fill"></i>
+          SPORTMAP
+        </span>
+
+        <h1>
+          O esporte conecta pessoas.
+        </h1>
+
+        <p>
+          Descubra treinos, lugares e pessoas que compartilham
+          sua paixão pelo esporte.
+        </p>
+
+        <button
+          type="button"
+          class="feed-hero-button"
+          id="hero-create-post"
+        >
+          <i class="bi bi-plus-lg"></i>
+          Criar publicação
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ===================== CONTEÚDO DO FEED ===================== -->
+
+  <div class="feed-main">
+
+
+    <!-- CABEÇALHO -->
+
+    <div class="feed-header">
+
+      <div>
+
+        <span class="feed-kicker">
+          COMUNIDADE
+        </span>
+
+        <h2>
+          O que está acontecendo
+        </h2>
+
+        <p>
+          Acompanhe os momentos esportivos da sua comunidade.
+        </p>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="feed-create-button"
+        id="create-post-button"
+      >
+
+        <i class="bi bi-plus-lg"></i>
+
+        Criar publicação
+
+      </button>
+
+    </div>
+
+
+    <!-- FILTROS -->
+
+    <div class="feed-filters">
+
+      <button
+        type="button"
+        class="feed-filter active"
+        data-filter="todos"
+      >
+        Todos
+      </button>
+
+      <button
+        type="button"
+        class="feed-filter"
+        data-filter="Futebol"
+      >
+        <i class="bi bi-circle-fill"></i>
+        Futebol
+      </button>
+
+      <button
+        type="button"
+        class="feed-filter"
+        data-filter="Basquete"
+      >
+        <i class="bi bi-basketball"></i>
+        Basquete
+      </button>
+
+      <button
+        type="button"
+        class="feed-filter"
+        data-filter="Skate"
+      >
+        <i class="bi bi-person"></i>
+        Skate
+      </button>
+
+      <button
+        type="button"
+        class="feed-filter"
+        data-filter="Vôlei"
+      >
+        <i class="bi bi-dribbble"></i>
+        Vôlei
+      </button>
+
+      <button
+        type="button"
+        class="feed-filter"
+        data-filter="Tênis"
+      >
+        <i class="bi bi-circle"></i>
+        Tênis
+      </button>
+
+    </div>
+
+
+    <!-- RESULTADO DA BUSCA -->
+
+    <div
+      class="feed-search-result"
+      id="feed-search-result"
+    ></div>
+
+
+    <!-- POSTS -->
+
+    <div class="feed-wrap" id="feed-posts">
+
+
+      <!-- ================= POST 1 ================= -->
+
+      <article
+        class="post-card"
+        data-sport="Skate"
+        data-search="Rafael Mendes rafamendes Skate Fechamos a pista hoje cedo ninguém segurou esse ollie"
+      >
+
+        <div class="post-head">
+
+          <div class="avatar">
+            RM
+          </div>
+
+          <div class="post-user">
+
+            <div class="name">
+
+              Rafael Mendes
+
+              <span class="sport-tag">
+                Skate
+              </span>
+
+            </div>
+
+            <div class="meta">
+              @rafamendes · há 12 min
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            class="post-follow"
+          >
+            Seguir
+          </button>
+
+        </div>
+
+
+        <div class="post-caption">
+          Fechamos a pista hoje cedo, ninguém segurou esse ollie 🛹
+        </div>
+
+
+        <div class="post-photo">
+
+          <i class="bi bi-image"></i>
+
+          <span>espaço para foto</span>
+
+        </div>
+
+
+        <div class="post-actions">
+
+          <button
+            type="button"
+            class="action-btn like-button liked"
+            data-likes="128"
+          >
+
+            <i class="bi bi-heart-fill"></i>
+
+            <span class="like-count">
+              128
+            </span>
+
+          </button>
+
+
+          <button
+            type="button"
+            class="action-btn"
+          >
+
+            <i class="bi bi-chat"></i>
+            14
+
+          </button>
+
+
+          <button
+            type="button"
+            class="action-btn share-button"
+          >
+
+            <i class="bi bi-share"></i>
+            Compartilhar
+
+          </button>
+
+        </div>
+
+
+        <div class="post-likes">
+
+          Curtido por
+          <strong>Vinícius R.</strong>
+          e mais
+          <strong>127 pessoas</strong>
+
+        </div>
+
+      </article>
+
+
+      <!-- ================= POST 2 ================= -->
+
+      <article
+        class="post-card"
+        data-sport="Vôlei"
+        data-search="Julia Alves ju.alves Vôlei Treino sábado quadra Vila Time completo domingo"
+      >
+
+        <div class="post-head">
+
+          <div class="avatar">
+            JA
+          </div>
+
+          <div class="post-user">
+
+            <div class="name">
+
+              Julia Alves
+
+              <span class="sport-tag">
+                Vôlei
+              </span>
+
+            </div>
+
+            <div class="meta">
+              @ju.alves · há 40 min
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            class="post-follow"
+          >
+            Seguir
+          </button>
+
+        </div>
+
+
+        <div class="post-caption">
+          Treino de sábado na quadra da Vila.
+          Time completo pra domingo! 🏐
+        </div>
+
+
+        <div class="post-photo">
+
+          <i class="bi bi-image"></i>
+
+          <span>espaço para foto</span>
+
+        </div>
+
+
+        <div class="post-actions">
+
+          <button
+            type="button"
+            class="action-btn like-button"
+            data-likes="76"
+          >
+
+            <i class="bi bi-heart"></i>
+
+            <span class="like-count">
+              76
+            </span>
+
+          </button>
+
+
+          <button class="action-btn">
+
+            <i class="bi bi-chat"></i>
+            5
+
+          </button>
+
+
+          <button
+            type="button"
+            class="action-btn share-button"
+          >
+
+            <i class="bi bi-share"></i>
+            Compartilhar
+
+          </button>
+
+        </div>
+
+
+        <div class="post-likes">
+
+          Curtido por
+          <strong>76 pessoas</strong>
+
+        </div>
+
+      </article>
+
+
+      <!-- ================= POST 3 ================= -->
+
+      <article
+        class="post-card"
+        data-sport="Futebol"
+        data-search="Bruno Zago brunozago Futebol Gol bicicleta pelada hoje"
+      >
+
+        <div class="post-head">
+
+          <div class="avatar">
+            BZ
+          </div>
+
+          <div class="post-user">
+
+            <div class="name">
+
+              Bruno Zago
+
+              <span class="sport-tag">
+                Futebol
+              </span>
+
+            </div>
+
+            <div class="meta">
+              @brunozago · há 1 h
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            class="post-follow"
+          >
+            Seguir
+          </button>
+
+        </div>
+
+
+        <div class="post-caption">
+          Gol de bicicleta na pelada de hoje,
+          quem viu sabe 🔥⚽
+        </div>
+
+
+        <div class="post-photo">
+
+          <i class="bi bi-image"></i>
+
+          <span>espaço para foto</span>
+
+        </div>
+
+
+        <div class="post-actions">
+
+          <button
+            type="button"
+            class="action-btn like-button liked"
+            data-likes="342"
+          >
+
+            <i class="bi bi-heart-fill"></i>
+
+            <span class="like-count">
+              342
+            </span>
+
+          </button>
+
+
+          <button class="action-btn">
+
+            <i class="bi bi-chat"></i>
+            48
+
+          </button>
+
+
+          <button
+            type="button"
+            class="action-btn share-button"
+          >
+
+            <i class="bi bi-share"></i>
+            Compartilhar
+
+          </button>
+
+        </div>
+
+
+        <div class="post-likes">
+
+          Curtido por
+          <strong>Rafael M.</strong>
+          e mais
+          <strong>341 pessoas</strong>
+
+        </div>
+
+      </article>
+
+
+      <!-- ================= POST 4 ================= -->
+
+      <article
+        class="post-card"
+        data-sport="Tênis"
+        data-search="Carla Souza carlas Tênis Primeira aula quadra nova saibro"
+      >
+
+        <div class="post-head">
+
+          <div class="avatar">
+            CS
+          </div>
+
+          <div class="post-user">
+
+            <div class="name">
+
+              Carla Souza
+
+              <span class="sport-tag">
+                Tênis
+              </span>
+
+            </div>
+
+            <div class="meta">
+              @carlas · há 2 h
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            class="post-follow"
+          >
+            Seguir
+          </button>
+
+        </div>
+
+
+        <div class="post-caption">
+          Primeira aula na quadra nova,
+          saudade de jogar em saibro 🎾
+        </div>
+
+
+        <div class="post-photo">
+
+          <i class="bi bi-image"></i>
+
+          <span>espaço para foto</span>
+
+        </div>
+
+
+        <div class="post-actions">
+
+          <button
+            type="button"
+            class="action-btn like-button"
+            data-likes="59"
+          >
+
+            <i class="bi bi-heart"></i>
+
+            <span class="like-count">
+              59
+            </span>
+
+          </button>
+
+
+          <button class="action-btn">
+
+            <i class="bi bi-chat"></i>
+            3
+
+          </button>
+
+
+          <button
+            type="button"
+            class="action-btn share-button"
+          >
+
+            <i class="bi bi-share"></i>
+            Compartilhar
+
+          </button>
+
+        </div>
+
+
+        <div class="post-likes">
+
+          Curtido por
+          <strong>59 pessoas</strong>
+
+        </div>
+
+      </article>
+
+
+      <!-- ================= POST 5 ================= -->
+
+      <article
+        class="post-card"
+        data-sport="Basquete"
+        data-search="Vinícius Rocha viniciusr Basquete 5x5 Ibirapuera quadra"
+      >
+
+        <div class="post-head">
+
+          <div class="avatar">
+            VR
+          </div>
+
+          <div class="post-user">
+
+            <div class="name">
+
+              Vinícius Rocha
+
+              <span class="sport-tag">
+                Basquete
+              </span>
+
+            </div>
+
+            <div class="meta">
+              @viniciusr · há 3 h
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            class="post-follow"
+          >
+            Seguir
+          </button>
+
+        </div>
+
+
+        <div class="post-caption">
+          Fechamos com 5x5 até escurecer na quadra
+          do Ibirapuera 🏀
+        </div>
+
+
+        <div class="post-photo">
+
+          <i class="bi bi-image"></i>
+
+          <span>espaço para foto</span>
+
+        </div>
+
+
+        <div class="post-actions">
+
+          <button
+            type="button"
+            class="action-btn like-button liked"
+            data-likes="213"
+          >
+
+            <i class="bi bi-heart-fill"></i>
+
+            <span class="like-count">
+              213
+            </span>
+
+          </button>
+
+
+          <button class="action-btn">
+
+            <i class="bi bi-chat"></i>
+            22
+
+          </button>
+
+
+          <button
+            type="button"
+            class="action-btn share-button"
+          >
+
+            <i class="bi bi-share"></i>
+            Compartilhar
+
+          </button>
+
+        </div>
+
+
+        <div class="post-likes">
+
+          Curtido por
+          <strong>Julia A.</strong>
+          e mais
+          <strong>212 pessoas</strong>
+
+        </div>
+
+      </article>
+
+
+      <!-- ================= POST 6 ================= -->
+
+      <article
+        class="post-card"
+        data-sport="Futebol"
+        data-search="Thiago Lima thiagol Futebol racha quinta time"
+      >
+
+        <div class="post-head">
+
+          <div class="avatar">
+            TL
+          </div>
+
+          <div class="post-user">
+
+            <div class="name">
+
+              Thiago Lima
+
+              <span class="sport-tag">
+                Futebol
+              </span>
+
+            </div>
+
+            <div class="meta">
+              @thiagol · há 4 h
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            class="post-follow"
+          >
+            Seguir
+          </button>
+
+        </div>
+
+
+        <div class="post-caption">
+          Time montado pro racha de quinta,
+          só falta você 👀⚽
+        </div>
+
+
+        <div class="post-photo">
+
+          <i class="bi bi-image"></i>
+
+          <span>espaço para foto</span>
+
+        </div>
+
+
+        <div class="post-actions">
+
+          <button
+            type="button"
+            class="action-btn like-button"
+            data-likes="45"
+          >
+
+            <i class="bi bi-heart"></i>
+
+            <span class="like-count">
+              45
+            </span>
+
+          </button>
+
+
+          <button class="action-btn">
+
+            <i class="bi bi-chat"></i>
+            9
+
+          </button>
+
+
+          <button
+            type="button"
+            class="action-btn share-button"
+          >
+
+            <i class="bi bi-share"></i>
+            Compartilhar
+
+          </button>
+
+        </div>
+
+
+        <div class="post-likes">
+
+          Curtido por
+          <strong>45 pessoas</strong>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- SEM RESULTADOS -->
+
+    <div
+      class="feed-empty"
+      id="feed-empty"
+    >
+
+      <i class="bi bi-search"></i>
+
+      <h3>Nenhuma publicação encontrada</h3>
+
+      <p>
+        Tente buscar por outro nome, esporte ou assunto.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ===================== MODAL CRIAR POST ===================== -->
+
+  <div
+    class="post-modal"
+    id="post-modal"
+    aria-hidden="true"
+  >
+
+    <div class="post-modal-content">
+
+      <div class="post-modal-header">
+
+        <div>
+
+          <span>NOVA PUBLICAÇÃO</span>
+
+          <h2>Criar publicação</h2>
+
+        </div>
+
+        <button
+          type="button"
+          class="modal-close"
+          id="close-post-modal"
+        >
+          <i class="bi bi-x-lg"></i>
+        </button>
+
+      </div>
+
+
+      <form id="create-post-form">
+
+        <div class="create-user">
+
+          <img
+            src="https://github.com/mdo.png"
+            alt="João Vitor Pereira"
+          />
+
+          <div>
+
+            <strong>João Vitor Pereira</strong>
+
+            <span>
+              Publicando para sua comunidade
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <label for="new-post-text">
+          O que você está praticando?
+        </label>
+
+        <textarea
+          id="new-post-text"
+          placeholder="Compartilhe seu treino, lugar ou momento esportivo..."
+          maxlength="500"
+          required
+        ></textarea>
+
+
+        <div class="create-post-row">
+
+          <div>
+
+            <label for="new-post-sport">
+              Esporte
+            </label>
+
+            <select id="new-post-sport">
+
+              <option value="Futebol">
+                ⚽ Futebol
+              </option>
+
+              <option value="Basquete">
+                🏀 Basquete
+              </option>
+
+              <option value="Skate">
+                🛹 Skate
+              </option>
+
+              <option value="Vôlei">
+                🏐 Vôlei
+              </option>
+
+              <option value="Tênis">
+                🎾 Tênis
+              </option>
+
+              <option value="Corrida">
+                🏃 Corrida
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div class="create-post-actions">
+
+          <button
+            type="button"
+            class="modal-cancel"
+            id="cancel-post"
+          >
+            Cancelar
+          </button>
+
+          <button
+            type="submit"
+            class="modal-publish"
+          >
+            <i class="bi bi-send-fill"></i>
+            Publicar
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- TOAST -->
+
+  <div
+    class="feed-toast"
+    id="feed-toast"
+  >
+
+    <i class="bi bi-check-circle-fill"></i>
+
+    <span></span>
+
+  </div>
+
+</section>
+
 
 
       <!-- ================================================= -->
