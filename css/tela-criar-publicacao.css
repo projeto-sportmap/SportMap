@@ -1,0 +1,168 @@
+/* ========================================
+   TELA CRIAR PUBLICAÇÃO
+======================================== */
+
+.criar-publicacao {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #222;
+}
+
+.criar-publicacao h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   PASSOS
+======================================== */
+
+.passo-publicacao {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.numero-passo {
+    min-width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff5a00;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.conteudo-passo {
+    width: 100%;
+}
+
+.conteudo-passo h3 {
+    margin: 0 0 10px 0;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   TEXTAREA
+======================================== */
+
+.conteudo-passo textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: none;
+    font-size: 15px;
+    outline: none;
+}
+
+.conteudo-passo textarea:focus {
+    border-color: #ff5a00;
+}
+
+
+/* ========================================
+   INPUT
+======================================== */
+
+.conteudo-passo input[type="text"] {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    font-size: 15px;
+    outline: none;
+}
+
+.conteudo-passo input[type="text"]:focus {
+    border-color: #ff5a00;
+}
+
+
+/* ========================================
+   ADICIONAR IMAGEM
+======================================== */
+
+.adicionar-imagem {
+    position: relative;
+
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    color: #555;
+}
+
+.adicionar-imagem:hover {
+    border-color: #ff5a00;
+    color: #ff5a00;
+}
+
+.adicionar-imagem i {
+    font-size: 24px;
+}
+
+.adicionar-imagem input {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   BOTÃO PUBLICAR
+======================================== */
+
+.btn-publicar {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #ff5a00;
+    color: white;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.btn-publicar:hover {
+    background-color: #e64f00;
+}

@@ -19,7 +19,8 @@
   <link rel="stylesheet" href="css/mapa.css" />
   <link rel="stylesheet" href="css/mk.css" />
   <link rel="stylesheet" href="css/comunidade.css" />
-
+  <link rel="stylesheet" href="css/modal-comunidade.css" />
+  <link rel="stylesheet" href="css/tela-criar-publicacao.css" />
 </head>
 
 <body>
@@ -1713,15 +1714,6 @@
 
           </div>
         </div>
-
-
-
-
-
-
-
-
-
       </section>
 
 
@@ -1732,686 +1724,348 @@
       <section class="app-section" id="section-customers">
 
         <div class="comunidade-container">
-
-
-          <!-- CABEÇALHO -->
           <div class="comunidade-header">
-
-
             <div class="comunidade-icone">
               <i class="bi bi-people-fill"></i>
             </div>
 
-
             <div>
               <h1>Comunidade</h1>
-              <p>
-                Compartilhe seus treinos, lugares e momentos esportivos.
-              </p>
+              <p>Compartilhe seus treinos, lugares e momentos esportivos.</p>
             </div>
 
-
-            <button style="
-                background-color: rgb(255, 85, 0);
-                color: #FFFFFF;
-                border: none;
-                border-radius: 8px;
-                padding: 12px 24px;
-                font-size: 16px;
-                font-weight: 600;
-                cursor: pointer;
-                margin-left: 215px;
-               ">
+            <button onclick="abrirModal()" class="BOTAO">
               Criar publicação
             </button>
 
+            <!-- MODAL -->
+            <div id="modal" class="modal">
+              <div class="modalConteudo">
 
+                <button type="button" onclick="fecharModal()" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+
+                <!-- Conteúdo do modal -->
+                <div id="conteudoModal"></div>
+
+              </div>
+            </div>
           </div>
-
-
-
 
           <!-- FEED -->
           <div class="feed-comunidade">
 
-
-
-
             <!-- PUBLICAÇÃO 1 -->
             <article class="post-comunidade">
-
-
               <div class="post-header">
-
-
                 <div class="post-avatar">
                   RM
                 </div>
 
-
                 <div class="post-usuario">
-
-
                   <div class="post-nome">
                     Rafael Mendes
-
-
                     <span class="post-esporte">
                       Skate
                     </span>
                   </div>
-
-
                   <div class="post-data">
                     @rafamendes · há 12 min
                   </div>
-
-
                 </div>
-
 
                 <button class="btn-seguir">
                   Seguir
                 </button>
-
-
               </div>
-
-
-
 
               <div class="post-texto">
                 Fechamos a pista hoje cedo, ninguém segurou esse ollie 🛹
               </div>
 
+              <div class="ladoAlado">
+                <div class="post-imagem">
+                  <span>espaço para foto</span>
+                </div>
 
-
-
-              <div class="post-imagem">
-
-
-                <i class="bi bi-image"></i>
-
-
-                <span>espaço para foto</span>
-
-
+                <div class="post-imagem2">
+                  <span>espaço para mapa</span>
+                </div>
               </div>
 
-
-
-
               <div class="post-acoes">
-
-
                 <button class="acao-post curtida">
                   <i class="bi bi-heart-fill"></i>
                   128
                 </button>
-
 
                 <button class="acao-post">
                   <i class="bi bi-chat"></i>
                   14
                 </button>
 
-
                 <button class="acao-post">
                   <i class="bi bi-share"></i>
                   Compartilhar
                 </button>
-
-
               </div>
-
-
-
 
               <div class="post-curtidas">
-
-
                 Curtido por <strong>Vinícius R.</strong> e mais
                 <strong>127 pessoas</strong>
-
-
               </div>
-
-
             </article>
-
-
-
-
 
 
             <!-- PUBLICAÇÃO 2 -->
             <article class="post-comunidade">
-
-
               <div class="post-header">
-
-
                 <div class="post-avatar">
                   JA
                 </div>
 
-
                 <div class="post-usuario">
-
-
                   <div class="post-nome">
-
-
                     Julia Alves
-
-
                     <span class="post-esporte">
                       Vôlei
                     </span>
-
-
                   </div>
-
-
                   <div class="post-data">
                     @ju.alves · há 40 min
                   </div>
-
-
                 </div>
-
 
                 <button class="btn-seguir">
                   Seguir
                 </button>
-
-
               </div>
-
-
-
 
               <div class="post-texto">
                 Treino de sábado na quadra da Vila. Time completo pra domingo! 🏐
               </div>
 
+              <div class="ladoAlado">
+                <div class="post-imagem">
+                  <span>espaço para foto</span>
+                </div>
 
-
-
-              <div class="post-imagem">
-
-
-                <i class="bi bi-image"></i>
-
-
-                <span>espaço para foto</span>
-
-
+                <div class="post-imagem2">
+                  <span>espaço para mapa</span>
+                </div>
               </div>
 
-
-
-
               <div class="post-acoes">
-
-
                 <button class="acao-post">
                   <i class="bi bi-heart"></i>
                   77
                 </button>
-
 
                 <button class="acao-post">
                   <i class="bi bi-chat"></i>
                   5
                 </button>
 
-
                 <button class="acao-post">
                   <i class="bi bi-share"></i>
                   Compartilhar
                 </button>
-
-
               </div>
-
-
-
 
               <div class="post-curtidas">
-
-
                 Curtido por <strong>76 pessoas</strong>
-
-
               </div>
-
-
             </article>
-
-
-
-
 
 
             <!-- PUBLICAÇÃO 3 -->
             <article class="post-comunidade">
-
-
               <div class="post-header">
-
-
                 <div class="post-avatar">
                   BZ
                 </div>
 
-
                 <div class="post-usuario">
-
-
                   <div class="post-nome">
-
-
                     Bruno Zago
-
-
                     <span class="post-esporte">
                       Futebol
                     </span>
-
-
                   </div>
-
 
                   <div class="post-data">
                     @brunozago · há 1 h
                   </div>
-
-
                 </div>
-
 
                 <button class="btn-seguir">
                   Seguir
                 </button>
-
-
               </div>
-
-
-
 
               <div class="post-texto">
                 Gol de bicicleta na pelada de hoje, quem viu sabe 🔥⚽
               </div>
 
+              <div class="ladoAlado">
+                <div class="post-imagem">
+                  <span>espaço para foto</span>
+                </div>
 
-
-
-              <div class="post-imagem">
-
-
-                <i class="bi bi-image"></i>
-
-
-                <span>espaço para foto</span>
-
-
+                <div class="post-imagem2">
+                  <span>espaço para mapa</span>
+                </div>
               </div>
 
-
-
-
               <div class="post-acoes">
-
-
                 <button class="acao-post curtida">
                   <i class="bi bi-heart-fill"></i>
                   342
                 </button>
-
 
                 <button class="acao-post">
                   <i class="bi bi-chat"></i>
                   48
                 </button>
 
-
                 <button class="acao-post">
                   <i class="bi bi-share"></i>
                   Compartilhar
                 </button>
-
-
               </div>
-
-
-
 
               <div class="post-curtidas">
-
-
                 Curtido por <strong>Rafael M.</strong> e mais
                 <strong>341 pessoas</strong>
-
-
               </div>
-
-
             </article>
-
-
-
-
 
 
             <!-- PUBLICAÇÃO 4 -->
             <article class="post-comunidade">
-
-
               <div class="post-header">
-
-
                 <div class="post-avatar">
                   CS
                 </div>
 
-
                 <div class="post-usuario">
-
-
                   <div class="post-nome">
-
-
                     Carla Souza
-
-
                     <span class="post-esporte">
                       Tênis
                     </span>
-
-
                   </div>
-
 
                   <div class="post-data">
                     @carlas · há 2 h
                   </div>
-
-
                 </div>
-
 
                 <button class="btn-seguir">
                   Seguir
                 </button>
-
-
               </div>
-
-
-
 
               <div class="post-texto">
                 Primeira aula na quadra nova, saudade de jogar em saibro 🎾
               </div>
 
+              <div class="ladoAlado">
+                <div class="post-imagem">
+                  <span>espaço para foto</span>
+                </div>
 
-
-
-              <div class="post-imagem">
-
-
-                <i class="bi bi-image"></i>
-
-
-                <span>espaço para foto</span>
-
-
+                <div class="post-imagem2">
+                  <span>espaço para mapa</span>
+                </div>
               </div>
 
-
-
-
               <div class="post-acoes">
-
-
                 <button class="acao-post">
                   <i class="bi bi-heart"></i>
                   60
                 </button>
-
 
                 <button class="acao-post">
                   <i class="bi bi-chat"></i>
                   3
                 </button>
 
-
                 <button class="acao-post">
                   <i class="bi bi-share"></i>
                   Compartilhar
                 </button>
-
-
               </div>
-
-
-
 
               <div class="post-curtidas">
-
-
                 Curtido por <strong>59 pessoas</strong>
-
-
               </div>
-
-
             </article>
-
-
-
-
 
 
             <!-- PUBLICAÇÃO 5 -->
             <article class="post-comunidade">
-
-
               <div class="post-header">
-
-
                 <div class="post-avatar">
                   VR
                 </div>
 
-
                 <div class="post-usuario">
-
-
                   <div class="post-nome">
-
-
                     Vinícius Rocha
-
-
                     <span class="post-esporte">
                       Basquete
                     </span>
-
-
                   </div>
-
 
                   <div class="post-data">
                     @viniciusr · há 3 h
                   </div>
-
-
                 </div>
-
 
                 <button class="btn-seguir">
                   Seguir
                 </button>
-
-
               </div>
-
-
-
 
               <div class="post-texto">
                 Fechamos com 5x5 até escurecer na quadra do Ibirapuera 🏀
               </div>
 
+              <div class="ladoAlado">
+                <div class="post-imagem">
+                  <span>espaço para foto</span>
+                </div>
 
-
-
-              <div class="post-imagem">
-
-
-                <i class="bi bi-image"></i>
-
-
-                <span>espaço para foto</span>
-
-
+                <div class="post-imagem2">
+                  <span>espaço para mapa</span>
+                </div>
               </div>
 
-
-
-
               <div class="post-acoes">
-
-
                 <button class="acao-post curtida">
                   <i class="bi bi-heart-fill"></i>
                   213
                 </button>
-
 
                 <button class="acao-post">
                   <i class="bi bi-chat"></i>
                   22
                 </button>
 
-
                 <button class="acao-post">
                   <i class="bi bi-share"></i>
                   Compartilhar
                 </button>
-
-
               </div>
-
-
-
 
               <div class="post-curtidas">
-
-
                 Curtido por <strong>Julia A.</strong> e mais
                 <strong>212 pessoas</strong>
-
-
               </div>
-
-
             </article>
-
-
-
-
-
-
-            <!-- PUBLICAÇÃO 6 -->
-            <article class="post-comunidade">
-
-
-              <div class="post-header">
-
-
-                <div class="post-avatar">
-                  TL
-                </div>
-
-
-                <div class="post-usuario">
-
-
-                  <div class="post-nome">
-
-
-                    Thiago Lima
-
-
-                    <span class="post-esporte">
-                      Futebol
-                    </span>
-
-
-                  </div>
-
-
-                  <div class="post-data">
-                    @thiagol · há 4 h
-                  </div>
-
-
-                </div>
-
-
-                <button class="btn-seguir">
-                  Seguir
-                </button>
-
-
-              </div>
-
-
-
-
-              <div class="post-texto">
-                Time montado pro racha de quinta, só falta você 👀⚽
-              </div>
-              <!-- FOTO AQUI -->
-              <div class="post-photo">
-                <i class="bi bi-image"></i>espaço para foto
-              </div>
-              <div class="post-actions">
-                <input type="checkbox" id="like6" class="like-checkbox" />
-                <label for="like6" class="action-btn like-label">
-                  <span class="icon-liked"
-                    ><i class="bi bi-heart-fill"></i
-                  ></span>
-                  <span class="icon-unliked"><i class="bi bi-heart"></i></span>
-                  <span class="count-liked">46</span>
-                  <span class="count-unliked">45</span>
-                </label>
-                <button class="action-btn"><i class="bi bi-chat"></i> 9</button>
-                <button class="action-btn">
-                  <i class="bi bi-share"></i> C ompartilhar
-                </button>
-              </div>
-              <div class="post-likes">
-                Curtido por <strong>45 pessoas</strong>
-
-
-              </div>
-
-
-            </article>
-
-
-
-
           </div>
-
-
         </div>
-
 
       </section>
 
@@ -2433,6 +2087,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+  <script src="js/btnModalComunidade.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 
