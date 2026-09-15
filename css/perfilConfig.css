@@ -1,0 +1,223 @@
+.configuracoes {
+  width: 100%;
+  max-width: 840px;
+  margin: 40px auto;
+  padding: 0 20px 60px;
+}
+
+.config-section {
+  background: #0c151b;
+  border: 1px solid #22313a;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 18px;
+}
+
+.config-section h2 {
+  margin: 0 0 22px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.config-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid #1c2930;
+}
+
+.config-section h2 + .config-item {
+  padding-top: 0;
+}
+
+.config-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.config-item label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #eeeeee;
+}
+
+.config-item input[type="text"],
+.config-item input[type="email"],
+.config-item textarea {
+  width: 60%;
+  background: #111c23;
+  color: #ffffff;
+  border: 1px solid #30414b;
+  border-radius: 8px;
+  padding: 11px 13px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.config-item textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.config-item input:focus,
+.config-item textarea:focus {
+  border-color: #ff5a00;
+}
+
+.config-item input:focus-visible,
+.config-item textarea:focus-visible {
+  outline: 2px solid #ff5a00;
+  outline-offset: 2px;
+}
+
+.config-item input::placeholder,
+.config-item textarea::placeholder {
+  color: #7d8b96;
+}
+
+.config-item button {
+  background: #ff5a00;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+.config-item button:hover {
+  background: #ff6a1a;
+}
+
+.config-item button:active {
+  transform: scale(0.98);
+}
+
+.config-item button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Privacidade e notificações */
+
+.config-switch {
+  align-items: center;
+}
+
+.config-switch > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.config-switch small {
+  color: #71808a;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* Checkbox */
+
+.config-switch input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 42px;
+  height: 24px;
+  background: #27343b;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.config-switch input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.2s;
+}
+
+.config-switch input[type="checkbox"]:checked {
+  background: #ff5a00;
+}
+
+.config-switch input[type="checkbox"]:checked::before {
+  transform: translateX(18px);
+}
+
+.config-switch input[type="checkbox"]:focus-visible {
+  outline: 2px solid #ff5a00;
+  outline-offset: 2px;
+}
+
+/* Botão sair */
+
+.config-item .btn-sair {
+  background: transparent;
+  color: #ff5a00;
+  border: 1px solid #ff5a00;
+}
+
+.config-item .btn-sair:hover {
+  background: #ff5a00;
+  color: #ffffff;
+}
+
+/* Celular */
+
+@media (max-width: 600px) {
+  .configuracoes {
+    margin: 20px auto;
+    padding: 0 12px 40px;
+  }
+
+  .config-section {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .config-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .config-item input[type="text"],
+  .config-item input[type="email"],
+  .config-item textarea {
+    width: 100%;
+  }
+
+  .config-item button {
+    width: 100%;
+  }
+
+  .config-switch {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Movimento reduzido */
+
+@media (prefers-reduced-motion: reduce) {
+  .config-item input,
+  .config-item textarea,
+  .config-item button,
+  .config-switch input[type="checkbox"],
+  .config-switch input[type="checkbox"]::before {
+    transition: none;
+  }
+}
