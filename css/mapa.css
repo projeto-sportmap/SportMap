@@ -2,16 +2,49 @@
    MAPA - SPORTMAP
 ========================================= */
 
-#section-dashboard {
+/* CONTEÚDO PRINCIPAL */
+
+#conteudo {
+    padding: 0 !important;
+    margin: 0;
+    min-width: 0;
+    min-height: calc(100vh - 70px);
+    overflow: hidden;
+}
+
+#conteudo > .app-section {
+    width: 100%;
+    height: 100%;
+    margin: 0;
     padding: 0;
+}
+
+#section-dashboard {
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
     background: #000;
 }
 
+
+/* =========================================
+   PÁGINA DO MAPA
+========================================= */
+
 .map-page {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 70px);
+    min-height: 600px;
+
     padding: 20px;
+
     box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #000;
 }
 
 
@@ -20,26 +53,42 @@
 ========================================= */
 
 .map-top {
-    height: 55px;
+    width: 100%;
+    min-height: 55px;
+
     display: flex;
+    align-items: center;
+
     gap: 15px;
+
     margin-bottom: 15px;
+
+    flex-shrink: 0;
 }
 
 
-/* PESQUISA */
+/* =========================================
+   PESQUISA
+========================================= */
 
 .map-search {
     width: 430px;
     height: 55px;
+
+    flex-shrink: 0;
+
     background: #11181e;
+
     border: 1px solid #1e2930;
+
     border-radius: 14px;
 
     display: flex;
     align-items: center;
 
     padding: 0 18px;
+
+    box-sizing: border-box;
 }
 
 .map-search i {
@@ -49,11 +98,14 @@
 
 .map-search input {
     width: 100%;
+
     background: transparent;
+
     border: none;
     outline: none;
 
     color: white;
+
     margin-left: 12px;
 
     font-size: 14px;
@@ -70,8 +122,20 @@
 
 .sport-filters {
     display: flex;
-    gap: 8px;
+
     align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.sport-filters::-webkit-scrollbar {
+    display: none;
 }
 
 .sport-filter {
@@ -80,19 +144,32 @@
     padding: 0 16px;
 
     border: none;
+
     border-radius: 22px;
 
     background: #11181e;
+
     color: #dce3e8;
 
     font-weight: 600;
+
     font-size: 13px;
 
     cursor: pointer;
 
     display: flex;
+
     align-items: center;
+
+    justify-content: center;
+
     gap: 7px;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+
+    transition: 0.2s ease;
 }
 
 .sport-filter:hover {
@@ -110,13 +187,17 @@
 ========================================= */
 
 .map-content {
+    width: 100%;
+
+    flex: 1;
+
+    min-height: 0;
+
     display: grid;
 
     grid-template-columns: minmax(0, 1fr) 430px;
 
     gap: 15px;
-
-    height: calc(100vh - 90px);
 }
 
 
@@ -127,6 +208,12 @@
 .sport-map {
     position: relative;
 
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
     overflow: hidden;
 
     border-radius: 15px;
@@ -134,10 +221,14 @@
     background: #101820;
 
     border: 1px solid #1c272e;
+
+    box-sizing: border-box;
 }
 
 
-/* FUNDO DO MAPA */
+/* =========================================
+   FUNDO DO MAPA
+========================================= */
 
 .map-background {
     position: absolute;
@@ -163,14 +254,18 @@
 }
 
 
-/* ESTRADAS */
+/* =========================================
+   ESTRADAS
+========================================= */
 
 .map-road {
     position: absolute;
 
     background: #26343c;
 
-    opacity: .7;
+    opacity: 0.7;
+
+    pointer-events: none;
 }
 
 .road-1 {
@@ -228,6 +323,8 @@
     font-weight: 600;
 
     letter-spacing: 1px;
+
+    pointer-events: none;
 }
 
 .place-1 {
@@ -258,14 +355,15 @@
 .radius-circle {
     position: absolute;
 
-    width: 520px;
-    height: 520px;
+    width: min(520px, 65%);
+
+    aspect-ratio: 1 / 1;
 
     border-radius: 50%;
 
     border: 2px solid #ff5a00;
 
-    background: rgba(255, 90, 0, .08);
+    background: rgba(255, 90, 0, 0.08);
 
     left: 50%;
     top: 50%;
@@ -273,11 +371,15 @@
     transform: translate(-50%, -50%);
 
     box-shadow:
-        0 0 50px rgba(255, 90, 0, .08);
+        0 0 50px rgba(255, 90, 0, 0.08);
+
+    pointer-events: none;
 }
 
 
-/* TEXTO 5 KM */
+/* =========================================
+   TEXTO 5 KM
+========================================= */
 
 .radius-label {
     position: absolute;
@@ -298,6 +400,8 @@
     font-weight: 700;
 
     font-size: 13px;
+
+    white-space: nowrap;
 }
 
 
@@ -347,7 +451,7 @@
 
     border-radius: 50%;
 
-    background: rgba(22, 131, 255, .2);
+    background: rgba(22, 131, 255, 0.2);
 
     left: 50%;
     top: 50%;
@@ -366,13 +470,16 @@
     width: 34px;
     height: 34px;
 
+    padding: 0;
+
     border-radius: 50%;
 
-    border: 3px solid rgba(255,255,255,.15);
+    border: 3px solid rgba(255,255,255,0.15);
 
     color: white;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -380,9 +487,9 @@
 
     z-index: 5;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,.4);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 
-    transition: .2s;
+    transition: 0.2s ease;
 }
 
 .sport-marker:hover {
@@ -390,7 +497,9 @@
 }
 
 
-/* POSIÇÕES */
+/* =========================================
+   POSIÇÕES
+========================================= */
 
 .marker-1 {
     left: 28%;
@@ -438,7 +547,9 @@
 }
 
 
-/* CORES */
+/* =========================================
+   CORES
+========================================= */
 
 .corrida {
     background: #ff5a00;
@@ -468,6 +579,7 @@
     top: 18px;
 
     display: flex;
+
     flex-direction: column;
 
     background: #101820;
@@ -485,6 +597,8 @@
     width: 44px;
     height: 44px;
 
+    padding: 0;
+
     border: none;
 
     background: transparent;
@@ -494,6 +608,11 @@
     font-size: 18px;
 
     cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 }
 
 .map-controls button:hover {
@@ -512,32 +631,40 @@
     bottom: 18px;
 
     display: flex;
+
     align-items: center;
 
     gap: 12px;
 
     padding: 16px;
 
-    background: rgba(10, 16, 20, .94);
+    max-width: 350px;
+
+    background: rgba(10, 16, 20, 0.94);
 
     border: 1px solid #29343c;
 
     border-radius: 13px;
 
     z-index: 20;
+
+    box-sizing: border-box;
 }
 
 .radius-info-icon {
     width: 38px;
     height: 38px;
 
+    flex-shrink: 0;
+
     border-radius: 50%;
 
-    background: rgba(255,90,0,.15);
+    background: rgba(255,90,0,0.15);
 
     color: #ff5a00;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -574,9 +701,10 @@
     padding: 12px 15px;
 
     display: flex;
+
     gap: 14px;
 
-    background: rgba(10,16,20,.9);
+    background: rgba(10,16,20,0.9);
 
     border-radius: 10px;
 
@@ -591,14 +719,19 @@
     font-size: 11px;
 
     display: flex;
+
     align-items: center;
 
     gap: 6px;
+
+    white-space: nowrap;
 }
 
 .legend-dot {
     width: 9px;
     height: 9px;
+
+    flex-shrink: 0;
 
     border-radius: 50%;
 }
@@ -629,10 +762,16 @@
     cursor: pointer;
 
     display: flex;
+
     align-items: center;
+
     gap: 9px;
 
     z-index: 20;
+
+    transition: 0.2s ease;
+
+    white-space: nowrap;
 }
 
 .share-sport-button:hover {
@@ -647,6 +786,12 @@
 ========================================= */
 
 .nearby-people {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
     background: #10171c;
 
     border: 1px solid #1d282f;
@@ -656,10 +801,16 @@
     padding: 15px;
 
     overflow-y: auto;
+
+    box-sizing: border-box;
+
+    scrollbar-width: thin;
 }
 
 
-/* CABEÇALHO */
+/* =========================================
+   CABEÇALHO
+========================================= */
 
 .nearby-header {
     display: flex;
@@ -715,7 +866,9 @@
 
     margin-bottom: 9px;
 
-    transition: .2s;
+    transition: 0.2s;
+
+    min-width: 0;
 }
 
 .person-card:hover {
@@ -723,7 +876,9 @@
 }
 
 
-/* AVATAR */
+/* =========================================
+   AVATAR
+========================================= */
 
 .person-avatar {
     min-width: 43px;
@@ -739,12 +894,13 @@
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     font-weight: 700;
 
     font-size: 13px;
+
+    flex-shrink: 0;
 }
 
 .avatar-purple {
@@ -760,12 +916,16 @@
 }
 
 
-/* INFORMAÇÕES */
+/* =========================================
+   INFORMAÇÕES
+========================================= */
 
 .person-info {
     min-width: 0;
 
     flex: 1;
+
+    overflow: hidden;
 }
 
 .person-name {
@@ -776,9 +936,12 @@
     font-weight: 700;
 
     display: flex;
+
     align-items: center;
 
     gap: 6px;
+
+    white-space: nowrap;
 }
 
 .online {
@@ -788,10 +951,14 @@
     background: #24c76b;
 
     border-radius: 50%;
+
+    flex-shrink: 0;
 }
 
 
-/* ESPORTE */
+/* =========================================
+   ESPORTE
+========================================= */
 
 .person-sport {
     font-size: 11px;
@@ -799,6 +966,8 @@
     font-weight: 700;
 
     margin-top: 3px;
+
+    white-space: nowrap;
 }
 
 .corrida-text {
@@ -818,7 +987,9 @@
 }
 
 
-/* DESCRIÇÃO */
+/* =========================================
+   DESCRIÇÃO
+========================================= */
 
 .person-info p {
     color: #7e8b94;
@@ -835,7 +1006,9 @@
 }
 
 
-/* DISTÂNCIA */
+/* =========================================
+   DISTÂNCIA
+========================================= */
 
 .person-distance {
     color: #687780;
@@ -866,6 +1039,10 @@
     cursor: pointer;
 
     white-space: nowrap;
+
+    flex-shrink: 0;
+
+    transition: 0.2s;
 }
 
 .connect-button:hover {
@@ -879,8 +1056,19 @@
 
 @media (max-width: 1100px) {
 
+    #conteudo {
+        overflow-y: auto;
+    }
+
+    .map-page {
+        height: auto;
+        min-height: calc(100vh - 70px);
+    }
+
     .map-content {
         grid-template-columns: 1fr;
+
+        min-height: 650px;
     }
 
     .nearby-people {
@@ -888,13 +1076,12 @@
     }
 
     .sport-filters {
-        overflow-x: auto;
+        flex: 1;
     }
 
     .map-search {
         width: 300px;
     }
-
 }
 
 
@@ -902,10 +1089,14 @@
 
     .map-page {
         padding: 10px;
+
+        min-height: calc(100vh - 70px);
     }
 
     .map-top {
         flex-direction: column;
+
+        align-items: stretch;
 
         height: auto;
     }
@@ -919,12 +1110,12 @@
     }
 
     .map-content {
-        height: calc(100vh - 150px);
+        min-height: 600px;
     }
 
     .radius-circle {
         width: 400px;
-        height: 400px;
+        max-width: 80%;
     }
 
     .map-legend {
@@ -934,6 +1125,8 @@
     .radius-info {
         left: 10px;
         bottom: 10px;
+
+        max-width: calc(100% - 20px);
     }
 
     .share-sport-button {
@@ -941,6 +1134,7 @@
         bottom: 10px;
 
         padding: 11px 15px;
-    }
 
+        font-size: 12px;
+    }
 }

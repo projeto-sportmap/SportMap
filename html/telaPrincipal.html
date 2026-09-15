@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+     <link rel="stylesheet" href="/css/principal.css"/>
+    <link rel="stylesheet" href="/css/feed.css"/>
+    <link rel="stylesheet" href="/css/mapa.css"/>
+    <link rel="stylesheet" href="/css/mk.css"/>
+    <link rel="stylesheet" href="/css/comunidade.css"/>
+
+</head>
+<body>
+
+    <!-- Linha 1 -->
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col d-flex justify-content-center align-items-center bg-dark text-white">
+            
+
+
+             <!-- ===================== NAVBAR DO FEED ===================== -->
+
+        <nav class="feed-navbar">
+          <div class="feed-navbar-spacer"></div>
+          <!-- BUSCA -->
+          <form class="feed-search-form" id="feed-search-form">
+            <div class="feed-search-box">
+              <i class="bi bi-search"></i>
+              <input
+                type="search"
+                id="feed-search"
+                placeholder="Busque locais, pessoas, esportes..."
+                autocomplete="off"
+              />
+            </div>
+          </form>
+
+          <!-- USUÁRIO -->
+          <div class="user-menu">
+            <input
+              type="checkbox"
+              id="user-menu-toggle"
+              class="user-menu-toggle"
+            />
+            <label
+              for="user-menu-toggle"
+              class="user-menu-label"
+            >
+              <strong>João Vitor Pereira</strong>
+              <img
+                src="https://github.com/mdo.png"
+                alt="João Vitor Pereira"
+                width="36"
+                height="36"
+                class="rounded-circle"
+              />
+              <i class="bi bi-chevron-down"></i>
+            </label>
+            <!-- MENU DROPDOWN -->
+
+            <div class="user-dropdown">
+              <div class="user-dropdown-header">
+                <img
+                  src="https://github.com/mdo.png"
+                  alt="Perfil"
+                />
+                <div>
+                  <strong>João Vitor Pereira</strong>
+                  <span>@joaovitor</span>
+                </div>
+              </div>
+              <hr>
+              <label id="btn-perfilconfig" class="nav-link">
+                <i class="bi bi-person"></i>
+                Meu perfil
+              </label>
+
+            </div>
+          </div>
+        </nav>
+
+
+
+
+        </div>
+    </div>
+
+    <!-- Linha 2 com duas colunas (Menu e Conteúdo) -->
+
+    <div class="row">
+
+   <!-- ================================================= -->
+    <!-- SIDEBAR -->
+    <!-- ================================================= -->
+
+    <div class="col-auto d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar">
+
+      <!-- LOGO -->
+      <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <span class="fs-4">SportMap</span>
+      </a>
+      <hr />
+
+      <!-- MENU -->
+      <ul class="nav nav-pills flex-column mb-auto">
+        <!-- FEED -->
+        <li class="nav-item">
+          <label id="btn-feed" class="nav-link">
+            <i class="bi bi-house-door me-2"></i>
+            Feed
+          </label>
+        </li>
+
+        <!-- MAPA -->
+        <li>
+          <label id="btn-mapa" class="nav-link">
+            <i class="bi bi-speedometer2 me-2"></i>
+            Mapa
+          </label>
+        </li>
+        
+        <!-- MENSAGENS -->
+        <li>
+          <label id="btn-mensagens" class="nav-link">
+            <i class="bi bi-chat-dots me-2"></i>
+            Mensagens
+          </label>
+        </li>
+
+        <!-- MARKETPLACE -->
+        <li>
+          <label id="btn-marketplace" class="nav-link">
+            <i class="bi bi-grid me-2"></i>
+            Marketplace
+          </label>
+        </li>
+
+        <!-- COMUNIDADE -->
+        <li>
+          <label id="btn-comunidade" class="nav-link">
+            <i class="bi bi-people-fill me-2"></i>
+            Comunidade
+          </label>
+        </li>
+      </ul>
+      <hr />
+
+    </div>
+    <!-- ================================================= -->
+    <!-- FIM DA SIDEBAR -->
+    <!-- ================================================= -->
+
+        <div class="col bg-secondary main-content" id="conteudo">
+
+        </div>
+
+    </div>
+    
+
+
+
+
+   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../Views/feed.js"></script>
+<script src="../Views/Mapa.js"></script>
+<script src="../Views/Marketplace.js"></script>
+<script src="../Views/Comunidade.js"></script>
+
+</body>
+</html>

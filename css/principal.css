@@ -18,15 +18,8 @@ body{
 }
 h1,h2,h3,h4,h5{ font-family: 'Archivo Black', sans-serif; }
 
-/* ================= CONTAINER ================= */
-.app-container{
-  display: flex;
-  height: 100%;
-  position: relative;
-}
-
-/* inputs invisíveis que controlam tudo via CSS */
-.nav-radio, .filter-radio, .like-checkbox, .user-menu-toggle{
+/* inputs invisíveis usados só por outros componentes (curtidas, dropdown) */
+.like-checkbox, .user-menu-toggle{
   position: absolute;
   opacity: 0;
   pointer-events: none;
@@ -36,12 +29,42 @@ h1,h2,h3,h4,h5{ font-family: 'Archivo Black', sans-serif; }
 /* ================= SIDEBAR ================= */
 .sidebar{
   width: 280px;
+  height: calc(100vh - 74px); /* 74px = altura da navbar (navbar.css) */
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+
+  background: linear-gradient(180deg, var(--panel-2) 0%, var(--bg) 55%);
   border-right: 1px solid var(--border);
+  box-shadow: 6px 0 30px rgba(0,0,0,.4);
+
   position: relative;
+  z-index: 10;
 }
-.sidebar .fs-4{ font-family: 'Archivo Black', sans-serif; letter-spacing: .5px; }
-.sidebar hr{ border-color: var(--border); opacity: 1; }
+
+.sidebar .fs-4{
+  font-family: 'Archivo Black', sans-serif;
+  letter-spacing: .5px;
+}
+
+.sidebar hr{
+  border: none;
+  height: 1px;
+  margin: 16px 0;
+  background: linear-gradient(90deg, transparent, var(--border) 25%, var(--border) 75%, transparent);
+  opacity: 1;
+}
+
+/* logo com leve destaque no hover */
+.sidebar > a{
+  transition: opacity .2s ease;
+}
+.sidebar > a:hover{
+  opacity: .85;
+}
+.sidebar > a > div{
+  box-shadow: 0 4px 14px rgba(255,85,0,.35);
+}
 
 .nav-pills .nav-link{
   display:flex;
@@ -52,10 +75,14 @@ h1,h2,h3,h4,h5{ font-family: 'Archivo Black', sans-serif; }
   padding: 10px 12px;
   margin-bottom: 4px;
   cursor: pointer;
-  color: #fff;
+  color: var(--muted);
+  border-left: 3px solid transparent;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, padding-left .2s ease;
 }
 .nav-pills .nav-link:hover{
   background: var(--panel-2);
+  color: var(--text);
+  padding-left: 16px;
 }
 .nav-badge{
   margin-left:auto;
@@ -67,20 +94,14 @@ h1,h2,h3,h4,h5{ font-family: 'Archivo Black', sans-serif; }
   border-radius: 20px;
 }
 
-/* liga o item ativo da sidebar ao radio correspondente */
-#nav-home:checked ~ .sidebar label[for="nav-home"],
-#nav-dashboard:checked ~ .sidebar label[for="nav-dashboard"],
-#nav-orders:checked ~ .sidebar label[for="nav-orders"],
-#nav-products:checked ~ .sidebar label[for="nav-products"],
-#nav-customers:checked ~ .sidebar label[for="nav-customers"]{
-  background: var(--orange) !important;
+/* item ativo da sidebar — controlado via JS adicionando/removendo esta classe */
+.nav-pills .nav-link.active{
+  background: linear-gradient(90deg, rgba(255,85,0,.18), rgba(255,85,0,.04));
   color: #fff !important;
+  border-left-color: var(--orange);
+  box-shadow: inset 0 0 0 1px rgba(255,85,0,.15);
 }
-#nav-home:checked ~ .sidebar label[for="nav-home"] .nav-badge,
-#nav-dashboard:checked ~ .sidebar label[for="nav-dashboard"] .nav-badge,
-#nav-orders:checked ~ .sidebar label[for="nav-orders"] .nav-badge,
-#nav-products:checked ~ .sidebar label[for="nav-products"] .nav-badge,
-#nav-customers:checked ~ .sidebar label[for="nav-customers"] .nav-badge{
+.nav-pills .nav-link.active .nav-badge{
   background: rgba(255,255,255,.25);
 }
 
@@ -96,51 +117,20 @@ h1,h2,h3,h4,h5{ font-family: 'Archivo Black', sans-serif; }
 }
 .btn-create:hover{ background: var(--orange-dark); color:#fff; }
 
-/* menu do usuário (dropdown 100% CSS) */
+/* menu do usuário: o dropdown do feed (.user-dropdown) já tem
+   estilo próprio e completo em navbar.css, então este arquivo
+   não deve definir posição/tamanho para ele. */
 .user-menu{ position: relative; }
 .user-menu-label{
   display:flex; align-items:center; color:#fff; text-decoration:none; cursor:pointer;
 }
-.dropdown-menu-custom{
-  display:none;
-  position:absolute;
-  bottom: 46px;
-  left: 0;
-  width: 100%;
-  background: var(--panel-2);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 6px;
-  list-style:none;
-  margin:0;
-}
-.user-menu-toggle:checked ~ .dropdown-menu-custom{ display:block; }
-.dropdown-menu-custom li a{
-  display:block;
-  padding: 8px 10px;
-  border-radius: 6px;
-  color: var(--text);
-  text-decoration:none;
-  font-size: .85rem;
-}
-.dropdown-menu-custom li a:hover{ background: #1a1a1a; }
-.dropdown-divider{ border-color: var(--border); margin: 6px 0; }
 
 /* ================= MAIN / SECTIONS ================= */
 .main-content{
   flex: 1;
   min-width: 0;
-  height: 100%;
+  height: calc(100vh - 74px);
   overflow-y: auto;
-}
-.app-section{ display:none; }
-
-#nav-home:checked ~ .main-content #section-home,
-#nav-dashboard:checked ~ .main-content #section-dashboard,
-#nav-orders:checked ~ .main-content #section-orders,
-#nav-products:checked ~ .main-content #section-products,
-#nav-customers:checked ~ .main-content #section-customers{
-  display: block;
 }
 
 .section-header{
@@ -169,14 +159,11 @@ h1,h2,h3,h4,h5{ font-family: 'Archivo Black', sans-serif; }
   cursor:pointer;
   background: transparent;
 }
-#filter-all:checked ~ .filter-pills label[for="filter-all"],
-#filter-futebol:checked ~ .filter-pills label[for="filter-futebol"],
-#filter-basquete:checked ~ .filter-pills label[for="filter-basquete"],
-#filter-skate:checked ~ .filter-pills label[for="filter-skate"],
-#filter-volei:checked ~ .filter-pills label[for="filter-volei"],
-#filter-tenis:checked ~ .filter-pills label[for="filter-tenis"]{
+/* filtro ativo — adicione/remova esta classe via JS no pill clicado */
+.pill.active{
   background: var(--orange); border-color: var(--orange); color:#fff;
 }
+
 
 .feed-wrap{
   padding: 20px 32px 60px;
@@ -227,7 +214,7 @@ h1,h2,h3,h4,h5{ font-family: 'Archivo Black', sans-serif; }
 .action-btn i{ font-size:1.05rem; }
 .action-btn:hover{ color: var(--text); }
 
-/* curtidas 100% CSS: cada post tem um checkbox oculto + label logo em seguida */
+/* curtidas: continuam via checkbox oculto (não é navegação de tela) */
 .icon-liked, .count-liked{ display:none; }
 .icon-unliked, .count-unliked{ display:inline-flex; align-items:center; gap:7px; }
 .like-checkbox:checked + .like-label{ color: var(--orange); }
@@ -291,4 +278,331 @@ h1,h2,h3,h4,h5{ font-family: 'Archivo Black', sans-serif; }
 
 @media (max-width: 860px){
   .sidebar{ display:none; }
+}
+
+
+/* =========================================================
+   SPORTMAP — NAVBAR (versão standalone, sem #section-home)
+   css/navbar.css
+   ========================================================= */
+
+.feed-navbar {
+  --feed-orange: #ff5500;
+  --feed-orange-hover: #ff6a1a;
+
+  --feed-bg: #08090b;
+  --feed-panel: #111315;
+  --feed-panel-2: #16191c;
+  --feed-border: #282c31;
+
+  --feed-text: #f5f5f5;
+  --feed-muted: #92979f;
+  --feed-soft: #c7cbd1;
+
+  width: 100%;
+  min-height: 74px;
+
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 560px) 1fr;
+  align-items: center;
+
+  padding: 14px 32px;
+
+  background: #0d0f11;
+  border-bottom: 1px solid var(--feed-border);
+
+  position: relative;
+  z-index: 20;
+
+  font-family: 'Archivo', sans-serif;
+  color: var(--feed-text);
+}
+
+.feed-navbar-spacer {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   BUSCA
+   ========================================================= */
+
+.feed-navbar .feed-search-form {
+  width: 100%;
+  margin: 0;
+}
+
+.feed-navbar .feed-search-box {
+  width: 100%;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 16px;
+
+  background: #181b1e;
+  border: 1px solid #292d32;
+  border-radius: 10px;
+
+  transition: border-color .2s ease,
+              box-shadow .2s ease,
+              background .2s ease;
+}
+
+.feed-navbar .feed-search-box:focus-within {
+  background: #1b1e21;
+  border-color: var(--feed-orange);
+  box-shadow: 0 0 0 3px rgba(255, 85, 0, .12);
+}
+
+.feed-navbar .feed-search-box i {
+  color: #777d85;
+  font-size: 17px;
+}
+
+.feed-navbar .feed-search-box input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+  color: var(--feed-text);
+
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.feed-navbar .feed-search-box input::placeholder {
+  color: #777d85;
+}
+
+
+/* =========================================================
+   MENU DO USUÁRIO
+   ========================================================= */
+
+.feed-navbar .user-menu {
+  position: relative;
+
+  justify-self: end;
+
+  display: flex;
+  align-items: center;
+}
+
+.feed-navbar .user-menu-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+.feed-navbar .user-menu-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 0;
+  padding: 5px 8px;
+
+  cursor: pointer;
+
+  color: var(--feed-text);
+  border-radius: 10px;
+
+  transition: background .2s ease;
+}
+
+.feed-navbar .user-menu-label:hover {
+  background: #181b1e;
+}
+
+.feed-navbar .user-menu-label strong {
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.feed-navbar .user-menu-label img {
+  width: 36px;
+  height: 36px;
+
+  object-fit: cover;
+
+  border: 2px solid #30343a;
+  border-radius: 50%;
+}
+
+.feed-navbar .user-menu-label i {
+  color: #8a9098;
+  font-size: 12px;
+
+  transition: transform .2s ease;
+}
+
+.feed-navbar .user-menu-toggle:checked + .user-menu-label i {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   DROPDOWN
+   ========================================================= */
+
+.feed-navbar .user-dropdown {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 260px;
+
+  padding: 10px;
+
+  background: #151719;
+  border: 1px solid var(--feed-border);
+  border-radius: 13px;
+
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+
+  transition:
+    opacity .2s ease,
+    visibility .2s ease,
+    transform .2s ease;
+
+  z-index: 100;
+}
+
+.feed-navbar .user-menu-toggle:checked ~ .user-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.feed-navbar .user-dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 8px;
+}
+
+.feed-navbar .user-dropdown-header img {
+  width: 42px;
+  height: 42px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.feed-navbar .user-dropdown-header div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  min-width: 0;
+}
+
+.feed-navbar .user-dropdown-header strong {
+  color: #fff;
+  font-size: 13px;
+}
+
+.feed-navbar .user-dropdown-header span {
+  color: var(--feed-muted);
+  font-size: 12px;
+}
+
+.feed-navbar .user-dropdown hr {
+  margin: 8px 0;
+
+  border: 0;
+  border-top: 1px solid var(--feed-border);
+
+  opacity: 1;
+}
+
+.feed-navbar .user-dropdown .nav-link {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #d8dbe0;
+  text-decoration: none;
+
+  text-align: left;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: background .2s ease, color .2s ease;
+}
+
+.feed-navbar .user-dropdown .nav-link:hover {
+  background: #222529;
+  color: #fff;
+}
+
+.feed-navbar .user-dropdown .nav-link i {
+  width: 18px;
+  color: #8e949c;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .feed-navbar {
+    grid-template-columns: 1fr 1.5fr 1fr;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .feed-navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    padding: 12px 15px;
+  }
+
+  .feed-navbar-spacer {
+    display: none;
+  }
+
+  .feed-navbar .feed-search-form {
+    order: 2;
+    flex: 1 1 100%;
+  }
+
+  .feed-navbar .user-menu {
+    margin-left: auto;
+  }
+
+  .feed-navbar .user-menu-label strong {
+    display: none;
+  }
 }
