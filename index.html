@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportMap — Encontre seu próximo jogo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="homee">
+
+    <header>
+        <div class="nav">
+            <div class="logo">
+                <div class="logo-mark">
+                    <div class="logo-mark-grid">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+                Sport<b>Map</b>
+            </div>
+            <nav class="nav-links">
+                <a href="#feed">Feed</a>
+                <a href="#mapa">Mapa</a>
+                <a href="#sessoes">Sessões</a>
+                <a href="#marketplace">Marketplace</a>
+                <a href="#comunidade">Comunidade</a>
+            </nav>
+            <div class="nav-actions">
+                <a class="btn btn-ghost" onclick="telaLogin()">Entrar</a>
+                <a class="btn btn-primary" onclick="telaCadastro()">Criar conta</a>
+            </div>
+            <button class="nav-toggle" aria-label="Abrir menu">☰</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="wrap2 hero-grid">
+            <div>
+                <h1 class="fontona">A RUA É<br><em>NOSSA PISTA</em></h1>
+                <p class="lead">Conectando atletas urbanos, pistas, comunidades e cultura de rua em um só lugar.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat"><b>12.480</b><span>atletas ativos</span></div>
+                    <div class="stat"><b>890</b><span>itens no marketplace</span></div>
+                    <div class="stat"><b>3.200</b><span>sessões essa semana</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature" id="mapa">
+        <div class="wrap">
+            <div class="feature-head">
+                <div>
+                    <span class="tag">Mapa</span>
+                    <h2 style="margin-top:14px;">Seu próximo parceiro de treino pode estar mais próximo do que você imagina.</h2>
+                </div>
+                <p>Ative sua localização e veja quem está treinando agora dentro do raio que você definir.</p>
+            </div>
+
+            <div class="map-panel">
+                <div class="map-canvas">
+                    <div class="map-legend">
+                        <span><i style="background:var(--orange);"></i>Corrida</span>
+                        <span><i style="background:var(--purple);"></i>Musculação</span>
+                        <span><i style="background:var(--green);"></i>Futebol</span>
+                        <span><i style="background:var(--blue);"></i>Bike</span>
+                    </div>
+                    <div class="map-zone" style="width:78%; height:78%; top:50%; left:52%; transform:translate(-50%,-50%);"></div>
+                    <div class="map-you"></div>
+                    <div class="map-dot" style="background:var(--purple); top:26%; left:30%;"></div>
+                    <div class="map-dot" style="background:var(--blue); top:20%; left:66%;"></div>
+                    <div class="map-dot" style="background:var(--orange); top:32%; left:18%;"></div>
+                    <div class="map-dot" style="background:var(--green); top:40%; left:78%;"></div>
+                    <div class="map-dot" style="background:var(--orange); top:54%; left:24%;"></div>
+                    <div class="map-dot" style="background:var(--green); top:64%; left:80%;"></div>
+                    <div class="map-dot" style="background:var(--purple); top:76%; left:16%;"></div>
+                    <div class="map-dot" style="background:var(--orange); top:80%; left:44%;"></div>
+                    <div class="map-dot" style="background:var(--blue); top:82%; left:64%;"></div>
+                    <div class="map-label" style="top:14%; left:64%;">JARDIM REGINA</div>
+                    <div class="map-label" style="top:74%; left:8%;">ARARETAMA</div>
+                    <div class="map-label" style="top:60%; left:70%;">VILA RICA</div>
+                </div>
+                <div class="people-list">
+                    <h3>Pessoas por perto</h3>
+                    <div class="sub">Atualizado agora mesmo</div>
+
+                    <div class="person-row">
+                        <div class="avatar" style="background:var(--orange);">LF</div>
+                        <div class="person-info">
+                            <div class="name">Lucas Ferreira</div>
+                            <div class="sport" style="color:var(--orange);">Corrida</div>
+                            <div class="loc">1,2 km · Parque da Cidade</div>
+                        </div>
+                        <span class="connect-btn">Conectar</span>
+                    </div>
+                    <div class="person-row">
+                        <div class="avatar" style="background:var(--purple);">AS</div>
+                        <div class="person-info">
+                            <div class="name">Ana Souza</div>
+                            <div class="sport" style="color:var(--purple);">Musculação</div>
+                            <div class="loc">2,4 km · Treino de membros superiores</div>
+                        </div>
+                        <span class="connect-btn">Conectar</span>
+                    </div>
+                    <div class="person-row">
+                        <div class="avatar" style="background:var(--green);">RC</div>
+                        <div class="person-info">
+                            <div class="name">Rafael Costa</div>
+                            <div class="sport" style="color:var(--green);">Futebol</div>
+                            <div class="loc">3,1 km · Campo do Araretama</div>
+                        </div>
+                        <span class="connect-btn">Conectar</span>
+                    </div>
+                    <div class="person-row">
+                        <div class="avatar" style="background:var(--blue);">MS</div>
+                        <div class="person-info">
+                            <div class="name">Matheus Silva</div>
+                            <div class="sport" style="color:var(--blue);">Bike</div>
+                            <div class="loc">3,8 km · Pedalada pelo centro</div>
+                        </div>
+                        <span class="connect-btn">Conectar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature" id="comunidade">
+        <div class="wrap community-grid">
+            <div>
+                <span class="tag">Comunidade</span>
+                <h2 style="margin-top:14px; font-size:clamp(30px,4vw,44px);">Registre a sessão.<br>Motive a próxima.</h2>
+                <p style="color:var(--text-muted); margin:18px 0 32px; max-width:380px;">Poste fotos do treino, marque o
+                    esporte e deixe a galera saber que a pista, a quadra ou a trilha te esperam.</p>
+
+
+                <ul class="feature-list linhazinha">
+                    <li>
+                        <div>
+                            <h4>Feed por esporte</h4>
+                            <p>Veja só o que importa: skate, vôlei, futebol ou o esporte que você escolher.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>Local marcado no post</h4>
+                            <p>Cada publicação já vem com o mapa do treino, pra galera saber onde te encontrar.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>Siga quem joga como você</h4>
+                            <p>Acompanhe atletas da sua região e construa seu grupo de treino.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="post-card">
+                <div class="post-head">
+                    <div class="avatar" style="background:var(--orange); width:42px; height:42px; font-size:14px;">RM</div>
+                    <div class="meta">
+                        <div class="name-row"><b>Rafael Mendes</b><span class="tag"
+                            style="font-size:10px; padding:2px 8px;">Skate</span>
+                        </div>
+                        <div class="handle">@rafamendes · há 12 min</div>
+                    </div>
+                </div>
+                <div class="post-text">Fechamos a pista hoje cedo 🛹</div>
+                <div class="post-media">espaço para foto</div>
+                <div class="post-actions">
+                    <span class="liked">♥ 128</span>
+                    <span>💬 14</span>
+                    <span>↗ Compartilhar</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature" id="marketplace">
+        <div class="wrap">
+            <div class="feature-head">
+                <div>
+                    <span class="tag">Marketplace</span>
+                    <h2 style="margin-top:14px;">Faltou alguma coisa no rolê?<br>Dá uma olhada no Marketplace.</h2>
+                </div>
+                <p>Compre e venda equipamento direto com quem precisa na sua região — do skate ao par de chuteiras.</p>
+            </div>
+
+            <div class="shop-scroll">
+                <div class="shop-card">
+                    <div class="shop-thumb" style="background:linear-gradient(135deg,#1c2b18,#0f150d);">
+                        <span class="badge">Usado</span>
+                    </div>
+                    <div class="shop-body">
+                        <div class="name">Chuteira Nike Mercurial laranja</div>
+                        <div class="price">R$ 180</div>
+                        <div class="loc">Moema · 1,2 km</div>
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div class="shop-thumb" style="background:linear-gradient(135deg,#241a12,#120d08);">
+                        <span class="badge">Novo</span>
+                    </div>
+                    <div class="shop-body">
+                        <div class="name">Bola de basquete Spalding oficial</div>
+                        <div class="price">R$ 129</div>
+                        <div class="loc">Vila Mariana · 2,8 km</div>
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div class="shop-thumb" style="background:linear-gradient(135deg,#151820,#0b0d12);">
+                        <span class="badge">Usado</span>
+                    </div>
+                    <div class="shop-body">
+                        <div class="name">Skate completo shape 8.0</div>
+                        <div class="price">R$ 320</div>
+                        <div class="loc">Pinheiros · 3,4 km</div>
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div class="shop-thumb" style="background:linear-gradient(135deg,#0e1c22,#080e11);">
+                        <span class="badge">Novo</span>
+                    </div>
+                    <div class="shop-body">
+                        <div class="name">Bola de vôlei de praia Mikasa</div>
+                        <div class="price">R$ 95</div>
+                        <div class="loc">Ibirapuera · 1,0 km</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature" id="sessoes">
+        <div class="wrap">
+            <div class="feature-head">
+                <div>
+                    <span class="tag">Sessões</span>
+                    <h2 style="margin-top:14px;">Marque, convide, apareça.</h2>
+                </div>
+                <p>Transforme uma conexão do mapa em um compromisso real na agenda de todo mundo.</p>
+            </div>
+
+            <div class="sessions-panel">
+                <div>
+                    <h3 style="font-family:'Manrope'; font-size:20px; font-weight:800;">Sua semana de treino</h3>
+                    <p style="color:var(--text-muted); font-size:14.5px; margin-top:8px;">Crie uma sessão, escolha quem participa e receba lembrete uma hora antes.</p>
+                    <div class="week-row">
+                        <div class="day-chip">
+                            <div class="d">SEG</div>
+                            <div class="n">08</div>
+                        </div>
+                        <div class="day-chip">
+                            <div class="d">TER</div>
+                            <div class="n">09</div>
+                        </div>
+                        <div class="day-chip active">
+                            <div class="d">QUA</div>
+                            <div class="n">10</div>
+                        </div>
+                        <div class="day-chip">
+                            <div class="d">QUI</div>
+                            <div class="n">11</div>
+                        </div>
+                        <div class="day-chip">
+                            <div class="d">SEX</div>
+                            <div class="n">12</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="session-card">
+                    <div class="row">
+                        <b>Treino de vôlei</b>
+                        <span>18h00 · Quadra da Vila</span>
+                    </div>
+                    <div class="row" style="margin-bottom:0;">
+                        <div class="avatars-mini">
+                            <div class="avatar" style="background:var(--orange);">JA</div>
+                            <div class="avatar" style="background:var(--purple);">RC</div>
+                            <div class="avatar" style="background:var(--green);">MS</div>
+                            <div class="avatar" style="background:var(--blue);">+4</div>
+                        </div>
+                        <span class="connect-btn">Ver sessão</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="wrap">
+            <h2>Com companhia, qualquer esporte fica mais radical.</h2>
+            <p>Crie sua conta grátis e comece a treinar acompanhado ainda essa semana.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <div class="foot-grid">
+                <div class="logo" style="font-size:20px;">
+                    <div class="logo-mark" style="width:28px; height:28px;">
+                        <div class="logo-mark-grid" style="gap:3px;">
+                        <span></span><span></span><span></span><span></span></div>
+                    </div>
+                    Sport<b>Map</b>
+                </div>
+                <div class="foot-links">
+                    <a href="#mapa">Mapa</a>
+                    <a href="#comunidade">Comunidade</a>
+                    <a href="#marketplace">Marketplace</a>
+                    <a href="#sessoes">Sessões</a>
+                </div>
+            </div>
+            <div class="foot-bottom">
+                <span>© 2026 SportMap. Feito para quem não treina sozinho.</span>
+                <span>São Paulo, Brasil</span>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="js/btnsHome.js"></script>
+
+</body>
+</html>
