@@ -682,3 +682,36 @@
   }
 
 }
+
+
+/* =========================================================
+   BANNER DO FEED (foto do topo)
+   ========================================================= */
+
+.feed-hero{
+  position: relative;
+  width: 100%;
+  height: 420px;
+  max-height: 55vh;
+
+  margin: 0 auto 30px;
+  max-width: 1120px;
+
+  border-radius: var(--feed-radius, 14px);
+  overflow: hidden;
+
+  background-color: var(--panel-2);
+}
+
+.feed-hero-photo{
+  position: absolute;
+  inset: 0;
+}
+
+.feed-hero-photo-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}

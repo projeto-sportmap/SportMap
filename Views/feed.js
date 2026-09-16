@@ -9,6 +9,13 @@ btnFeed.addEventListener("click", function(){
 
     <div class="feed-main">
 
+          <!-- BANNER DO FEED -->
+          <div class="feed-hero">
+            <!-- FOTO AQUI -->
+            <div class="feed-hero-photo">
+              <img src="../img/fundo.png" class="feed-hero-photo-img">
+            </div>
+          </div>
 
           <!-- CABEÇALHO -->
 
