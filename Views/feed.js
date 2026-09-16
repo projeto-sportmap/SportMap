@@ -788,4 +788,128 @@ btnFeed.addEventListener("click", function(){
 
     `;
 
+    // ===== ADICIONADO: liga o botão de criar publicação =====
+    const createPostButton = document.getElementById("create-post-button");
+    if (createPostButton) {
+      createPostButton.addEventListener("click", abrirModalPublicacao);
+    }
+
 });
+
+
+// ===== ADICIONADO: modal de criar publicação =====
+
+function abrirModalPublicacao() {
+  if (document.getElementById("create-post-overlay")) return; // evita duplicar
+
+  const overlay = document.createElement("div");
+  overlay.id = "create-post-overlay";
+  overlay.className = "create-post-overlay";
+  overlay.innerHTML = `
+    <div class="create-post-modal">
+
+      <div class="create-post-header">
+        <h3>Criar publicação</h3>
+        <button type="button" class="create-post-close" id="create-post-close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <div class="create-post-body">
+
+        <label class="create-post-photo" for="create-post-photo-input">
+          <input type="file" id="create-post-photo-input" accept="image/*" hidden />
+
+          <div class="create-post-photo-placeholder" id="create-post-photo-placeholder">
+            <i class="bi bi-image"></i>
+            <span>Clique para adicionar uma foto</span>
+          </div>
+
+          <img id="create-post-photo-preview" class="create-post-photo-preview" hidden />
+        </label>
+
+        <textarea
+          id="create-post-description"
+          class="create-post-description"
+          placeholder="Escreva uma legenda para sua publicação..."
+          rows="4"
+        ></textarea>
+
+      </div>
+
+      <div class="create-post-footer">
+        <button type="button" class="create-post-cancel" id="create-post-cancel">Cancelar</button>
+        <button type="button" class="create-post-submit" id="create-post-submit">Publicar</button>
+      </div>
+
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+  document.body.style.overflow = "hidden"; // trava o scroll atrás do modal
+
+  iniciarModalPublicacao(overlay);
+}
+
+function fecharModalPublicacao() {
+  const overlay = document.getElementById("create-post-overlay");
+  if (overlay) overlay.remove();
+  document.body.style.overflow = "";
+}
+
+function iniciarModalPublicacao(overlay) {
+  const closeBtn = overlay.querySelector("#create-post-close");
+  const cancelBtn = overlay.querySelector("#create-post-cancel");
+  const submitBtn = overlay.querySelector("#create-post-submit");
+  const photoInput = overlay.querySelector("#create-post-photo-input");
+  const photoPlaceholder = overlay.querySelector("#create-post-photo-placeholder");
+  const photoPreview = overlay.querySelector("#create-post-photo-preview");
+  const description = overlay.querySelector("#create-post-description");
+
+  closeBtn.addEventListener("click", fecharModalPublicacao);
+  cancelBtn.addEventListener("click", fecharModalPublicacao);
+
+  // Fecha clicando no fundo escuro (fora do card)
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) fecharModalPublicacao();
+  });
+
+  // Fecha com Esc
+  document.addEventListener("keydown", function escListener(e) {
+    if (e.key === "Escape") {
+      fecharModalPublicacao();
+      document.removeEventListener("keydown", escListener);
+    }
+  });
+
+  // Preview da foto escolhida
+  photoInput.addEventListener("change", () => {
+    const file = photoInput.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      photoPreview.src = e.target.result;
+      photoPreview.hidden = false;
+      photoPlaceholder.hidden = true;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // Botão Publicar (por enquanto só fecha — depois liga com o backend)
+  submitBtn.addEventListener("click", () => {
+    const texto = description.value.trim();
+
+    if (!texto && !photoInput.files[0]) {
+      alert("Escreva algo ou adicione uma foto antes de publicar.");
+      return;
+    }
+
+    console.log("Nova publicação:", {
+      texto,
+      foto: photoInput.files[0] || null,
+    });
+
+    fecharModalPublicacao();
+  });
+}
