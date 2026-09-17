@@ -9,72 +9,7 @@ btnMarketplace.addEventListener("click", function () {
 
         <section class="app-section" id="section-products">
 
-            <!-- ===== Topbar ===== -->
-
-            <nav class="topbar d-flex align-items-center gap-3">
-
-                <div class="logo-mark d-none d-sm-block">
-                    <span class="sport">Sport</span>
-                    <span class="map">Map</span>
-                </div>
-
-                <div class="flex-grow-1 mx-2" style="max-width:520px;">
-
-                    <div class="input-group">
-
-                        <span class="input-group-text search-input border-end-0">
-                            <i class="bi bi-search"></i>
-                        </span>
-
-                        <input
-                            type="text"
-                            class="form-control search-input border-start-0"
-                            placeholder="Buscar chuteiras, skates, bolas..."
-                            aria-label="Buscar no marketplace"
-                        >
-
-                    </div>
-
-                </div>
-
-                <div class="ms-auto d-flex align-items-center gap-2">
-
-                    <button
-                        type="button"
-                        class="btn btn-orange d-none d-md-inline-flex align-items-center gap-2"
-                    >
-                        <i class="bi bi-plus-lg"></i>
-                        Anunciar item
-                    </button>
-
-                    <button
-                        type="button"
-                        class="icon-btn"
-                        aria-label="Favoritos"
-                    >
-                        <i class="bi bi-heart"></i>
-                    </button>
-
-                    <button
-                        type="button"
-                        class="icon-btn"
-                        aria-label="Mensagens"
-                    >
-                        <i class="bi bi-chat-dots"></i>
-                        <span class="icon-dot">3</span>
-                    </button>
-
-                    <img
-                        class="avatar-sm"
-                        loading="lazy"
-                        src="https://images.unsplash.com/photo-1623605931891-d5b95ee98459?auto=format&fit=crop&w=100&q=60"
-                        alt="perfil"
-                    >
-
-                </div>
-
-            </nav>
-
+            
 
             <div class="container-fluid px-3 px-lg-4 py-4">
 
