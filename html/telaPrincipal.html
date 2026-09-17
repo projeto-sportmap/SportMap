@@ -165,7 +165,9 @@
         </div>
 
     </div>
-    
+
+
+
 
 
 
@@ -177,28 +179,9 @@
 <script src="../Views/Mapa.js"></script>
 <script src="../Views/Marketplace.js"></script>
 <script src="../Views/Comunidade.js"></script>
-<script src="../Views/Config.js"></script>
-<script src="../Views/Mensagens.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+<script src="../js/modalComunidadeBtn.js"></script>
 
-    const botoes = document.querySelectorAll(".sidebar .nav-link");
-
-    botoes.forEach(function (botao) {
-
-        botao.addEventListener("click", function () {
-
-            botoes.forEach(function (item) {
-                item.classList.remove("active");
-            });
-
-            this.classList.add("active");
-
-        });
-
-    });
-
-});
+   
 </script>
 </body>
 </html>

@@ -3,663 +3,507 @@
    COMUNIDADE - SPORTMAP
 ========================================= */
 
-
 /* =========================================
    CONTEÚDO PRINCIPAL
 ========================================= */
-
 #conteudo {
     min-width: 0;
     min-height: calc(100vh - 70px);
 }
 
-
 /* =========================================
    SEÇÃO DA COMUNIDADE
 ========================================= */
-
 #section-customers {
     width: 100%;
     min-height: 100%;
-
     margin: 0;
     padding: 0;
-
     background-color: #050607;
     color: white;
-
     box-sizing: border-box;
 }
-
 
 /* =========================================
    CONTAINER
 ========================================= */
-
 #section-customers .comunidade-container {
-
     width: 100%;
     max-width: 900px;
-
     margin: 0 auto;
-
     padding: 40px 30px;
-
     color: white;
-
     box-sizing: border-box;
 }
-
 
 /* =========================================
    CABEÇALHO
 ========================================= */
-
 #section-customers .comunidade-header {
-
     display: flex;
-
     align-items: center;
-
     gap: 15px;
-
     margin-bottom: 35px;
-
     width: 100%;
 }
 
-
 /* ÍCONE */
-
 #section-customers .comunidade-icone {
-
     width: 55px;
     height: 55px;
-
     min-width: 55px;
-
     background-color: #ff5a00;
-
     border-radius: 12px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     font-size: 25px;
-
     color: white;
-
     flex-shrink: 0;
 }
 
-
 /* TÍTULO */
-
 #section-customers .comunidade-header > div:nth-child(2) {
-
     min-width: 0;
-
     flex: 1;
 }
 
-
 #section-customers .comunidade-header h1 {
-
     margin: 0;
-
     font-size: 32px;
-
     font-weight: 700;
-
     color: white;
 }
 
-
 #section-customers .comunidade-header p {
-
     margin: 5px 0 0;
-
     color: #8d969c;
-
     font-size: 14px;
-
     line-height: 1.4;
 }
-
 
 /* =========================================
    BOTÃO CRIAR PUBLICAÇÃO
 ========================================= */
-
 #section-customers .btn-criar-publicacao {
-
     margin-left: auto;
-
     background-color: #ff5500;
-
     color: #ffffff;
-
     border: none;
-
     border-radius: 8px;
-
     padding: 12px 24px;
-
     font-size: 16px;
-
     font-weight: 600;
-
     cursor: pointer;
-
     white-space: nowrap;
-
     flex-shrink: 0;
-
     transition: background-color .2s ease, transform .2s ease;
 }
 
-
 #section-customers .btn-criar-publicacao:hover {
-
     background-color: #e94d00;
-
     transform: translateY(-1px);
 }
-
 
 /* =========================================
    FEED
 ========================================= */
-
 #section-customers .feed-comunidade {
-
     width: 100%;
-
     display: flex;
-
     flex-direction: column;
-
     gap: 20px;
 }
-
 
 /* =========================================
    POST
 ========================================= */
-
 #section-customers .post-comunidade {
-
     width: 100%;
-
     background-color: #0d151b;
-
     border: 1px solid #1d2a32;
-
     border-radius: 14px;
-
     padding: 22px;
-
     box-sizing: border-box;
-
     transition: border-color .2s ease, background-color .2s ease;
 }
 
-
 #section-customers .post-comunidade:hover {
-
     border-color: #293b45;
-
     background-color: #0f181e;
 }
 
+.margemDireita {
+    margin-right: 20px;
+}
 
 /* =========================================
    CABEÇALHO DO POST
 ========================================= */
-
 #section-customers .post-header {
-
     display: flex;
-
     align-items: center;
-
     gap: 12px;
-
     width: 100%;
 }
-
 
 /* =========================================
    AVATAR
 ========================================= */
-
 #section-customers .post-avatar {
-
     width: 45px;
     height: 45px;
-
     min-width: 45px;
-
     border-radius: 50%;
-
     background-color: #ff5a00;
-
     color: white;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     font-weight: bold;
-
     font-size: 14px;
-
     flex-shrink: 0;
 }
-
 
 /* =========================================
    USUÁRIO
 ========================================= */
-
 #section-customers .post-usuario {
-
     flex: 1;
-
     min-width: 0;
 }
 
-
 #section-customers .post-nome {
-
     color: white;
-
     font-weight: 700;
-
     font-size: 15px;
-
     line-height: 1.3;
-
     white-space: nowrap;
-
     overflow: hidden;
-
     text-overflow: ellipsis;
 }
-
 
 /* =========================================
    ESPORTE
 ========================================= */
-
 #section-customers .post-esporte {
-
     display: inline-block;
-
     margin-left: 6px;
-
     padding: 3px 8px;
-
     border-radius: 20px;
-
     background-color: #18242c;
-
     color: #ff5a00;
-
     font-size: 11px;
-
     font-weight: 600;
-
     vertical-align: middle;
 }
-
 
 /* =========================================
    DATA
 ========================================= */
-
 #section-customers .post-data {
-
     margin-top: 3px;
-
     color: #68747b;
-
     font-size: 12px;
-
     white-space: nowrap;
-
     overflow: hidden;
-
     text-overflow: ellipsis;
 }
-
 
 /* =========================================
    BOTÃO SEGUIR
 ========================================= */
-
 #section-customers .btn-seguir {
-
     background-color: transparent;
-
     border: 1px solid #35434c;
-
     color: white;
-
     padding: 7px 15px;
-
     border-radius: 8px;
-
     cursor: pointer;
-
     font-size: 13px;
-
     white-space: nowrap;
-
     flex-shrink: 0;
-
     transition: .2s ease;
 }
 
-
 #section-customers .btn-seguir:hover {
-
     border-color: #ff5a00;
-
     color: #ff5a00;
-
     background-color: rgba(255, 90, 0, .06);
 }
-
 
 /* =========================================
    TEXTO DO POST
 ========================================= */
-
 #section-customers .post-texto {
-
     margin-top: 18px;
-
     margin-bottom: 16px;
-
     color: #e6e9eb;
-
     font-size: 15px;
-
     line-height: 1.5;
-
     word-break: break-word;
 }
-
 
 /* =========================================
    IMAGEM
 ========================================= */
-
 #section-customers .post-imagem {
-
     width: 100%;
-
     height: 300px;
-
     border-radius: 10px;
-
     background-color: #151f25;
-
     border: 1px solid #25333b;
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
-
     gap: 10px;
-
     color: #657179;
-
     box-sizing: border-box;
 }
 
-
 #section-customers .post-imagem i {
-
     font-size: 35px;
-
     color: #39474f;
 }
 
-
 #section-customers .post-imagem span {
-
     font-size: 13px;
 }
 
+.post-imagem {
+    margin-left: 20px;
+    width: 40%;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #151f25;
+    border: 1px solid #25333b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #657179;
+}
+
+.post-imagem2 {
+    margin-left: 20px;
+    width: 40%;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #151f25;
+    border: 1px solid #25333b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #657179;
+}
+
+.ladoAlado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* =========================================
    AÇÕES
 ========================================= */
-
 #section-customers .post-acoes {
-
     display: flex;
-
     align-items: center;
-
     gap: 8px;
-
     margin-top: 15px;
-
     flex-wrap: wrap;
 }
 
-
 #section-customers .acao-post {
-
     background: transparent;
-
     border: none;
-
     color: #929ca2;
-
     padding: 8px 10px;
-
     border-radius: 7px;
-
     cursor: pointer;
-
     display: flex;
-
     align-items: center;
-
     gap: 6px;
-
     font-size: 13px;
-
     transition: .2s ease;
 }
 
-
 #section-customers .acao-post:hover {
-
     background-color: #172128;
-
     color: white;
 }
 
-
 #section-customers .acao-post.curtida {
-
     color: #ff5a00;
 }
 
-
 #section-customers .acao-post i {
-
     font-size: 17px;
 }
-
 
 /* =========================================
    CURTIDAS
 ========================================= */
-
 #section-customers .post-curtidas {
-
     margin-top: 4px;
-
     color: #6f7a81;
-
     font-size: 12px;
 }
 
-
 #section-customers .post-curtidas strong {
-
     color: #b8c0c5;
 }
-
 
 /* =========================================
    RESPONSIVO
 ========================================= */
-
 @media (max-width: 900px) {
-
     #section-customers .comunidade-container {
-
         max-width: 100%;
-
         padding: 30px 20px;
     }
-
 }
 
 
 @media (max-width: 700px) {
-
     #section-customers .comunidade-container {
-
         padding: 25px 15px;
     }
 
-
     #section-customers .comunidade-header {
-
         flex-wrap: wrap;
-
         align-items: flex-start;
-
         margin-bottom: 25px;
     }
 
-
     #section-customers .comunidade-header h1 {
-
         font-size: 26px;
     }
 
-
     #section-customers .comunidade-header p {
-
         font-size: 13px;
     }
 
-
     #section-customers .btn-criar-publicacao {
-
         width: 100%;
-
         margin-left: 0;
-
         margin-top: 5px;
-
         justify-content: center;
-
         padding: 11px 18px;
     }
 
-
     #section-customers .post-comunidade {
-
         padding: 17px;
     }
 
-
     #section-customers .post-imagem {
-
         height: 220px;
     }
 
-
     #section-customers .btn-seguir {
-
         padding: 6px 10px;
-
         font-size: 12px;
     }
-
 
     #section-customers .acao-post {
-
         font-size: 12px;
-
         padding: 7px 8px;
     }
-
 }
 
-
 @media (max-width: 500px) {
-
     #section-customers .post-header {
-
         align-items: flex-start;
     }
 
-
     #section-customers .post-avatar {
-
         width: 40px;
         height: 40px;
-
         min-width: 40px;
     }
 
-
     #section-customers .post-nome {
-
         font-size: 14px;
     }
 
-
     #section-customers .post-esporte {
-
         font-size: 10px;
-
         padding: 2px 7px;
     }
 
-
     #section-customers .post-texto {
-
         font-size: 14px;
     }
 
-
     #section-customers .post-imagem {
-
         height: 190px;
     }
 
-
     #section-customers .post-acoes {
-
         gap: 3px;
     }
+}
 
+/* ========================================
+   BOTÃO CRIAR PUBLICAÇÃO
+======================================== */
+.BOTAO {
+    background-color: rgb(255, 85, 0);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 215px;
+}
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+}
+
+/* CONTEÚDO DO MODAL */
+.modalConteudo {
+    position: relative;
+    width: 600px;
+    max-width: 90%;
+    height: 700px;
+    max-height: 90vh;
+
+    background-color: #0d151b;
+    border-radius: 14px;
+    padding: 25px;
+
+    box-sizing: border-box;
+    position: relative;
+
+    overflow-y: auto;
+}
+
+.btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    background-color: #ff5a00;
 }

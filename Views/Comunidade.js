@@ -7,35 +7,23 @@ btnComunidade.addEventListener("click", function () {
     conteudo.innerHTML = `
 
         <section class="app-section" id="section-customers">
-
             <div class="comunidade-container">
-
 
                 <!-- =========================================
                      CABEÇALHO
                 ========================================== -->
 
                 <div class="comunidade-header">
-
                     <div class="comunidade-icone">
                         <i class="bi bi-people-fill"></i>
                     </div>
 
                     <div>
                         <h1>Comunidade</h1>
-
-                        <p>
-                            Compartilhe seus treinos, lugares e momentos esportivos.
-                        </p>
+                        <p>Compartilhe seus treinos, lugares e momentos esportivos.</p>
                     </div>
 
-                    <button
-                        type="button"
-                        class="btn-criar-publicacao"
-                    >
-                        Criar publicação
-                    </button>
-
+                    <button type="button" onclick="abrirModal()" class="BOTAO">Criar publicação</button>
                 </div>
 
 
@@ -45,89 +33,66 @@ btnComunidade.addEventListener("click", function () {
 
                 <div class="feed-comunidade">
 
-
                     <!-- =====================================
                          PUBLICAÇÃO 1
                     ====================================== -->
 
                     <article class="post-comunidade">
-
                         <div class="post-header">
-
                             <div class="post-avatar">
                                 RM
                             </div>
 
                             <div class="post-usuario">
-
                                 <div class="post-nome">
-
                                     Rafael Mendes
-
-                                    <span class="post-esporte">
-                                        Skate
-                                    </span>
-
+                                    <span class="post-esporte">Skate</span>
                                 </div>
 
                                 <div class="post-data">
                                     @rafamendes · há 12 min
                                 </div>
-
                             </div>
 
-                            <button
-                                type="button"
-                                class="btn-seguir"
-                            >
-                                Seguir
-                            </button>
-
+                            <button type="button" class="btn-seguir">Seguir</button>
                         </div>
-
 
                         <div class="post-texto">
                             Fechamos a pista hoje cedo, ninguém segurou esse ollie 🛹
                         </div>
 
-
-                        <div class="post-imagem">
-
+                        <div class="ladoAlado margemDireita">
+                           <div class="post-imagem2">
                             <i class="bi bi-image"></i>
-
                             <span>
                                 espaço para foto
                             </span>
-
                         </div>
-
-
+                        
+                        <div class="post-imagem2">
+                            <i class="bi bi-image"></i>
+                            <span>
+                                espaço para mapa
+                            </span>
+                        </div>
+                        
+                        </div>
+                
                         <div class="post-acoes">
-
-                            <button
-                                type="button"
-                                class="acao-post curtida"
-                            >
+                            <button type="button" class="acao-post curtida">
                                 <i class="bi bi-heart-fill"></i>
                                 128
                             </button>
 
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
+                            <button type="button" class="acao-post">
                                 <i class="bi bi-chat"></i>
                                 14
                             </button>
 
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
+                            <button type="button" class="acao-post">
                                 <i class="bi bi-share"></i>
                                 Compartilhar
                             </button>
-
                         </div>
 
 
@@ -137,7 +102,6 @@ btnComunidade.addEventListener("click", function () {
                             e mais
                             <strong>127 pessoas</strong>
                         </div>
-
                     </article>
 
 
@@ -146,91 +110,70 @@ btnComunidade.addEventListener("click", function () {
                     ====================================== -->
 
                     <article class="post-comunidade">
-
                         <div class="post-header">
-
                             <div class="post-avatar">
-                                JA
+                                RM
                             </div>
 
                             <div class="post-usuario">
-
                                 <div class="post-nome">
-
-                                    Julia Alves
-
-                                    <span class="post-esporte">
-                                        Vôlei
-                                    </span>
-
+                                    Rafael Mendes
+                                    <span class="post-esporte">Skate</span>
                                 </div>
 
                                 <div class="post-data">
-                                    @ju.alves · há 40 min
+                                    @rafamendes · há 12 min
                                 </div>
-
                             </div>
 
-                            <button
-                                type="button"
-                                class="btn-seguir"
-                            >
-                                Seguir
-                            </button>
-
+                            <button type="button" class="btn-seguir">Seguir</button>
                         </div>
-
 
                         <div class="post-texto">
-                            Treino de sábado na quadra da Vila. Time completo pra domingo! 🏐
+                            Fechamos a pista hoje cedo, ninguém segurou esse ollie 🛹
                         </div>
 
-
-                        <div class="post-imagem">
-
+                        <div class="ladoAlado margemDireita">
+                           <div class="post-imagem2">
                             <i class="bi bi-image"></i>
-
                             <span>
                                 espaço para foto
                             </span>
-
                         </div>
-
-
+                        
+                        <div class="post-imagem2">
+                            <i class="bi bi-image"></i>
+                            <span>
+                                espaço para mapa
+                            </span>
+                        </div>
+                        
+                        </div>
+                
                         <div class="post-acoes">
-
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
-                                <i class="bi bi-heart"></i>
-                                76
+                            <button type="button" class="acao-post curtida">
+                                <i class="bi bi-heart-fill"></i>
+                                128
                             </button>
 
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
+                            <button type="button" class="acao-post">
                                 <i class="bi bi-chat"></i>
-                                5
+                                14
                             </button>
 
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
+                            <button type="button" class="acao-post">
                                 <i class="bi bi-share"></i>
                                 Compartilhar
                             </button>
-
                         </div>
 
 
                         <div class="post-curtidas">
                             Curtido por
-                            <strong>76 pessoas</strong>
+                            <strong>Vinícius R.</strong>
+                            e mais
+                            <strong>127 pessoas</strong>
                         </div>
-
                     </article>
 
 
@@ -239,93 +182,70 @@ btnComunidade.addEventListener("click", function () {
                     ====================================== -->
 
                     <article class="post-comunidade">
-
                         <div class="post-header">
-
                             <div class="post-avatar">
-                                BZ
+                                RM
                             </div>
 
                             <div class="post-usuario">
-
                                 <div class="post-nome">
-
-                                    Bruno Zago
-
-                                    <span class="post-esporte">
-                                        Futebol
-                                    </span>
-
+                                    Rafael Mendes
+                                    <span class="post-esporte">Skate</span>
                                 </div>
 
                                 <div class="post-data">
-                                    @brunozago · há 1 h
+                                    @rafamendes · há 12 min
                                 </div>
-
                             </div>
 
-                            <button
-                                type="button"
-                                class="btn-seguir"
-                            >
-                                Seguir
-                            </button>
-
+                            <button type="button" class="btn-seguir">Seguir</button>
                         </div>
-
 
                         <div class="post-texto">
-                            Gol de bicicleta na pelada de hoje, quem viu sabe 🔥⚽
+                            Fechamos a pista hoje cedo, ninguém segurou esse ollie 🛹
                         </div>
 
-
-                        <div class="post-imagem">
-
+                        <div class="ladoAlado margemDireita">
+                           <div class="post-imagem2">
                             <i class="bi bi-image"></i>
-
                             <span>
                                 espaço para foto
                             </span>
-
                         </div>
-
-
+                        
+                        <div class="post-imagem2">
+                            <i class="bi bi-image"></i>
+                            <span>
+                                espaço para mapa
+                            </span>
+                        </div>
+                        
+                        </div>
+                
                         <div class="post-acoes">
-
-                            <button
-                                type="button"
-                                class="acao-post curtida"
-                            >
+                            <button type="button" class="acao-post curtida">
                                 <i class="bi bi-heart-fill"></i>
-                                342
+                                128
                             </button>
 
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
+                            <button type="button" class="acao-post">
                                 <i class="bi bi-chat"></i>
-                                48
+                                14
                             </button>
 
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
+                            <button type="button" class="acao-post">
                                 <i class="bi bi-share"></i>
                                 Compartilhar
                             </button>
-
                         </div>
 
 
                         <div class="post-curtidas">
                             Curtido por
-                            <strong>Rafael M.</strong>
+                            <strong>Vinícius R.</strong>
                             e mais
-                            <strong>341 pessoas</strong>
+                            <strong>127 pessoas</strong>
                         </div>
-
                     </article>
 
 
@@ -334,91 +254,70 @@ btnComunidade.addEventListener("click", function () {
                     ====================================== -->
 
                     <article class="post-comunidade">
-
                         <div class="post-header">
-
                             <div class="post-avatar">
-                                CS
+                                RM
                             </div>
 
                             <div class="post-usuario">
-
                                 <div class="post-nome">
-
-                                    Carla Souza
-
-                                    <span class="post-esporte">
-                                        Tênis
-                                    </span>
-
+                                    Rafael Mendes
+                                    <span class="post-esporte">Skate</span>
                                 </div>
 
                                 <div class="post-data">
-                                    @carlas · há 2 h
+                                    @rafamendes · há 12 min
                                 </div>
-
                             </div>
 
-                            <button
-                                type="button"
-                                class="btn-seguir"
-                            >
-                                Seguir
-                            </button>
-
+                            <button type="button" class="btn-seguir">Seguir</button>
                         </div>
-
 
                         <div class="post-texto">
-                            Primeira aula na quadra nova, saudade de jogar em saibro 🎾
+                            Fechamos a pista hoje cedo, ninguém segurou esse ollie 🛹
                         </div>
 
-
-                        <div class="post-imagem">
-
+                        <div class="ladoAlado margemDireita">
+                           <div class="post-imagem2">
                             <i class="bi bi-image"></i>
-
                             <span>
                                 espaço para foto
                             </span>
-
                         </div>
-
-
+                        
+                        <div class="post-imagem2">
+                            <i class="bi bi-image"></i>
+                            <span>
+                                espaço para mapa
+                            </span>
+                        </div>
+                        
+                        </div>
+                
                         <div class="post-acoes">
-
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
-                                <i class="bi bi-heart"></i>
-                                59
+                            <button type="button" class="acao-post curtida">
+                                <i class="bi bi-heart-fill"></i>
+                                128
                             </button>
 
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
+                            <button type="button" class="acao-post">
                                 <i class="bi bi-chat"></i>
-                                3
+                                14
                             </button>
 
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
+                            <button type="button" class="acao-post">
                                 <i class="bi bi-share"></i>
                                 Compartilhar
                             </button>
-
                         </div>
 
 
                         <div class="post-curtidas">
                             Curtido por
-                            <strong>59 pessoas</strong>
+                            <strong>Vinícius R.</strong>
+                            e mais
+                            <strong>127 pessoas</strong>
                         </div>
-
                     </article>
 
 
@@ -427,93 +326,70 @@ btnComunidade.addEventListener("click", function () {
                     ====================================== -->
 
                     <article class="post-comunidade">
-
                         <div class="post-header">
-
                             <div class="post-avatar">
-                                VR
+                                RM
                             </div>
 
                             <div class="post-usuario">
-
                                 <div class="post-nome">
-
-                                    Vinícius Rocha
-
-                                    <span class="post-esporte">
-                                        Basquete
-                                    </span>
-
+                                    Rafael Mendes
+                                    <span class="post-esporte">Skate</span>
                                 </div>
 
                                 <div class="post-data">
-                                    @viniciusr · há 3 h
+                                    @rafamendes · há 12 min
                                 </div>
-
                             </div>
 
-                            <button
-                                type="button"
-                                class="btn-seguir"
-                            >
-                                Seguir
-                            </button>
-
+                            <button type="button" class="btn-seguir">Seguir</button>
                         </div>
-
 
                         <div class="post-texto">
-                            Fechamos com 5x5 até escurecer na quadra do Ibirapuera 🏀
+                            Fechamos a pista hoje cedo, ninguém segurou esse ollie 🛹
                         </div>
 
-
-                        <div class="post-imagem">
-
+                        <div class="ladoAlado margemDireita">
+                           <div class="post-imagem2">
                             <i class="bi bi-image"></i>
-
                             <span>
                                 espaço para foto
                             </span>
-
                         </div>
-
-
+                        
+                        <div class="post-imagem2">
+                            <i class="bi bi-image"></i>
+                            <span>
+                                espaço para mapa
+                            </span>
+                        </div>
+                        
+                        </div>
+                
                         <div class="post-acoes">
-
-                            <button
-                                type="button"
-                                class="acao-post curtida"
-                            >
+                            <button type="button" class="acao-post curtida">
                                 <i class="bi bi-heart-fill"></i>
-                                213
+                                128
                             </button>
 
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
+                            <button type="button" class="acao-post">
                                 <i class="bi bi-chat"></i>
-                                22
+                                14
                             </button>
 
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
+                            <button type="button" class="acao-post">
                                 <i class="bi bi-share"></i>
                                 Compartilhar
                             </button>
-
                         </div>
 
 
                         <div class="post-curtidas">
                             Curtido por
-                            <strong>Julia A.</strong>
+                            <strong>Vinícius R.</strong>
                             e mais
-                            <strong>212 pessoas</strong>
+                            <strong>127 pessoas</strong>
                         </div>
-
                     </article>
 
 
@@ -522,102 +398,97 @@ btnComunidade.addEventListener("click", function () {
                     ====================================== -->
 
                     <article class="post-comunidade">
-
                         <div class="post-header">
-
                             <div class="post-avatar">
-                                TL
+                                RM
                             </div>
 
                             <div class="post-usuario">
-
                                 <div class="post-nome">
-
-                                    Thiago Lima
-
-                                    <span class="post-esporte">
-                                        Futebol
-                                    </span>
-
+                                    Rafael Mendes
+                                    <span class="post-esporte">Skate</span>
                                 </div>
 
                                 <div class="post-data">
-                                    @thiagol · há 4 h
+                                    @rafamendes · há 12 min
                                 </div>
-
                             </div>
 
-                            <button
-                                type="button"
-                                class="btn-seguir"
-                            >
-                                Seguir
-                            </button>
-
+                            <button type="button" class="btn-seguir">Seguir</button>
                         </div>
-
 
                         <div class="post-texto">
-                            Time montado pro racha de quinta, só falta você 👀⚽
+                            Fechamos a pista hoje cedo, ninguém segurou esse ollie 🛹
                         </div>
 
-
-                        <div class="post-imagem">
-
+                        <div class="ladoAlado margemDireita">
+                           <div class="post-imagem2">
                             <i class="bi bi-image"></i>
-
                             <span>
                                 espaço para foto
                             </span>
-
                         </div>
-
-
+                        
+                        <div class="post-imagem2">
+                            <i class="bi bi-image"></i>
+                            <span>
+                                espaço para mapa
+                            </span>
+                        </div>
+                        
+                        </div>
+                
                         <div class="post-acoes">
-
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
-                                <i class="bi bi-heart"></i>
-                                45
+                            <button type="button" class="acao-post curtida">
+                                <i class="bi bi-heart-fill"></i>
+                                128
                             </button>
 
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
+                            <button type="button" class="acao-post">
                                 <i class="bi bi-chat"></i>
-                                9
+                                14
                             </button>
 
-                            <button
-                                type="button"
-                                class="acao-post"
-                            >
+                            <button type="button" class="acao-post">
                                 <i class="bi bi-share"></i>
                                 Compartilhar
                             </button>
-
                         </div>
 
 
                         <div class="post-curtidas">
                             Curtido por
-                            <strong>45 pessoas</strong>
+                            <strong>Vinícius R.</strong>
+                            e mais
+                            <strong>127 pessoas</strong>
                         </div>
-
                     </article>
 
 
                 </div>
-
             </div>
 
+            
         </section>
+        <!-- MODAL -->
+            <div id="modal" class="modal">
+              <div class="modalConteudo">
+
+
+                <button type="button" onclick="fecharModal()" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+
+
+                <!-- Conteúdo do modal -->
+                <div id="conteudoModal"></div>
+
+
+              </div>
+            </div>
+          </div>
+
 
     `;
-
 });
 
 
