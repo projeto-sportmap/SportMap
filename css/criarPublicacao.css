@@ -1,0 +1,180 @@
+/* =========================================
+   TELA CRIAR PUBLICAÇÃO
+========================================= */
+
+.criar-publicacao {
+    background: #0d151b;
+    color: white;
+    width: 100%;
+    min-height: 100%;
+    padding: 35px 55px;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+}
+
+/* TÍTULO */
+
+.criar-publicacao h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+/* =========================================
+   CADA PASSO
+========================================= */
+
+.passo-publicacao {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 32px;
+}
+
+/* NÚMERO */
+
+.numero-passo {
+    min-width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ff5a00;
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* CONTEÚDO */
+
+.conteudo-passo {
+    flex: 1;
+}
+
+.conteudo-passo h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+.campo-publicacao {
+    width: 100%;
+    height: 130px;
+
+    background: #20252a;
+    color: white;
+
+    border: 1px solid #777;
+    border-radius: 12px;
+
+    padding: 15px;
+
+    font-size: 16px;
+    resize: none;
+}
+
+.campo-publicacao::placeholder {
+    color: #858585;
+}
+
+.campo-publicacao:focus {
+    outline: none;
+    border-color: #ff5a00;
+}
+
+/* =========================================
+   BOTÃO DE IMAGEM
+========================================= */
+
+.botao-imagem {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    background: #20252a;
+    color: white;
+
+    border: 1px solid #777;
+    border-radius: 10px;
+
+    padding: 12px 18px;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.botao-imagem:hover {
+    border-color: #ff5a00;
+    color: #ff5a00;
+}
+
+/* ESCONDE O INPUT ORIGINAL */
+
+.botao-imagem input[type="file"] {
+    display: none;
+}
+
+/* =========================================
+   BOTÃO LOCALIZAÇÃO
+========================================= */
+
+.botao-local {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    background: #20252a;
+    color: white;
+
+    border: 1px solid #777;
+    border-radius: 10px;
+
+    padding: 12px 18px;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.botao-local:hover {
+    border-color: #ff5a00;
+    color: #ff5a00;
+}
+
+/* =========================================
+   BOTÃO PUBLICAR
+========================================= */
+
+.area-publicar {
+    margin-top: 10px;
+}
+
+.btn-publicar {
+    width: 100%;
+
+    background: #ff5a00;
+    color: white;
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 15px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.btn-publicar:hover {
+    background: #e64f00;
+}
