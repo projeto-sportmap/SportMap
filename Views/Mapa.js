@@ -14,14 +14,7 @@ btnMapa.addEventListener("click", function () {
 
                 <div class="map-top">
 
-                    <div class="map-search">
-                        <i class="bi bi-search"></i>
-
-                        <input 
-                            type="text" 
-                            placeholder="Buscar por esportes, pessoas ou locais..."
-                        />
-                    </div>
+                 
 
                     <div class="sport-filters">
 
