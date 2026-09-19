@@ -1,4 +1,3 @@
-
 const btnMarketplace = document.getElementById("btn-marketplace");
 
 btnMarketplace.addEventListener("click", function () {
@@ -36,6 +35,29 @@ btnMarketplace.addEventListener("click", function () {
                         <i class="bi bi-plus-lg"></i>
                         Anunciar
                     </button>
+
+                    <div class="d-none d-md-flex align-items-center gap-2">
+
+                        <button
+                            type="button"
+                            class="btn btn-orange d-inline-flex align-items-center gap-2"
+                            id="btn-anunciar-item"
+                        >
+                            <i class="bi bi-plus-lg"></i>
+                            Anunciar item
+                        </button>
+
+                        <button
+                            type="button"
+                            class="icon-btn"
+                            id="btn-carrinho"
+                            aria-label="Carrinho"
+                        >
+                            <i class="bi bi-cart3"></i>
+                            <span class="icon-dot" id="cart-count" style="display:none;">0</span>
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -778,8 +800,261 @@ btnMarketplace.addEventListener("click", function () {
 
             </div>
 
+            <!-- Modal: Anunciar item -->
+            <div id="modal-anunciar" class="modal-overlay">
+
+                <div class="modal-box">
+
+                    <div class="modal-header-custom">
+                        <h5>Anunciar item</h5>
+                        <span id="closeModalAnunciar" class="modal-close">&times;</span>
+                    </div>
+
+                    <form id="form-anunciar-item">
+
+                        <div class="mb-3">
+                            <label for="itemNome">Nome do item</label>
+                            <input
+                                type="text"
+                                class="form-control search-input"
+                                id="itemNome"
+                                placeholder="Ex: Chuteira Nike Mercurial"
+                                required
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="itemPreco">Preço (R$)</label>
+                            <input
+                                type="number"
+                                class="form-control search-input"
+                                id="itemPreco"
+                                placeholder="0,00"
+                                min="0"
+                                step="0.01"
+                                required
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="itemFoto">Foto do item</label>
+                            <input
+                                type="file"
+                                class="form-control search-input"
+                                id="itemFoto"
+                                accept="image/*"
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="itemDescricao">Descrição</label>
+                            <textarea
+                                class="form-control search-input"
+                                id="itemDescricao"
+                                rows="3"
+                                placeholder="Detalhes do item..."
+                            ></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="itemCategoria">Categoria</label>
+                            <select class="form-control search-input" id="itemCategoria">
+                                <option value="futebol">Futebol</option>
+                                <option value="basquete">Basquete</option>
+                                <option value="skate">Skate</option>
+                                <option value="volei">Vôlei</option>
+                                <option value="tenis">Tênis</option>
+                                <option value="roupas">Roupas</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="itemEstado">Estado</label>
+                            <select class="form-control search-input" id="itemEstado">
+                                <option value="novo">Novo</option>
+                                <option value="seminovo">Seminovo</option>
+                                <option value="usado">Usado</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="itemLocalizacao">Localização do vendedor</label>
+                            <div class="input-group">
+                                <span class="input-group-text search-input border-end-0">
+                                    <i class="bi bi-geo-alt"></i>
+                                </span>
+                                <input
+                                    type="text"
+                                    class="form-control search-input border-start-0"
+                                    id="itemLocalizacao"
+                                    placeholder="Ex: Moema, SP"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2 mt-4">
+                            <button type="button" id="cancelarAnuncio" class="btn btn-social flex-fill">
+                                Sair
+                            </button>
+                            <button type="submit" class="btn btn-orange flex-fill">
+                                Enviar
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- Modal: Carrinho -->
+            <div id="modal-carrinho" class="modal-overlay">
+
+                <div class="modal-box">
+
+                    <div class="modal-header-custom">
+                        <h5>Meu carrinho</h5>
+                        <span id="closeModalCarrinho" class="modal-close">&times;</span>
+                    </div>
+
+                    <div id="carrinho-conteudo">
+                        <p class="product-meta text-center py-4">
+                            Seu carrinho está vazio.
+                        </p>
+                    </div>
+
+                    <div class="d-flex gap-2 mt-3">
+                        <button type="button" id="btnSelecionarItens" class="btn btn-orange flex-fill">
+                            Selecionar itens
+                        </button>
+                        <button type="button" id="btnLimparCarrinho" class="btn btn-social flex-fill">
+                            Apagar carrinho
+                        </button>
+                    </div>
+
+                    <button type="button" id="btnSairCarrinho" class="btn btn-social w-100 mt-2">
+                        Sair
+                    </button>
+
+                </div>
+
+            </div>
+
         </section>
 
     `;
+
+    // ===== Modal: Anunciar item =====
+
+    const btnAnunciarItem = document.getElementById("btn-anunciar-item");
+    const modalAnunciar = document.getElementById("modal-anunciar");
+    const closeModalAnunciar = document.getElementById("closeModalAnunciar");
+    const cancelarAnuncio = document.getElementById("cancelarAnuncio");
+    const formAnunciar = document.getElementById("form-anunciar-item");
+
+    function abrirModalAnunciar() {
+        modalAnunciar.classList.add("active");
+    }
+
+    function fecharModalAnunciar() {
+        modalAnunciar.classList.remove("active");
+        formAnunciar.reset();
+    }
+
+    btnAnunciarItem.addEventListener("click", abrirModalAnunciar);
+    closeModalAnunciar.addEventListener("click", fecharModalAnunciar);
+    cancelarAnuncio.addEventListener("click", fecharModalAnunciar);
+
+    modalAnunciar.addEventListener("click", function (e) {
+        if (e.target === modalAnunciar) {
+            fecharModalAnunciar();
+        }
+    });
+
+    formAnunciar.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // aqui entraria o envio dos dados (nome, preço, foto, descrição,
+        // estado e localização) para o backend
+
+        alert("Item anunciado com sucesso!");
+        fecharModalAnunciar();
+    });
+
+    // ===== Modal: Carrinho =====
+
+    let carrinho = [];
+
+    const btnCarrinho = document.getElementById("btn-carrinho");
+    const modalCarrinho = document.getElementById("modal-carrinho");
+    const closeModalCarrinho = document.getElementById("closeModalCarrinho");
+    const carrinhoConteudo = document.getElementById("carrinho-conteudo");
+    const btnSelecionarItens = document.getElementById("btnSelecionarItens");
+    const btnLimparCarrinho = document.getElementById("btnLimparCarrinho");
+    const btnSairCarrinho = document.getElementById("btnSairCarrinho");
+    const cartCount = document.getElementById("cart-count");
+
+    function renderCarrinho() {
+
+        if (carrinho.length === 0) {
+
+            carrinhoConteudo.innerHTML = `
+                <p class="product-meta text-center py-4">
+                    Seu carrinho está vazio.
+                </p>
+            `;
+
+            cartCount.style.display = "none";
+
+        } else {
+
+            carrinhoConteudo.innerHTML = carrinho.map(function (item) {
+                return `
+                    <div
+                        class="d-flex justify-content-between align-items-center py-2"
+                        style="border-bottom:1px solid var(--sm-border);"
+                    >
+                        <span>${item.nome}</span>
+                        <span class="product-price">${item.preco}</span>
+                    </div>
+                `;
+            }).join("");
+
+            cartCount.style.display = "flex";
+            cartCount.textContent = carrinho.length;
+
+        }
+
+    }
+
+    function abrirModalCarrinho() {
+        renderCarrinho();
+        modalCarrinho.classList.add("active");
+    }
+
+    function fecharModalCarrinho() {
+        modalCarrinho.classList.remove("active");
+    }
+
+    btnCarrinho.addEventListener("click", abrirModalCarrinho);
+    closeModalCarrinho.addEventListener("click", fecharModalCarrinho);
+    btnSairCarrinho.addEventListener("click", fecharModalCarrinho);
+
+    modalCarrinho.addEventListener("click", function (e) {
+        if (e.target === modalCarrinho) {
+            fecharModalCarrinho();
+        }
+    });
+
+    btnLimparCarrinho.addEventListener("click", function () {
+        carrinho = [];
+        renderCarrinho();
+    });
+
+    btnSelecionarItens.addEventListener("click", function () {
+        // fecha o modal do carrinho pra o usuário voltar pra listagem
+        // e escolher os produtos que deseja comprar
+        fecharModalCarrinho();
+    });
 
 });
