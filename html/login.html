@@ -67,7 +67,7 @@
               <input class="form-check-input" type="checkbox" id="termos"
                 style="background-color: var(--sm-panel-2); border-color: var(--sm-border);">
               <label class="form-check-label text-secondary" for="termos" style="font-size:.82rem; font-weight:400;">
-                Aceito os <a href="#" class="link-orange">termos de uso</a> e a <a href="#" class="link-orange">política
+                Aceito os <a href="#" class="link-orange" id="openModal1">termos de uso</a> e a <a href="#" class="link-orange" id="openModal2">política
                 de privacidade</a>
               </label>
             </div>
@@ -90,7 +90,25 @@
         </div>
       </div>
     </div>
+    <div id="modal" class="modal">
+
+  <div class="modal-content">
+
+    <span id="closeModal" class="close">&times;</span>
+
+      <h2 id="titulo-termo"></h2>
+
+    <!-- Conteúdo grande para testar a rolagem -->
+    <p id="termos-conteudo"></p>
+
   </div>
+
+</div>
+  </div>
+
+
+
+  <script src="/js/login.js"></script>
 </body>
 
 </html>

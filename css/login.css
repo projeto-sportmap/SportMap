@@ -1,4 +1,93 @@
-  :root {
+/* Fundo do modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  padding: 20px;
+
+  /* Impede que o próprio fundo tenha rolagem */
+  overflow: hidden;
+}
+
+/* Caixa do modal */
+.modal-content {
+  background: var(--sm-panel);
+  border: 1px solid var(--sm-border);
+  border-radius: 15px;
+
+  width: 90%;
+  max-width: 1000px;
+
+  max-height: calc(100vh - 40px);
+
+  padding: 25px;
+
+  position: relative;
+  color: var(--sm-text);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--sm-orange) var(--sm-panel-2);
+}
+
+
+/* Barra de rolagem - Chrome, Edge, Safari */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: var(--sm-panel-2);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--sm-orange);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: var(--sm-orange-dark);
+}
+
+/* Botão fechar */
+.close {
+  position: sticky;
+  top: 0;
+  float: right;
+
+  z-index: 10;
+
+  font-size: 28px;
+  line-height: 1;
+
+  color: var(--sm-muted);
+  cursor: pointer;
+
+  background: var(--sm-panel);
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.close:hover {
+  color: var(--sm-orange);
+}
+
+
+
+
+:root {
       --sm-bg: #0b0b0d;
       --sm-panel: #141417;
       --sm-panel-2: #1b1b1f;
