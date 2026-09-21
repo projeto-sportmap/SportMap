@@ -1138,3 +1138,207 @@
         font-size: 12px;
     }
 }
+
+
+/* =========================================
+   MODAL - COMPARTILHAR ESPORTE
+========================================= */
+
+/* OVERLAY */
+.share-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-modal-overlay.active {
+    display: flex;
+}
+
+/* MODAL */
+.share-modal {
+    background: #10171c;
+    border: 1px solid #1d282f;
+    border-radius: 15px;
+    width: 420px;
+    max-width: 92vw;
+    max-height: 88vh;
+    overflow-y: auto;
+    color: #fff;
+    scrollbar-width: thin;
+}
+
+.share-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #202a30;
+}
+
+.share-modal-header h3 {
+    margin: 0;
+    color: white;
+    font-size: 16px;
+}
+
+.share-modal-close {
+    background: none;
+    border: none;
+    color: #77858f;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.share-modal-close:hover {
+    color: #fff;
+}
+
+.share-modal-body {
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.share-modal-label {
+    font-size: 12px;
+    color: #82909a;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+.share-modal-input {
+    background: #11181e;
+    border: 1px solid #1e2930;
+    border-radius: 10px;
+    color: #fff;
+    padding: 8px 10px;
+    font-size: 13px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.share-modal-input:focus {
+    outline: none;
+    border-color: #ff5a00;
+}
+
+/* ESPORTES */
+.share-sport-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.share-sport-option {
+    background: #11181e;
+    border: none;
+    color: #dce3e8;
+    border-radius: 20px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.2s ease;
+}
+
+.share-sport-option:hover {
+    background: #1c252c;
+}
+
+.share-sport-option.selected {
+    background: #ff5a00;
+    color: #fff;
+}
+
+/* MINI MAPA */
+.share-mini-map {
+    position: relative;
+    height: 160px;
+    border-radius: 13px;
+    overflow: hidden;
+    background: #101820;
+    border: 1px solid #1c272e;
+    cursor: crosshair;
+}
+
+.share-marker {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    color: #ff5a00;
+    font-size: 22px;
+    pointer-events: none;
+}
+
+.share-map-hint {
+    font-size: 11px;
+    color: #687780;
+    margin-top: 4px;
+}
+
+/* FOOTER */
+.share-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 14px 20px;
+    border-top: 1px solid #202a30;
+}
+
+.share-btn-cancel {
+    background: transparent;
+    border: 1px solid #1e2930;
+    color: #dce3e8;
+    padding: 9px 16px;
+    border-radius: 18px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.share-btn-cancel:hover {
+    background: #1c252c;
+}
+
+.share-btn-post {
+    background: #ff5a00;
+    border: none;
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: 18px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.share-btn-post:hover {
+    background: #ff701f;
+}
+
+.share-btn-post:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+@media (max-width: 700px) {
+
+    .share-modal {
+        width: 100%;
+        max-width: 100vw;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .share-modal-overlay {
+        align-items: flex-end;
+    }
+}
