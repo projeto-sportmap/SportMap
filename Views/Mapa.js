@@ -261,6 +261,87 @@ btnMapa.addEventListener("click", function () {
 
                         </button>
 
+
+                        <!-- MODAL COMPARTILHAR ESPORTE -->
+
+                        <div class="share-modal-overlay" id="share-modal-overlay">
+                            <div class="share-modal">
+
+                                <div class="share-modal-header">
+                                    <h3>Compartilhar seu esporte</h3>
+                                    <button type="button" class="share-modal-close" id="share-modal-close">
+                                        <i class="bi bi-x-lg"></i>
+                                    </button>
+                                </div>
+
+                                <div class="share-modal-body">
+
+                                    <!-- ESPORTE -->
+                                    <label class="share-modal-label">Esporte</label>
+                                    <div class="share-sport-options" id="share-sport-options">
+                                        <button type="button" class="share-sport-option" data-sport="corrida">
+                                            <i class="bi bi-person-walking"></i> Corrida
+                                        </button>
+                                        <button type="button" class="share-sport-option" data-sport="musculacao">
+                                            <i class="bi bi-heart-pulse"></i> Musculação
+                                        </button>
+                                        <button type="button" class="share-sport-option" data-sport="futebol">
+                                            <i class="bi bi-circle-fill"></i> Futebol
+                                        </button>
+                                        <button type="button" class="share-sport-option" data-sport="bike">
+                                            <i class="bi bi-bicycle"></i> Bike
+                                        </button>
+                                        <button type="button" class="share-sport-option" data-sport="outros">
+                                            <i class="bi bi-three-dots"></i> Outros
+                                        </button>
+                                    </div>
+
+                                    <!-- HORÁRIO -->
+                                    <label class="share-modal-label" for="share-datetime">Data e horário</label>
+                                    <input type="datetime-local" id="share-datetime" class="share-modal-input">
+
+                                    <!-- LOCAL NO MAPA -->
+                                    <label class="share-modal-label">
+                                        Local (clique no mapa para marcar)
+                                    </label>
+                                    <div class="share-mini-map" id="share-mini-map">
+                                        <div class="map-road road-1"></div>
+                                        <div class="map-road road-2"></div>
+                                        <div class="map-road road-3"></div>
+                                        <div class="map-road road-4"></div>
+
+                                        <span class="map-place place-1">CENTRO</span>
+                                        <span class="map-place place-2">VILA RICA</span>
+                                        <span class="map-place place-3">JARDIM REGINA</span>
+                                        <span class="map-place place-4">ARARETAMA</span>
+
+                                        <div class="share-marker" id="share-marker" style="display:none;">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </div>
+                                    </div>
+                                    <span class="share-map-hint" id="share-map-hint">
+                                        Nenhum local selecionado
+                                    </span>
+
+                                    <!-- DESCRIÇÃO -->
+                                    <label class="share-modal-label" for="share-description">Descrição (opcional)</label>
+                                    <textarea id="share-description" class="share-modal-input" rows="2"
+                                        placeholder="Ex: Corrida leve, ritmo tranquilo..."></textarea>
+
+                                </div>
+
+                                <div class="share-modal-footer">
+                                    <button type="button" class="share-btn-cancel" id="share-btn-cancel">
+                                        Cancelar
+                                    </button>
+                                    <button type="button" class="share-btn-post" id="share-btn-post">
+                                        Postar
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
 
 
@@ -485,5 +566,108 @@ btnMapa.addEventListener("click", function () {
         </section>
 
     `;
+
+    // ===== LÓGICA DO MODAL "COMPARTILHAR ESPORTE" =====
+
+    const shareOverlay = document.getElementById("share-modal-overlay");
+    const shareBtnOpen = conteudo.querySelector(".share-sport-button");
+    const shareBtnClose = document.getElementById("share-modal-close");
+    const shareBtnCancel = document.getElementById("share-btn-cancel");
+    const shareBtnPost = document.getElementById("share-btn-post");
+    const sportOptions = document.querySelectorAll(".share-sport-option");
+    const miniMap = document.getElementById("share-mini-map");
+    const marker = document.getElementById("share-marker");
+    const mapHint = document.getElementById("share-map-hint");
+    const datetimeInput = document.getElementById("share-datetime");
+
+    let selectedSport = null;
+    let selectedLocation = null; // { x, y } em porcentagem
+
+    function abrirModal() {
+        shareOverlay.classList.add("active");
+    }
+
+    function fecharModal() {
+        shareOverlay.classList.remove("active");
+        resetarModal();
+    }
+
+    function resetarModal() {
+        selectedSport = null;
+        selectedLocation = null;
+        sportOptions.forEach(opt => opt.classList.remove("selected"));
+        marker.style.display = "none";
+        mapHint.textContent = "Nenhum local selecionado";
+        datetimeInput.value = "";
+        document.getElementById("share-description").value = "";
+    }
+
+    // abrir modal
+    shareBtnOpen.addEventListener("click", abrirModal);
+
+    // fechar modal (X e Cancelar)
+    shareBtnClose.addEventListener("click", fecharModal);
+    shareBtnCancel.addEventListener("click", fecharModal);
+
+    // fechar clicando fora do card
+    shareOverlay.addEventListener("click", function (e) {
+        if (e.target === shareOverlay) fecharModal();
+    });
+
+    // seleção de esporte
+    sportOptions.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            sportOptions.forEach(opt => opt.classList.remove("selected"));
+            btn.classList.add("selected");
+            selectedSport = btn.dataset.sport;
+        });
+    });
+
+    // clique no mini mapa para marcar local
+    miniMap.addEventListener("click", function (e) {
+        const rect = miniMap.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+        selectedLocation = { x, y };
+
+        marker.style.left = x + "%";
+        marker.style.top = y + "%";
+        marker.style.display = "block";
+
+        mapHint.textContent = `Local selecionado (${x.toFixed(0)}%, ${y.toFixed(0)}%)`;
+    });
+
+    // postar
+    shareBtnPost.addEventListener("click", function () {
+        if (!selectedSport) {
+            alert("Selecione um esporte.");
+            return;
+        }
+        if (!datetimeInput.value) {
+            alert("Selecione data e horário.");
+            return;
+        }
+        if (!selectedLocation) {
+            alert("Marque um local no mapa.");
+            return;
+        }
+
+        const descricao = document.getElementById("share-description").value;
+
+        const novoPost = {
+            esporte: selectedSport,
+            horario: datetimeInput.value,
+            local: selectedLocation,
+            descricao: descricao
+        };
+
+        console.log("Novo post de esporte:", novoPost);
+
+        // AQUI: enviar para backend/API, ou adicionar um marcador
+        // real no mapa principal (.sport-map) usando novoPost.local
+
+        fecharModal();
+    });
 
 });
